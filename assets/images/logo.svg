@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Signet der Jungenwaldmühle</title>
+  <circle cx="32" cy="32" r="30" fill="#17382b"/>
+  <path fill="none" stroke="#ead8b7" stroke-linecap="round" stroke-width="2.2" d="M13 42c8-6 14-7 20-3 6 4 11 3 19-3M16 49c7-4 12-5 17-2 5 3 10 3 15-1"/>
+  <path fill="#ead8b7" d="M20 34V17h4v17c0 3 1 5 4 5s4-2 4-5V17h4v17c0 6-3 9-8 9s-8-3-8-9Zm19-17h4v16c0 4-1 7-4 9l-2-4c1-1 2-3 2-5V17Z"/>
+  <path fill="#b88a4a" d="M48 14c-6 1-9-1-10-6 5 0 8 2 10 6Z"/>
+</svg>
