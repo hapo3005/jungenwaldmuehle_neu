@@ -1,0 +1,13 @@
+{
+  "name": "jungenwaldmuehle",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website der Jungenwaldmühle – Restaurant, Hofcafé & Reitschule",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

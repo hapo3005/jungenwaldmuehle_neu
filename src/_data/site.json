@@ -1,0 +1,10 @@
+{
+  "baseUrl": "https://hapo3005.github.io/jungenwaldmuehle_neu",
+  "nav": [
+    { "href": "index.html", "label": "Startseite", "key": "index" },
+    { "href": "restaurant.html", "label": "Restaurant & Hofcafé", "key": "restaurant" },
+    { "href": "reitschule.html", "label": "Reitschule", "key": "reitschule" },
+    { "href": "islandpferde.html", "label": "Islandpferde", "key": "islandpferde" },
+    { "href": "kontakt.html", "label": "Kontakt", "key": "kontakt" }
+  ]
+}
