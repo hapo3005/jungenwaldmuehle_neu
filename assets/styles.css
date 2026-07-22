@@ -23,6 +23,10 @@
   --radius:.15rem;
   --shadow:0 18px 55px rgba(0,0,0,.18);
   --max:78rem;
+  /* Bewusster System-Font-Stack (kein externer Webfont-Aufruf → DSGVO-freundlich,
+     kein Ladeflackern). Für echte Marken-Fonts hier später self-hosted woff2 ergänzen. */
+  --font-sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-serif:Georgia,"Times New Roman",serif;
 }
 
 /* 2. Basis & Reset ------------------------------------------------------- */
@@ -30,7 +34,7 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-family:var(--font-sans);
   background:var(--bg);
   color:var(--ink);
   line-height:1.65;
@@ -55,7 +59,7 @@ button,input,textarea{font:inherit}
 
 /* Gemeinsame Überschriften-Typografie */
 .hero h1,.page-hero h1,h2{
-  font-family:Georgia,"Times New Roman",serif;
+  font-family:var(--font-serif);
   font-weight:500;
   line-height:1.04;
 }
@@ -88,12 +92,12 @@ section{padding:clamp(5rem,9vw,8rem) 0}
   box-shadow:0 1px rgba(23,33,27,.08);
 }
 .nav{min-height:5.4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
-.brand{display:flex;align-items:center;gap:.9rem;text-decoration:none;font-family:Georgia,serif}
+.brand{display:flex;align-items:center;gap:.9rem;text-decoration:none;font-family:var(--font-serif)}
 .brand img{width:3rem;height:3rem;object-fit:contain}
 .brand strong{display:block;font-size:1.18rem;font-weight:600}
 .brand small{
   display:block;
-  font:600 .62rem/1.2 Inter,sans-serif;
+  font:600 .62rem/1.2 var(--font-sans);
   letter-spacing:.13em;
   text-transform:uppercase;
   color:var(--muted);
@@ -187,7 +191,7 @@ section{padding:clamp(5rem,9vw,8rem) 0}
 .quick a{padding:1.8rem;text-decoration:none;border-left:1px solid var(--line);transition:.2s}
 .quick a:first-child{padding-left:0;border-left:0}
 .quick a:hover strong{color:var(--sand)}
-.quick strong{display:block;font-family:Georgia,serif;font-size:1.12rem}
+.quick strong{display:block;font-family:var(--font-serif);font-size:1.12rem}
 .quick span{display:block;color:var(--muted);font-size:.9rem;margin-top:.35rem}
 
 /* 6. Editorial-Sektionen ------------------------------------------------- */
@@ -201,7 +205,7 @@ section{padding:clamp(5rem,9vw,8rem) 0}
 .feature img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
 .feature:hover img{transform:scale(1.025)}
 .overlay{position:absolute;inset:auto 0 0;padding:7rem 2.3rem 2.3rem;color:#fff;background:linear-gradient(transparent,rgba(8,14,9,.9))}
-.overlay h3,.mini h3{font-family:Georgia,serif;margin:0 0 .4rem;overflow-wrap:break-word;hyphens:auto}
+.overlay h3,.mini h3{font-family:var(--font-serif);margin:0 0 .4rem;overflow-wrap:break-word;hyphens:auto}
 .overlay h3{font-size:2rem}
 .mini h3{font-size:clamp(1.45rem,2.2vw,1.85rem)}
 
@@ -221,13 +225,13 @@ section{padding:clamp(5rem,9vw,8rem) 0}
   counter-increment:step;
   content:counter(step);
   display:block;
-  font-family:Georgia,serif;
+  font-family:var(--font-serif);
   font-size:2.4rem;
   color:var(--sand);
   line-height:1;
   margin-bottom:.6rem;
 }
-.step h3{font-family:Georgia,serif;font-size:1.35rem;margin:0 0 .4rem}
+.step h3{font-family:var(--font-serif);font-size:1.35rem;margin:0 0 .4rem}
 .step p{margin:0;color:var(--muted)}
 
 /* Call-to-Action-Band */
@@ -263,7 +267,7 @@ section{padding:clamp(5rem,9vw,8rem) 0}
 .menu-category{margin-bottom:4rem}
 .menu-category h2{font-size:2.35rem;border-bottom:1px solid var(--line);padding-bottom:.8rem}
 .menu-item{display:grid;grid-template-columns:1fr auto;gap:.7rem 2rem;padding:1rem 0;border-bottom:1px solid var(--line)}
-.menu-item strong{font-family:Georgia,serif;font-size:1.14rem}
+.menu-item strong{font-family:var(--font-serif);font-size:1.14rem}
 .menu-item p{grid-column:1;margin:0;color:var(--muted)}
 .menu-item span{grid-column:2;grid-row:1;font-weight:800}
 
@@ -273,8 +277,9 @@ section{padding:clamp(5rem,9vw,8rem) 0}
 .contact>.card:last-child{background:var(--surface-2)}
 form{display:grid;gap:1.4rem}
 .field{display:grid;gap:.4rem}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
 label{font-weight:700;font-size:.9rem}
-input,textarea{
+input,textarea,select{
   width:100%;
   border:0;
   border-bottom:1px solid #8f9a90;
@@ -283,9 +288,11 @@ input,textarea{
   background:transparent;
   transition:border-color .2s;
 }
+select{cursor:pointer;color:var(--ink)}
 input::placeholder,textarea::placeholder{color:#9aa39a}
-input:focus,textarea:focus{outline:0;border-bottom-color:var(--forest)}
+input:focus,textarea:focus,select:focus{outline:0;border-bottom-color:var(--forest)}
 textarea{min-height:9rem;resize:vertical}
+@media(max-width:600px){.field-row{grid-template-columns:1fr}}
 .form-note{margin:0;color:var(--muted);font-size:.85rem}
 .map iframe{width:100%;height:32rem;border:0;border-radius:var(--radius)}
 
@@ -294,7 +301,7 @@ textarea{min-height:9rem;resize:vertical}
 /* 9. Footer -------------------------------------------------------------- */
 .footer{background:#111a13;color:#fff;padding:4rem 0 3rem}
 .footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:3rem}
-.footer h2,.footer h3{font-family:Georgia,serif}
+.footer h2,.footer h3{font-family:var(--font-serif)}
 .footer h3{color:var(--sand-light)}
 .footer a{color:#fff}
 .legal{margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.17);color:#cdd3cd;font-size:.86rem}
