@@ -26,15 +26,15 @@
 <meta name="twitter:card" content="summary_large_image">
 {%- endif %}
 {%- if preloadHero %}
-<link rel="preload" as="image" href="assets/images/restaurant-hero.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="{{ image }}" fetchpriority="high">
 {%- endif %}
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a>
-<header class="site-header"><div class="container nav"><a class="brand" href="index.html" aria-label="Jungenwaldmühle – Startseite"><img src="assets/images/logo.svg" alt="" width="48" height="48" loading="lazy"><span><strong>Jungenwaldmühle</strong><small>Restaurant · Hofcafé · Reitschule</small></span></a><button class="toggle" aria-label="Navigation öffnen" aria-expanded="false" aria-controls="nav">☰</button><nav class="links" id="nav" aria-label="Hauptnavigation">{% for item in site.nav %}<a href="{{ item.href }}"{% if item.key == navKey %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}<a class="btn btn-primary" href="kontakt.html#reservierung">Tisch reservieren</a></nav></div></header>
+<header class="site-header"><div class="container nav"><a class="brand" href="index.html" aria-label="Jungenwaldmühle – Startseite"><img src="assets/images/logo.svg" alt="" width="48" height="48" loading="lazy"><span><strong>Jungenwaldmühle</strong><small>Restaurant · Hofcafé · Ponyhof</small></span></a><button class="toggle" type="button" aria-label="Navigation öffnen" aria-expanded="false" aria-controls="nav">☰</button><nav class="links" id="nav" aria-label="Hauptnavigation">{% for item in site.nav %}<a href="{{ item.href }}"{% if item.key == navKey %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}<a class="btn btn-primary" href="kontakt.html#reservierung">Tisch reservieren</a></nav></div></header>
 {{ content | safe }}
-<footer class="footer"><div class="container footer-grid"><div><h2>Jungenwaldmühle</h2><p>Ein besonderer Ort zwischen regionaler Küche, Natur und Islandpferden.</p></div><div><h3>Besuchen</h3><p>Jungenwaldmühle 1<br>54472 Brauneberg</p></div><div><h3>Kontakt</h3><p><a href="tel:+4965347493854">06534 7493854</a><br><a href="kontakt.html">Nachricht senden</a></p></div><div><h3>Entdecken</h3><p><a href="restaurant.html">Restaurant</a><br><a href="reitschule.html">Reitschule</a><br><a href="islandpferde.html">Islandpferde</a></p></div></div><div class="container legal">© <span data-year></span> Jungenwaldmühle · Konzeptseite zur Präsentation · <a href="impressum.html">Impressum & Datenschutz</a></div></footer>
+<footer class="footer"><div class="container footer-grid"><div><h2>Jungenwaldmühle</h2><p>Ein besonderer Ort zwischen regionaler Küche, Natur und Islandpferden.</p></div><div><h3>Besuchen</h3><p>Jungenwaldmühle 1<br>54472 Brauneberg</p></div><div><h3>Kontakt</h3><p><a href="tel:+4965347493854">06534 7493854</a><br><a href="kontakt.html">Nachricht senden</a></p></div><div><h3>Entdecken</h3><p><a href="restaurant.html">Restaurant</a><br><a href="reitschule.html">Ponyhof & Reitschule</a><br><a href="islandpferde.html">Islandpferde</a></p></div></div><div class="container legal">© <span data-year></span> Jungenwaldmühle · Konzeptseite zur Präsentation · <a href="impressum.html">Impressum & Datenschutz</a></div></footer>
 <script src="assets/app.js"></script>
 {%- if jsonLd %}
 <script type="application/ld+json">{{ jsonLd | safe }}</script>

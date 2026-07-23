@@ -149,7 +149,7 @@ section{padding:clamp(5rem,9vw,8rem) 0}
   overflow:hidden;
 }
 .hero-media{position:absolute;inset:0}
-.hero-media img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.06)}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 45%;filter:saturate(.86) contrast(1.04)}
 .hero:after{
   content:"";
   position:absolute;
@@ -177,7 +177,8 @@ section{padding:clamp(5rem,9vw,8rem) 0}
   box-shadow:var(--shadow);
 }
 .hero-meta h2{font-size:1.25rem;margin:0 0 .7rem}
-.hero-meta p{font-size:.94rem;margin:.25rem 0}
+.hero-meta p{font-size:.94rem;margin:.25rem 0;color:#354035}
+.hero-meta strong{color:var(--ink)}
 .hero-meta a{color:var(--forest2);font-weight:700}
 
 /* Schnelleinstieg-Leiste */
@@ -263,6 +264,10 @@ section{padding:clamp(5rem,9vw,8rem) 0}
 
 .card{background:var(--surface-2);padding:clamp(1.5rem,3vw,2.5rem);border-radius:var(--radius)}
 .card h2{margin-top:0}
+.card h3{font-family:var(--font-serif);font-size:1.45rem;margin-top:0}
+.card ul{padding-left:1.2rem;margin-bottom:0}
+.card li+li{margin-top:.45rem}
+.availability-note{margin:2rem 0 0;padding:1rem 1.2rem;border-left:4px solid var(--sand);background:rgba(255,255,255,.45)}
 
 .menu-category{margin-bottom:4rem}
 .menu-category h2{font-size:2.35rem;border-bottom:1px solid var(--line);padding-bottom:.8rem}
@@ -293,7 +298,6 @@ input::placeholder,textarea::placeholder{color:#9aa39a}
 input:focus,textarea:focus,select:focus{outline:0;border-bottom-color:var(--forest)}
 textarea{min-height:9rem;resize:vertical}
 @media(max-width:600px){.field-row{grid-template-columns:1fr}}
-.form-note{margin:0;color:var(--muted);font-size:.85rem}
 .map iframe{width:100%;height:32rem;border:0;border-radius:var(--radius)}
 
 .notice{border-left:4px solid var(--sand);background:#fff8e6;padding:1rem 1.2rem;border-radius:.5rem}
@@ -336,6 +340,7 @@ textarea{min-height:9rem;resize:vertical}
   .brand img{width:2.65rem;height:2.65rem}
   .brand small{display:none}
   .hero h1{font-size:3.35rem}
+  .hero-media img{object-position:58% center}
   .hero-meta{width:calc(100% - 1.5rem)}
   .quick{grid-template-columns:1fr}
   .quick a,.quick a:first-child{padding:1rem 0;border:0;border-bottom:1px solid var(--line)}
