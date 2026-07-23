@@ -254,6 +254,11 @@ section{padding:clamp(5rem,9vw,8rem) 0}
 .page-hero .container{position:relative;z-index:1}
 .page-hero h1{font-size:clamp(3.2rem,6.5vw,6rem);letter-spacing:-.03em;margin:.5rem 0}
 .page-hero p{max-width:42rem;font-size:1.2rem;color:rgba(255,255,255,.78)}
+/* Bild-Hero-Variante für Unterseiten: Foto + dunkler Verlauf, Grün bleibt Fallback */
+.page-hero.has-media{padding-top:clamp(8rem,13vw,12rem)}
+.page-hero-media{position:absolute;inset:0;z-index:0}
+.page-hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 50%;filter:saturate(.88) contrast(1.03)}
+.page-hero.has-media::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,rgba(7,18,13,.9),rgba(7,18,13,.55) 55%,rgba(7,18,13,.2) 88%),linear-gradient(0deg,rgba(7,18,13,.5),transparent 55%)}
 
 .content{display:grid;grid-template-columns:.9fr 1.1fr;gap:5rem;align-items:center}
 .prose h2{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.02em}
