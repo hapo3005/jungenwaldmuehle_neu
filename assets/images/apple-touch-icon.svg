@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-labelledby="apple-title">
+  <title id="apple-title">Jungenwaldmühle</title>
+  <rect width="180" height="180" fill="#17372b"/>
+  <circle cx="90" cy="77" r="39" fill="none" stroke="#ead8b7" stroke-width="6"/>
+  <circle cx="90" cy="77" r="9.75" fill="none" stroke="#ead8b7" stroke-width="6"/>
+  <g fill="none" stroke="#ead8b7" stroke-linecap="round" stroke-width="5.25">
+    <path d="M90 38v29.25M90 86.75V116M51 77h29.25M99.75 77H129M62.4 49.4l20.7 20.7M96.9 83.9l20.7 20.7M117.6 49.4 96.9 70.1M83.1 83.9l-20.7 20.7"/>
+    <path stroke-width="6" d="M34.5 128c13.2-8.4 26.1-8.4 39.3 0s26.1 8.4 39.3 0 26.1-8.4 32.4 0M45 146c11.4-6.6 22.8-6.6 34.2 0s22.8 6.6 34.2 0 19.2-6.6 24.6 0"/>
+  </g>
+  <circle cx="90" cy="77" r="3.6" fill="#b77a36"/>
+</svg>

@@ -36,6 +36,14 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Keine KI-Bilder, Stockfotos, künstlichen Lichtlecks oder generischen Textur-Overlays.
 - Bildausschnitte auf Mobilgeräten bewusst per `object-position` führen.
 
+## Logo
+
+- Das Signet abstrahiert ein Mühlrad über zwei Wasserlinien. Es leitet sich ausschließlich aus dem Namen und der belegten historischen Wassermühle ab.
+- Keine erfundene Jahreszahl, kein Wappen und keine zusätzlichen Herkunfts- oder Traditionsbehauptungen.
+- Primäranwendung ist das runde Signet in Mühlengrün und warmem Papier; der Ockerton markiert nur die Radnabe.
+- In der Navigation bildet das Signet mit dem gesetzten Namen und der Angebotszeile die verbindliche Wort-Bild-Marke.
+- Das Signet darf nicht gestreckt, gedreht, eingefärbt, mit Effekten versehen oder kleiner als 40 CSS-Pixel dargestellt werden.
+
 ## Interaktion
 
 - Reservierung ist als Telefonnummer beschriftet, nicht als unehrlich automatisierter Buchungsvorgang.
