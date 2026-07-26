@@ -1,4 +1,4 @@
-≠rá^—f•ñÿ¶{N¨y 'v√Æ∂õ≠const toggle=document.querySelector(".toggle");
+const toggle=document.querySelector(".toggle");
 const navigation=document.querySelector(".links");
 const mobileBreakpoint=window.matchMedia("(max-width: 980px)");
 

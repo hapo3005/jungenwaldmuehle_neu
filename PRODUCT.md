@@ -1,4 +1,4 @@
-≠rá^—f•ñÿ¶{N¨y 'v√Æ∂õ≠# Product
+# Product
 
 <!-- impeccable:product-schema 1 -->
 

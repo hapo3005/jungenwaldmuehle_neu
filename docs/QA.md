@@ -1,4 +1,4 @@
-≠rá^—f•ñÿ¶{Nly 'v√Æ∂õ≠# Qualit√§tspr√ºfung
+# Qualit√§tspr√ºfung
 
 ## Vor jedem Commit
 

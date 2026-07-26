@@ -1,4 +1,4 @@
-­r‡^Ñf¥–Ø¦{NlyÊ'vÃ®¶›­# Inhaltswahrheit und Freigabestatus
+# Inhaltswahrheit und Freigabestatus
 
 ## BestÃ¤tigt
 

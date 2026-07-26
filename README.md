@@ -1,4 +1,4 @@
-≠rá^—f•ñÿ¶{Nly 'v√Æ∂õ≠# Jungenwaldm√ºhle ‚Äì Website-Konzept
+# Jungenwaldm√ºhle ‚Äì Website-Konzept
 
 ## GitHub Pages
 1. Inhalt dieses Ordners in ein GitHub-Repository hochladen.

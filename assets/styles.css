@@ -1,4 +1,4 @@
-≠rá^—f•ñÿ¶{Nly 'v√Æ∂õ≠:root{--paper:#f2eee4;--paper-deep:#e5ddce;--ink:#172019;--muted:#59645b;--forest:#17372b;--forest-dark:#0e251c;--moss:#526b55;--ochre:#b77a36;--ochre-on-paper:#8b541d;--line:rgba(23,32,25,.17);--white:#fff;--max:80rem;--sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--serif:Georgia,"Times New Roman",serif;--ease:cubic-bezier(.23,1,.32,1)}
+:root{--paper:#f2eee4;--paper-deep:#e5ddce;--ink:#172019;--muted:#59645b;--forest:#17372b;--forest-dark:#0e251c;--moss:#526b55;--ochre:#b77a36;--ochre-on-paper:#8b541d;--line:rgba(23,32,25,.17);--white:#fff;--max:80rem;--sans:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--serif:Georgia,"Times New Roman",serif;--ease:cubic-bezier(.23,1,.32,1)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
