@@ -4,7 +4,7 @@
   "private": true,
   "description": "Website der Jungenwaldmühle – Restaurant, Hofcafé & Reitschule",
   "scripts": {
-    "build": "eleventy",
+    "build": "eleventy && node scripts/sync-root.mjs",
     "serve": "eleventy --serve"
   },
   "devDependencies": {
