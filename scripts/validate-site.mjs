@@ -47,7 +47,7 @@ for(const page of pages){
     const href=match[1];
     if(/^(https?:|mailto:|tel:)/i.test(href))continue;
     const [targetName,anchor]=href.split("#");
-    const target=targetName||page;
+    const target=(targetName||page).split("?")[0];
     const targetPath=path.join(root,target);
     if(!fs.existsSync(targetPath)){fail(page,`interner Link fehlt: ${href}`);continue;}
     if(anchor){
