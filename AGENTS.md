@@ -12,4 +12,4 @@ Alle Coding-Agenten lesen vor Änderungen `PRODUCT.md`, `DESIGN.md`, `docs/CONTE
 - Kein ungefragter Framework-, Hosting- oder Formularanbieter-Wechsel.
 - Desktop und Mobil müssen nach jeder wesentlichen UI-Änderung geprüft werden.
 - Tastatur, Fokus, reduzierte Bewegung, Kontrast und semantische Struktur sind Pflicht.
-- Keine Änderung gilt als fertig, bevor `npm run build` erfolgreich war und `docs/QA.md` abgearbeitet wurde.
+- Keine Änderung gilt als fertig, bevor `npm run check` einschließlich lokalem Impeccable-Detektor erfolgreich war und `docs/QA.md` abgearbeitet wurde.

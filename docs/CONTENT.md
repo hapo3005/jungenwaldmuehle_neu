@@ -27,6 +27,20 @@ Quellen:
 - Ortsplan Brauneberg 2026: https://www.brauneberg.de/wp-content/uploads/2026/03/Ortsplan_2026_final.pdf
 - bestehender Kontaktauftritt: https://jungenwaldmuehle.simdif.com/contact.html
 - aktuelle Reitschul- und Zuchtseite: https://jungenwaldmuehle.simdif.com/reitschule.html
+- Faszination Mosel, Projektbericht mit Bildnachweis „Fotos (c) Britta Böhm“:
+  https://www.faszinationmosel.info/2022/09/29/lag-mosel-leader-projekt-restaurant-und-hofcafe-jungenwaldmuehle-in-brauneberg/
+
+## Bildherkunft
+
+- Alle verwendeten Fotografien stammen aus dem ursprünglichen Projektbestand
+  und lassen sich bis zum Upload durch den Repositoryinhaber in Commit
+  `71c2de494865646e681686431b1af8301fa3b058` zurückverfolgen.
+- Die optimierten JPEG- und WebP-Dateien sind Ableitungen dieser
+  Ausgangsdateien; es wurden keine Stock- oder KI-Fotografien ergänzt.
+- Die Herkunftsdokumentation ersetzt keine Nutzungsfreigabe. Die Rechte für
+  Website, Bearbeitung, Portfolio und Vorschaubilder müssen vom Betrieb
+  schriftlich bestätigt werden.
+- Einzelheiten stehen in `docs/ASSETS.md`.
 
 ## Aus Projektbestand, vor Livegang durch den Betrieb bestätigen
 

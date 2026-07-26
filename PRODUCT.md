@@ -36,7 +36,7 @@ Viele Besucher entscheiden mobil und kurzfristig während eines Moselaufenthalts
 
 ## Brand Commitments
 
-Der Name Jungenwaldmühle, das bestehende Mühlenlogo, die realen Fotografien und die familiäre, bodenständige Ansprache bleiben erhalten. Die Seite soll hochwertig und eigenständig wirken, niemals luxuriös-abgehoben, verspielt-künstlich oder wie eine generische KI-Gastronomievorlage.
+Der Name Jungenwaldmühle, die realen Fotografien und die familiäre, bodenständige Ansprache bleiben erhalten. Das für den neuen Auftritt entwickelte Mühlen-Signet darf erst nach Zustimmung des Betriebs als verbindliches Logo eingeführt werden. Die Seite soll hochwertig und eigenständig wirken, niemals luxuriös-abgehoben, verspielt-künstlich oder wie eine generische KI-Gastronomievorlage.
 
 ## Evidence on Hand
 
