@@ -1,4 +1,4 @@
-# Jungenwaldm√ºhle ‚Äì Website-Konzept
+≠rá^—f•ñÿ¶{Nly 'v√Æ∂õ≠# Jungenwaldm√ºhle ‚Äì Website-Konzept
 
 ## GitHub Pages
 1. Inhalt dieses Ordners in ein GitHub-Repository hochladen.
@@ -9,4 +9,4 @@
 Semantische Struktur, Skip-Link, sichtbare Fokuszust√§nde, responsive Navigation, Alternativtexte, Formular-Labels und `prefers-reduced-motion`.
 
 ## Vor Ver√∂ffentlichung
-Kontaktdaten, √ñffnungszeiten, Speisekarte, Bildrechte, Impressum und Datenschutz pr√ºfen. Das Kontaktformular nutzt aktuell `mailto:`.
+Kontaktdaten, saisonale √ñffnungszeiten und Gastgeberangaben sind in `docs/CONTENT.md` mit Quellen dokumentiert. Konkrete Speisen und Preise werden erst nach aktueller Freigabe des Betriebs ver√∂ffentlicht. Bildrechte und betriebsindividuelle Pflichtangaben bleiben vor der endg√ºltigen kommerziellen √úbernahme durch den Betrieb zu best√§tigen.

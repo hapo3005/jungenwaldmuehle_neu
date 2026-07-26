@@ -1,4 +1,4 @@
-# Product
+�r�^�f��ئ{N�y�'vî���# Product
 
 <!-- impeccable:product-schema 1 -->
 
@@ -29,7 +29,7 @@ Viele Besucher entscheiden mobil und kurzfristig während eines Moselaufenthalts
 - Statische Eleventy-Website ohne Backend.
 - GitHub Pages ist das bestehende Veröffentlichungsziel.
 - Das bisherige `mailto:`-Formular ist kein verlässlicher Reservierungskanal.
-- Öffnungszeiten und Speisekarte müssen vor Veröffentlichung fachlich bestätigt werden.
+- Öffnungszeiten und Gastgeberangaben werden nur aus dokumentierten Quellen übernommen; konkrete Speisen und Preise erscheinen erst nach aktueller Freigabe des Betriebs.
 - Restaurant/Hofcafé ist der primäre wirtschaftliche Pfad.
 - Ponyhof/Reitschule und Islandpferde bleiben eigenständige Sekundärpfade.
 - Keine erfundenen Auszeichnungen, Kapazitäten, Verfügbarkeiten oder Wirkungszahlen.
@@ -44,7 +44,7 @@ Der Name Jungenwaldmühle, das bestehende Mühlenlogo, die realen Fotografien un
 - Öffentlich sichtbare, sehr positive Gästebewertungen zu Essen, Service, Atmosphäre, Wiesenlage und Pferden.
 - Bestätigte Adresse und Telefonnummer.
 - Von der regionalen Tourismusinformation veröffentlichte Saisonzeiten 2026.
-- Projekttexte zu Christian Böhm (Koch), Peter Böhm (Konditormeister) und Britta Böhm (Hotelfachfrau); vor Livegang nochmals durch den Betrieb freizugeben.
+- VisitMosel bestätigt Christian Böhm als Koch, Peter Böhm als Konditormeister und Britta Böhm als Gastgeberin.
 - Keine belastbaren eigenen Conversion-, Reservierungs- oder Umsatzdaten.
 
 ## Product Principles

@@ -1,4 +1,4 @@
-const toggle=document.querySelector(".toggle");
+­r‡^Ñf¥–Ø¦{N¬yÊ'vÃ®¶›­const toggle=document.querySelector(".toggle");
 const navigation=document.querySelector(".links");
 const mobileBreakpoint=window.matchMedia("(max-width: 980px)");
 
@@ -54,6 +54,21 @@ document.querySelectorAll("[data-year]").forEach(element=>{
 });
 
 const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
+const scrollTopButton=document.querySelector(".scroll-top");
+if(scrollTopButton){
+  const updateScrollTopButton=()=>{
+    const visible=window.scrollY>Math.max(520,window.innerHeight*.7);
+    scrollTopButton.classList.toggle("is-visible",visible);
+    scrollTopButton.tabIndex=visible?0:-1;
+  };
+  scrollTopButton.tabIndex=-1;
+  scrollTopButton.addEventListener("click",()=>{
+    window.scrollTo({top:0,behavior:reduceMotion.matches?"auto":"smooth"});
+  });
+  window.addEventListener("scroll",updateScrollTopButton,{passive:true});
+  updateScrollTopButton();
+}
+
 const revealTargets=[
   ...document.querySelectorAll(
     ".intro-grid > *, .food-grid > *, .menu-preview-grid > *, .horses-grid > *, .visit-grid > *, .content > *, .section-head > *, .horse-details > *, .steps > *, .contact > *, .map-panel > *"

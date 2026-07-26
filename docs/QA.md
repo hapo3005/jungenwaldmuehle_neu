@@ -1,15 +1,15 @@
-# Qualitätsprüfung
+�r�^�f��ئ{Nly�'vî���# Qualitätsprüfung
 
 ## Vor jedem Commit
 
 - [x] `npm run build` läuft ohne Fehler.
-- [ ] Keine ungeprüften Inhalte wurden als sicher dargestellt.
-- [ ] Alle internen Links und Sprungmarken funktionieren.
-- [ ] Telefonlinks verwenden `tel:+4965347493854`.
-- [ ] Aktuelle Seite ist in der Navigation erkennbar.
-- [ ] Navigation lässt sich per Tastatur öffnen, schließen und verlassen.
-- [ ] Fokus ist auf allen interaktiven Elementen sichtbar.
-- [ ] Bedeutungsvolle Bilder haben passende Alternativtexte.
+- [x] Keine ungeprüften Inhalte wurden als sicher dargestellt.
+- [x] Alle internen Links und Sprungmarken funktionieren.
+- [x] Telefonlinks verwenden `tel:+4965347493854`.
+- [x] Aktuelle Seite ist in der Navigation erkennbar.
+- [x] Navigation lässt sich per Tastatur öffnen, schließen und verlassen.
+- [x] Fokus ist auf allen interaktiven Elementen sichtbar.
+- [x] Bedeutungsvolle Bilder haben passende Alternativtexte.
 - [x] Keine horizontale Überbreite bei 320, 390, 768 und 1440 px.
 - [x] Primäre Handlung ist im ersten mobilen Bildschirm verständlich.
 - [x] Öffnungszeiten, Telefonnummer und Route sind mobil schnell erreichbar.
@@ -18,12 +18,12 @@
 
 ## Vor Veröffentlichung fachlich bestätigen
 
-- [ ] Saison- und Sonderöffnungszeiten
-- [ ] Speisekarte und Preise
-- [ ] Namen und berufliche Angaben der Gastgeber
+- [x] Saisonöffnungszeiten aus VisitMosel und Ortsplan Brauneberg 2026
+- [x] Unbestätigte Speisekarte und Preise aus der Live-Seite entfernt
+- [x] Namen und berufliche Angaben der Gastgeber aus VisitMosel
 - [ ] Bildrechte
-- [ ] Impressum und Datenschutz
-- [ ] Gewünschter finaler Kontakt-/Reservierungsprozess
+- [x] Impressum und Datenschutz für den aktuellen statischen GitHub-Pages-Stand ergänzt
+- [x] Kontakt-/Reservierungsprozess: Telefon und E-Mail, kein vorgetäuschtes Formular
 
 ## Mobile-Optimierung im Branch
 
@@ -41,6 +41,7 @@
 - [x] Kartenansicht und große Bilder erhalten mobile Höhen
 - [x] Horizontale Seitenüberläufe werden verhindert
 - [x] Bewegungsreduktion wird respektiert
+- [x] Scroll-up-Button ist touchfreundlich, tastaturbedienbar und bewegungsreduziert
 - [x] Geräteemulation mit echten CSS-Viewports bei 320, 390, 768 und 1440 px
 - [x] Alle Kernseiten bei 390 px ohne horizontalen Überlauf geprüft
 - [x] Mobile Navigation bei 320, 390 und 768 px geöffnet, geschlossen und per Escape bedient
@@ -49,7 +50,7 @@
 
 ## Referenzqualität
 
-- [ ] Keine generischen KI-Floskeln oder austauschbare Stockmotive
+- [x] Keine generischen KI-Floskeln oder austauschbare Stockmotive
 - [x] Gastronomie führt klar, Pferde differenzieren
 - [x] Startseite erzählt einen schlüssigen Besuchsweg
 - [x] Desktop und Mobil wurden visuell geprüft

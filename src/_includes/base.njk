@@ -1,4 +1,4 @@
-{%- set pageAbsUrl = site.baseUrl + "/" + (permalink if permalink != "index.html" else "") -%}
+�r�^�f��ئ{Nly�'vî���{%- set pageAbsUrl = site.baseUrl + "/" + (permalink if permalink != "index.html" else "") -%}
 <!doctype html>
 <html lang="de">
 <head>
@@ -44,6 +44,9 @@
   </div>
 </header>
 {{ content | safe }}
+<button class="scroll-top" type="button" aria-label="Zurück zum Seitenanfang" title="Nach oben">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6.5 10.5 12 5l5.5 5.5"/></svg>
+</button>
 <footer class="footer">
   <div class="container footer-lead">
     <a class="footer-brand" href="index.html" aria-label="Jungenwaldmühle – Startseite">
@@ -56,8 +59,8 @@
   </div>
   <div class="container footer-grid">
     <div><strong>Jungenwaldmühle 1</strong><br>54472 Brauneberg<br><a href="https://www.google.com/maps/dir/?api=1&destination=Jungenwaldm%C3%BChle%201%2C%2054472%20Brauneberg">Route öffnen</a></div>
-    <div><strong>Restaurant & Hofcafé</strong><br>Samstag bis Dienstag<br>11:30–21:00 Uhr</div>
-    <div><strong>Kontakt</strong><br><a href="tel:+4965347493854">06534 7493854</a><br><a href="kontakt.html">Alle Kontaktdaten</a></div>
+    <div><strong>Restaurant & Hofcafé</strong><br>Apr–Okt · Sa–Di<br>Nov–Mär · Sa–So<br>11:30–21:00 Uhr</div>
+    <div><strong>Kontakt</strong><br><a href="tel:+4965347493854">06534 7493854</a><br><a href="mailto:jungenwaldmuehle1@gmail.com">E-Mail schreiben</a></div>
   </div>
   <div class="container legal">© <span data-year></span> Jungenwaldmühle · <a href="impressum.html">Impressum & Datenschutz</a></div>
 </footer>
@@ -70,6 +73,7 @@
   "url": "{{ site.baseUrl }}/",
   "image": "{{ site.baseUrl }}/assets/images/terrace-enhanced.webp",
   "telephone": "+49 6534 7493854",
+  "email": "jungenwaldmuehle1@gmail.com",
   "servesCuisine": "Regionale deutsche Küche",
   "address": {
     "@type": "PostalAddress",
@@ -78,6 +82,24 @@
     "addressLocality": "Brauneberg",
     "addressCountry": "DE"
   },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday"],
+      "opens": "11:30",
+      "closes": "21:00",
+      "validFrom": "2026-04-01",
+      "validThrough": "2026-10-31"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "11:30",
+      "closes": "21:00",
+      "validFrom": "2026-11-01",
+      "validThrough": "2027-03-31"
+    }
+  ],
   "hasMap": "https://www.google.com/maps/search/?api=1&query=Jungenwaldm%C3%BChle%201%2C%2054472%20Brauneberg"
 }
 </script>

@@ -1,11 +1,12 @@
-{
+≠rá^—f•ñÿ¶{Nly 'v√Æ∂õ≠{
   "name": "jungenwaldmuehle",
   "version": "1.0.0",
   "private": true,
   "description": "Website der Jungenwaldm√ºhle ‚Äì Restaurant, Hofcaf√© & Reitschule",
   "scripts": {
     "build": "eleventy && node scripts/sync-root.mjs",
-    "serve": "eleventy --serve"
+    "serve": "eleventy --serve",
+    "check": "npm run build && node scripts/validate-site.mjs && node --check assets/app.js && node --check scripts/sync-root.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
