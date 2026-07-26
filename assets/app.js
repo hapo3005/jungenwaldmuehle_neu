@@ -52,3 +52,26 @@ if(toggle&&navigation){
 document.querySelectorAll("[data-year]").forEach(element=>{
   element.textContent=new Date().getFullYear();
 });
+
+const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
+const revealTargets=[
+  ...document.querySelectorAll(
+    ".intro-grid > *, .food-grid > *, .menu-preview-grid > *, .horses-grid > *, .visit-grid > *, .content > *, .section-head > *, .horse-details > *, .steps > *, .contact > *, .map-panel > *"
+  )
+];
+
+if("IntersectionObserver" in window&&!reduceMotion.matches&&revealTargets.length){
+  document.documentElement.classList.add("reveal-ready");
+  revealTargets.forEach((element,index)=>{
+    element.dataset.reveal="";
+    element.style.setProperty("--reveal-delay",`${(index%3)*55}ms`);
+  });
+  const revealObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      entry.target.classList.add("is-visible");
+      revealObserver.unobserve(entry.target);
+    });
+  },{rootMargin:"0px 0px -8% 0px",threshold:.08});
+  revealTargets.forEach(element=>revealObserver.observe(element));
+}
