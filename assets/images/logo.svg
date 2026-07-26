@@ -1,7 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title id="title">Signet der Jungenwaldmühle</title>
-  <circle cx="32" cy="32" r="30" fill="#17382b"/>
-  <path fill="none" stroke="#ead8b7" stroke-linecap="round" stroke-width="2.2" d="M13 42c8-6 14-7 20-3 6 4 11 3 19-3M16 49c7-4 12-5 17-2 5 3 10 3 15-1"/>
-  <path fill="#ead8b7" d="M20 34V17h4v17c0 3 1 5 4 5s4-2 4-5V17h4v17c0 6-3 9-8 9s-8-3-8-9Zm19-17h4v16c0 4-1 7-4 9l-2-4c1-1 2-3 2-5V17Z"/>
-  <path fill="#b88a4a" d="M48 14c-6 1-9-1-10-6 5 0 8 2 10 6Z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Jungenwaldmühle</title>
+  <desc id="logo-desc">Ein abstrahiertes Mühlrad über zwei Wasserlinien</desc>
+  <circle cx="32" cy="32" r="31" fill="#17372b"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="#ead8b7" stroke-width="1.25"/>
+  <g fill="none" stroke="#ead8b7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="32" cy="27.5" r="13" stroke-width="2"/>
+    <circle cx="32" cy="27.5" r="3.25" stroke-width="2"/>
+    <path stroke-width="1.75" d="M32 14.5v9.75M32 30.75v9.75M19 27.5h9.75M35.25 27.5H45M22.8 18.3l6.9 6.9M34.3 29.8l6.9 6.9M41.2 18.3l-6.9 6.9M29.7 29.8l-6.9 6.9"/>
+    <path stroke-width="2" d="M13.5 44.5c4.4-2.8 8.7-2.8 13.1 0s8.7 2.8 13.1 0 8.7-2.8 10.8 0M17 50.5c3.8-2.2 7.6-2.2 11.4 0s7.6 2.2 11.4 0 6.4-2.2 8.2 0"/>
+  </g>
+  <circle cx="32" cy="27.5" r="1.2" fill="#b77a36"/>
 </svg>
