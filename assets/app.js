@@ -1,1 +1,27 @@
-const b=document.querySelector('.toggle'),n=document.querySelector('.links');if(b&&n){b.addEventListener('click',()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',String(o));b.setAttribute('aria-label',o?'Navigation schließen':'Navigation öffnen')});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false');b.setAttribute('aria-label','Navigation öffnen')}))}const a=document.querySelector('#anliegen'),q=new URLSearchParams(location.search).get('anliegen');if(a&&q&&[...a.options].some(o=>o.value===q))a.value=q;document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());
+const toggle=document.querySelector(".toggle");
+const navigation=document.querySelector(".links");
+
+function closeNavigation(){
+  if(!toggle||!navigation)return;
+  navigation.classList.remove("open");
+  toggle.setAttribute("aria-expanded","false");
+  toggle.setAttribute("aria-label","Navigation öffnen");
+  document.body.style.overflow="";
+  toggle.focus();
+}
+
+if(toggle&&navigation){
+  toggle.addEventListener("click",()=>{
+    const isOpen=navigation.classList.toggle("open");
+    toggle.setAttribute("aria-expanded",String(isOpen));
+    toggle.setAttribute("aria-label",isOpen?"Navigation schließen":"Navigation öffnen");
+    document.body.style.overflow=isOpen?"hidden":"";
+    if(isOpen)navigation.querySelector("a")?.focus();
+  });
+  navigation.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeNavigation));
+  document.addEventListener("keydown",event=>{if(event.key==="Escape")closeNavigation()});
+}
+
+document.querySelectorAll("[data-year]").forEach(element=>{
+  element.textContent=new Date().getFullYear();
+});

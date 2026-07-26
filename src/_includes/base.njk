@@ -8,10 +8,8 @@
 <title>{{ title }}</title>
 <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/images/logo.png">
-<meta name="theme-color" content="#203b27">
-{%- if noindex %}
-<meta name="robots" content="noindex">
-{%- endif %}
+<meta name="theme-color" content="#17372b">
+{%- if noindex %}<meta name="robots" content="noindex">{%- endif %}
 <link rel="canonical" href="{{ pageAbsUrl }}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
@@ -25,19 +23,41 @@
 <meta property="og:image:height" content="{{ imageH }}">
 <meta name="twitter:card" content="summary_large_image">
 {%- endif %}
-{%- if preloadHero %}
-<link rel="preload" as="image" href="{{ image }}" fetchpriority="high">
-{%- endif %}
+{%- if preloadHero %}<link rel="preload" as="image" href="{{ image }}" fetchpriority="high">{%- endif %}
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a>
-<header class="site-header"><div class="container nav"><a class="brand" href="index.html" aria-label="Jungenwaldmühle – Startseite"><img src="assets/images/logo.svg" alt="" width="48" height="48" loading="lazy"><span><strong>Jungenwaldmühle</strong><small>Restaurant · Hofcafé · Ponyhof</small></span></a><button class="toggle" type="button" aria-label="Navigation öffnen" aria-expanded="false" aria-controls="nav">☰</button><nav class="links" id="nav" aria-label="Hauptnavigation">{% for item in site.nav %}<a href="{{ item.href }}"{% if item.key == navKey %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}<a class="btn btn-primary" href="kontakt.html#reservierung">Tisch reservieren</a></nav></div></header>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Jungenwaldmühle – Startseite">
+      <img src="assets/images/logo.svg" alt="" width="52" height="52">
+      <span><strong>Jungenwaldmühle</strong><small>Restaurant · Hofcafé · Ponyhof</small></span>
+    </a>
+    <button class="toggle" type="button" aria-label="Navigation öffnen" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    <nav class="links" id="nav" aria-label="Hauptnavigation">
+      <div class="nav-primary">
+      {% for item in site.nav %}<a href="{{ item.href }}"{% if item.key == navKey %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+      </div>
+      <a class="nav-reserve" href="tel:+4965347493854"><span>Tisch reservieren</span><strong>06534 7493854</strong></a>
+    </nav>
+  </div>
+</header>
 {{ content | safe }}
-<footer class="footer"><div class="container footer-grid"><div><h2>Jungenwaldmühle</h2><p>Ein besonderer Ort zwischen regionaler Küche, Natur und Islandpferden.</p></div><div><h3>Besuchen</h3><p>Jungenwaldmühle 1<br>54472 Brauneberg</p></div><div><h3>Kontakt</h3><p><a href="tel:+4965347493854">06534 7493854</a><br><a href="kontakt.html">Nachricht senden</a></p></div><div><h3>Entdecken</h3><p><a href="restaurant.html">Restaurant</a><br><a href="reitschule.html">Ponyhof & Reitschule</a><br><a href="islandpferde.html">Islandpferde</a></p></div></div><div class="container legal">© <span data-year></span> Jungenwaldmühle · Konzeptseite zur Präsentation · <a href="impressum.html">Impressum & Datenschutz</a></div></footer>
+<footer class="footer">
+  <div class="container footer-lead">
+    <p class="kicker">Jungenwaldmühle bei Brauneberg</p>
+    <h2>Ein guter Grund,<br>von der Mosel abzubiegen.</h2>
+    <a class="btn btn-light" href="tel:+4965347493854">Tisch telefonisch reservieren</a>
+  </div>
+  <div class="container footer-grid">
+    <div><strong>Jungenwaldmühle 1</strong><br>54472 Brauneberg<br><a href="https://www.google.com/maps/dir/?api=1&destination=Jungenwaldm%C3%BChle%201%2C%2054472%20Brauneberg">Route öffnen</a></div>
+    <div><strong>Restaurant & Hofcafé</strong><br>Samstag bis Dienstag<br>11:30–21:00 Uhr</div>
+    <div><strong>Kontakt</strong><br><a href="tel:+4965347493854">06534 7493854</a><br><a href="kontakt.html">Alle Kontaktdaten</a></div>
+  </div>
+  <div class="container legal">© <span data-year></span> Jungenwaldmühle · <a href="impressum.html">Impressum & Datenschutz</a></div>
+</footer>
 <script src="assets/app.js"></script>
-{%- if jsonLd %}
-<script type="application/ld+json">{{ jsonLd | safe }}</script>
-{%- endif %}
+{%- if jsonLd %}<script type="application/ld+json">{{ jsonLd | safe }}</script>{%- endif %}
 </body>
 </html>
