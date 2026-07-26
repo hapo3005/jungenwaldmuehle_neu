@@ -4,7 +4,7 @@ const mobileBreakpoint=window.matchMedia("(max-width: 980px)");
 
 function focusableNavigationItems(){
   if(!navigation)return[];
-  return [...navigation.querySelectorAll("a,button")].filter(element=>!element.hasAttribute("disabled"));
+  return [toggle,...navigation.querySelectorAll("a,button")].filter(element=>element&&!element.hasAttribute("disabled"));
 }
 
 function closeNavigation({restoreFocus=true}={}){
@@ -56,16 +56,33 @@ document.querySelectorAll("[data-year]").forEach(element=>{
 const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
 const scrollTopButton=document.querySelector(".scroll-top");
 if(scrollTopButton){
+  let scrollFrame;
   const updateScrollTopButton=()=>{
-    const visible=window.scrollY>Math.max(520,window.innerHeight*.7);
+    const scrollable=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
+    const progress=scrollable?Math.min(1,window.scrollY/scrollable):0;
+    const visible=window.scrollY>Math.min(420,window.innerHeight*.55);
     scrollTopButton.classList.toggle("is-visible",visible);
     scrollTopButton.tabIndex=visible?0:-1;
+    scrollTopButton.style.setProperty("--scroll-progress",`${progress*360}deg`);
+    scrollFrame=undefined;
   };
   scrollTopButton.tabIndex=-1;
-  scrollTopButton.addEventListener("click",()=>{
+  scrollTopButton.addEventListener("click",event=>{
     window.scrollTo({top:0,behavior:reduceMotion.matches?"auto":"smooth"});
+    if(event.detail===0){
+      const main=document.querySelector("#main");
+      window.setTimeout(()=>{
+        if(main){
+          main.setAttribute("tabindex","-1");
+          main.focus({preventScroll:true});
+        }
+      },reduceMotion.matches?0:500);
+    }
   });
-  window.addEventListener("scroll",updateScrollTopButton,{passive:true});
+  window.addEventListener("scroll",()=>{
+    if(!scrollFrame) scrollFrame=window.requestAnimationFrame(updateScrollTopButton);
+  },{passive:true});
+  window.addEventListener("resize",updateScrollTopButton);
   updateScrollTopButton();
 }
 

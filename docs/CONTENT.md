@@ -11,6 +11,10 @@
 - Peter Böhm ist Konditormeister; Kuchen, Torten und Desserts entstehen im Haus.
 - Ruhige Lage zwischen Brauneberg und Burgen
 - Restaurant/Hofcafé, Ponyhof/Reitschule und Islandpferde gehören zum Angebot
+- Reitlehrerin Chantal ist ausgebildete Pferdewirtin (Spezialreitweise Gangreiten) und Trainer C.
+- Reitunterricht findet montags bis freitags für Anfänger und Fortgeschrittene ab fünf Jahren statt.
+- Einzel- und Gruppenunterricht, Probestunden, externe Einzelstunden und begleitete Ausritte für geübte Reiter werden angeboten; Wintergruppen umfassen höchstens vier Personen.
+- Die Islandpferdezucht „vom Mandelgraben“ besteht seit über 20 Jahren; Zuchtziele sind ein kompakter Typ, klarer Kopf und taktklarer Tölt.
 - Saison 2026 laut regionaler Tourismusinformation:
   - 1. April bis 31. Oktober: Samstag bis Dienstag, 11:30–21:00 Uhr
   - 1. November bis 31. März: Samstag und Sonntag, 11:30–21:00 Uhr
@@ -22,6 +26,7 @@ Quellen:
 - VisitMosel: https://www.visitmosel.de/wein-kulinarik/gastro/restaurant-und-hofcafe-jungenwaldmuehle
 - Ortsplan Brauneberg 2026: https://www.brauneberg.de/wp-content/uploads/2026/03/Ortsplan_2026_final.pdf
 - bestehender Kontaktauftritt: https://jungenwaldmuehle.simdif.com/contact.html
+- aktuelle Reitschul- und Zuchtseite: https://jungenwaldmuehle.simdif.com/reitschule.html
 
 ## Aus Projektbestand, vor Livegang durch den Betrieb bestätigen
 
