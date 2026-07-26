@@ -1,29 +1,20 @@
-{%- set pageAbsUrl = site.baseUrl + "/" + (permalink if permalink != "index.html" else "") -%}
 <!doctype html>
 <html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="{{ description }}">
-<title>{{ title }}</title>
+<meta name="description" content="Die aufgerufene Seite wurde nicht gefunden. Zurück zur Jungenwaldmühle mit Restaurant, Hofcafé, Ponyhof und Reitschule.">
+<title>Seite nicht gefunden | Jungenwaldmühle</title>
 <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/images/logo.png">
-<meta name="theme-color" content="#17372b">
-{%- if noindex %}<meta name="robots" content="noindex">{%- endif %}
-<link rel="canonical" href="{{ pageAbsUrl }}">
+<meta name="theme-color" content="#17372b"><meta name="robots" content="noindex">
+<link rel="canonical" href="https://hapo3005.github.io/jungenwaldmuehle_neu/404.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Jungenwaldmühle">
-<meta property="og:title" content="{{ ogTitle or title }}">
-<meta property="og:description" content="{{ description }}">
-<meta property="og:url" content="{{ pageAbsUrl }}">
-{%- if image %}
-<meta property="og:image" content="{{ site.baseUrl }}/{{ image }}">
-<meta property="og:image:width" content="{{ imageW }}">
-<meta property="og:image:height" content="{{ imageH }}">
-<meta name="twitter:card" content="summary_large_image">
-{%- endif %}
-{%- if preloadHero %}<link rel="preload" as="image" href="{{ image }}" fetchpriority="high">{%- endif %}
+<meta property="og:title" content="Seite nicht gefunden | Jungenwaldmühle">
+<meta property="og:description" content="Die aufgerufene Seite wurde nicht gefunden. Zurück zur Jungenwaldmühle mit Restaurant, Hofcafé, Ponyhof und Reitschule.">
+<meta property="og:url" content="https://hapo3005.github.io/jungenwaldmuehle_neu/404.html">
 <link rel="stylesheet" href="assets/styles.css?v=20260726-4">
 </head>
 <body>
@@ -37,13 +28,26 @@
     <button class="toggle" type="button" aria-label="Navigation öffnen" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
     <nav class="links" id="nav" aria-label="Hauptnavigation">
       <div class="nav-primary">
-      {% for item in site.nav %}<a href="{{ item.href }}"{% if item.key == navKey %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+      <a href="index.html">Startseite</a><a href="restaurant.html">Restaurant &amp; Hofcafé</a><a href="reitschule.html">Ponyhof &amp; Reitschule</a><a href="islandpferde.html">Islandpferde</a><a href="kontakt.html">Kontakt</a>
       </div>
       <a class="nav-reserve" href="tel:+4965347493854"><span>Tisch reservieren</span><strong>06534 7493854</strong></a>
     </nav>
   </div>
 </header>
-{{ content | safe }}
+<main id="main" tabindex="-1">
+  <section class="page-hero">
+    <div class="container">
+      <div class="eyebrow">Fehler 404</div>
+      <h1>Hier führt der Weg<br>nicht weiter.</h1>
+      <p>Die gewünschte Seite ist nicht mehr erreichbar oder die Adresse wurde falsch eingegeben.</p>
+      <div class="actions">
+        <a class="btn btn-light" href="index.html">Zur Startseite</a>
+        <a class="text-link light" href="kontakt.html">Kontakt & Anfahrt</a>
+      </div>
+    </div>
+  </section>
+</main>
+
 <button class="scroll-top" type="button" aria-label="Zum Seitenanfang" title="Nach oben">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6.5 10.5 12 5l5.5 5.5"/></svg>
 </button>
@@ -65,46 +69,5 @@
   <div class="container legal">© <span data-year></span> Jungenwaldmühle · <a href="impressum.html">Impressum & Datenschutz</a></div>
 </footer>
 <script src="assets/app.js?v=20260726-4"></script>
-{%- if not noindex %}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "name": "Jungenwaldmühle",
-  "url": "{{ site.baseUrl }}/",
-  "image": "{{ site.baseUrl }}/assets/images/terrace-enhanced.webp",
-  "telephone": "+49 6534 7493854",
-  "email": "jungenwaldmuehle1@gmail.com",
-  "servesCuisine": "Regionale deutsche Küche",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Jungenwaldmühle 1",
-    "postalCode": "54472",
-    "addressLocality": "Brauneberg",
-    "addressCountry": "DE"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday"],
-      "opens": "11:30",
-      "closes": "21:00",
-      "validFrom": "2026-04-01",
-      "validThrough": "2026-10-31"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Saturday", "Sunday"],
-      "opens": "11:30",
-      "closes": "21:00",
-      "validFrom": "2026-11-01",
-      "validThrough": "2027-03-31"
-    }
-  ],
-  "hasMap": "https://www.google.com/maps/search/?api=1&query=Jungenwaldm%C3%BChle%201%2C%2054472%20Brauneberg"
-}
-</script>
-{%- endif %}
-{%- if jsonLd %}<script type="application/ld+json">{{ jsonLd | safe }}</script>{%- endif %}
 </body>
 </html>

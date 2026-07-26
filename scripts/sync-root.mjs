@@ -7,6 +7,7 @@ const pages = [
   "islandpferde.html",
   "kontakt.html",
   "impressum.html",
+  "404.html",
 ];
 
 await Promise.all(

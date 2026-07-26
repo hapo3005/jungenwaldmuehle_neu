@@ -68,15 +68,15 @@ if(scrollTopButton){
   };
   scrollTopButton.tabIndex=-1;
   scrollTopButton.addEventListener("click",event=>{
-    window.scrollTo({top:0,behavior:reduceMotion.matches?"auto":"smooth"});
-    if(event.detail===0){
+    const keyboardActivated=event.detail===0;
+    window.scrollTo({top:0,behavior:reduceMotion.matches||keyboardActivated?"auto":"smooth"});
+    if(keyboardActivated){
       const main=document.querySelector("#main");
       window.setTimeout(()=>{
         if(main){
-          main.setAttribute("tabindex","-1");
           main.focus({preventScroll:true});
         }
-      },reduceMotion.matches?0:500);
+      },0);
     }
   });
   window.addEventListener("scroll",()=>{
