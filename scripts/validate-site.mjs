@@ -34,22 +34,22 @@ for(const definition of definitions){
   const html=fs.readFileSync(rootPath,"utf8");
   const generated=fs.readFileSync(sitePath,"utf8");
   if(html!==generated)fail(file,"Root-Ausgabe ist nicht mit _site synchron");
-  if(Buffer.byteLength(html)>100_000)fail(file,"HTML Ã¼berschreitet 100 KB");
+  if(Buffer.byteLength(html)>100_000)fail(file,"HTML überschreitet 100 KB");
   if(!/^<!doctype html>/i.test(html))fail(file,"DOCTYPE fehlt");
   if(count(html,/<html\b/gi)!==1||!/<html lang="de">/i.test(html))fail(file,"genau ein deutsches html-Element erforderlich");
   if(count(html,/<head\b/gi)!==1||count(html,/<body\b/gi)!==1)fail(file,"head oder body ist nicht eindeutig");
   if(!/<meta charset="utf-8">/i.test(html))fail(file,"UTF-8-Metadatum fehlt");
-  if(/[ÃƒÃ‚ï¿½]/.test(html))fail(file,"mÃ¶glicherweise fehlerhafte Zeichenkodierung gefunden");
+  if(/[ÃÂ�]/.test(html))fail(file,"möglicherweise fehlerhafte Zeichenkodierung gefunden");
   if(!/<meta name="viewport" content="width=device-width,initial-scale=1">/i.test(html))fail(file,"Viewport-Metadatum fehlt");
-  if(/<!--[\s\S]*?-->/g.test(html))fail(file,"interner HTML-Kommentar wird Ã¶ffentlich ausgeliefert");
+  if(/<!--[\s\S]*?-->/g.test(html))fail(file,"interner HTML-Kommentar wird öffentlich ausgeliefert");
 
   const title=html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim();
-  if(!title||title.length>70)fail(file,"Seitentitel fehlt oder ist lÃ¤nger als 70 Zeichen");
+  if(!title||title.length>70)fail(file,"Seitentitel fehlt oder ist länger als 70 Zeichen");
   else if(titles.has(title))fail(file,`Seitentitel ist nicht eindeutig (${titles.get(title)})`);
   else titles.set(title,file);
 
   const description=html.match(/<meta name="description" content="([^"]+)">/i)?.[1]?.trim();
-  if(!description||description.length<50||description.length>170)fail(file,"Meta-Beschreibung muss 50â€“170 Zeichen lang sein");
+  if(!description||description.length<50||description.length>170)fail(file,"Meta-Beschreibung muss 50–170 Zeichen lang sein");
   else if(descriptions.has(description))fail(file,`Meta-Beschreibung ist nicht eindeutig (${descriptions.get(description)})`);
   else descriptions.set(description,file);
 
@@ -59,15 +59,15 @@ for(const definition of definitions){
   if(html.match(/<meta property="og:description" content="([^"]+)">/i)?.[1]!==description)fail(file,"Open-Graph-Beschreibung weicht ab");
   if(html.match(/<meta property="og:url" content="([^"]+)">/i)?.[1]!==canonical)fail(file,"Open-Graph-URL weicht ab");
   if(indexable&&/<meta name="robots" content="noindex">/i.test(html))fail(file,"indexierbare Seite ist auf noindex gesetzt");
-  if(!indexable&&!/<meta name="robots" content="noindex">/i.test(html))fail(file,"nicht indexierbare Seite benÃ¶tigt noindex");
+  if(!indexable&&!/<meta name="robots" content="noindex">/i.test(html))fail(file,"nicht indexierbare Seite benötigt noindex");
 
   if(count(html,/<header\b/gi)!==1||count(html,/<nav\b/gi)!==1||count(html,/<footer\b/gi)!==1)fail(file,"Header, Navigation oder Footer ist nicht eindeutig");
-  if(count(html,/<main\b/gi)!==1||!/<main id="main" tabindex="-1">/i.test(html))fail(file,"main benÃ¶tigt eindeutiges Sprungziel und Fokusziel");
+  if(count(html,/<main\b/gi)!==1||!/<main id="main" tabindex="-1">/i.test(html))fail(file,"main benötigt eindeutiges Sprungziel und Fokusziel");
   if(count(html,/<h1\b/gi)!==1)fail(file,"genau eine H1 erforderlich");
   const headings=[...html.matchAll(/<h([1-6])\b/gi)].map(match=>Number(match[1]));
-  if(headings[0]!==1)fail(file,"Ãœberschriftenfolge muss mit H1 beginnen");
+  if(headings[0]!==1)fail(file,"Überschriftenfolge muss mit H1 beginnen");
   for(let index=1;index<headings.length;index++){
-    if(headings[index]>headings[index-1]+1)fail(file,`Ãœberschriftenebene springt von H${headings[index-1]} auf H${headings[index]}`);
+    if(headings[index]>headings[index-1]+1)fail(file,`Überschriftenebene springt von H${headings[index-1]} auf H${headings[index]}`);
   }
   if(!/<a class="skip" href="#main">/i.test(html))fail(file,"Sprunglink zum Hauptinhalt fehlt");
 
@@ -76,18 +76,18 @@ for(const definition of definitions){
   if(!current&&currentLinks.length!==0)fail(file,"Seite darf keinen aktuellen Hauptnavigationspunkt markieren");
   if(current&&attr(currentLinks[0]?.[0]||"","href")!==current)fail(file,"falscher Navigationspunkt ist als aktuell markiert");
 
-  if(/Konzeptentwurf|vor VerÃ¶ffentlichung|Entwurfsstand|localhost|TODO|FIXME|Lorem ipsum/i.test(html))fail(file,"Entwurfs- oder Platzhaltertext gefunden");
+  if(/Konzeptentwurf|vor Veröffentlichung|Entwurfsstand|localhost|TODO|FIXME|Lorem ipsum/i.test(html))fail(file,"Entwurfs- oder Platzhaltertext gefunden");
   if(/href=(?:""|''|"#"|'#')/i.test(html))fail(file,"leerer Link gefunden");
   if(/<iframe\b/i.test(html))fail(file,"unerwartete externe Einbettung gefunden");
   if(/<form\b/i.test(html))fail(file,"unerwartetes Formular gefunden");
   for(const tag of html.matchAll(/<button\b[^>]*>/gi)){
     if(!/\stype="button"/i.test(tag[0]))fail(file,"Button ohne expliziten type=button");
-    if(!attr(tag[0],"aria-label")&&!textContent(tag[0]))fail(file,"Button ohne zugÃ¤nglichen Namen");
+    if(!attr(tag[0],"aria-label")&&!textContent(tag[0]))fail(file,"Button ohne zugänglichen Namen");
   }
   for(const match of html.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/gi)){
     const tag=match[0].match(/^<a\b[^>]*>/i)?.[0]||"";
     if(!attr(tag,"href"))fail(file,"Link ohne href");
-    if(!attr(tag,"aria-label")&&!textContent(match[1]))fail(file,"Link ohne zugÃ¤nglichen Namen");
+    if(!attr(tag,"aria-label")&&!textContent(match[1]))fail(file,"Link ohne zugänglichen Namen");
     if(/\starget="_blank"/i.test(tag)&&!/\srel="[^"]*\bnoopener\b/i.test(tag))fail(file,"target=_blank ohne noopener");
   }
 
@@ -99,7 +99,7 @@ for(const definition of definitions){
   }
 
   const jsonLdBlocks=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi)];
-  if(indexable&&jsonLdBlocks.length!==1)fail(file,"indexierbare Seite benÃ¶tigt genau einen JSON-LD-Block");
+  if(indexable&&jsonLdBlocks.length!==1)fail(file,"indexierbare Seite benötigt genau einen JSON-LD-Block");
   if(!indexable&&jsonLdBlocks.length!==0)fail(file,"noindex-Seite darf keine Restaurant-Strukturdaten ausliefern");
   for(const match of jsonLdBlocks){
     try{
@@ -109,7 +109,7 @@ for(const definition of definitions){
       }
       if(data.url!==`${baseUrl}/`)fail(file,"JSON-LD-Unternehmens-URL ist falsch");
     }catch(error){
-      fail(file,`ungÃ¼ltiges JSON-LD: ${error.message}`);
+      fail(file,`ungültiges JSON-LD: ${error.message}`);
     }
   }
 
@@ -127,7 +127,7 @@ for(const definition of definitions){
     const href=match[1];
     if(/^https?:/i.test(href))continue;
     if(attr(tag,"rel")==="canonical")continue;
-    if(!fs.existsSync(path.join(root,localPath(href))))fail(file,`verknÃ¼pfte Ressource fehlt: ${href}`);
+    if(!fs.existsSync(path.join(root,localPath(href))))fail(file,`verknüpfte Ressource fehlt: ${href}`);
   }
   const stylesheet=html.match(/<link rel="stylesheet" href="([^"]+)">/i)?.[1];
   const scriptSource=html.match(/<script src="([^"]+)"><\/script>/i)?.[1];
@@ -169,15 +169,15 @@ const budgets=[
 ];
 for(const [file,maximum] of budgets){
   const size=fs.statSync(path.join(root,file)).size;
-  if(size>maximum)fail(file,`DateigrÃ¶ÃŸe ${size} Ã¼berschreitet Budget ${maximum}`);
+  if(size>maximum)fail(file,`Dateigröße ${size} überschreitet Budget ${maximum}`);
 }
 for(const file of fs.readdirSync(path.join(root,"assets/images"))){
   const size=fs.statSync(path.join(root,"assets/images",file)).size;
-  if(size>300_000)fail(`assets/images/${file}`,`BildgrÃ¶ÃŸe ${size} Ã¼berschreitet 300 KB`);
+  if(size>300_000)fail(`assets/images/${file}`,`Bildgröße ${size} überschreitet 300 KB`);
 }
 
 if(failures.length){
   console.error(`Validierung fehlgeschlagen (${failures.length}):\n- ${failures.join("\n- ")}`);
   process.exit(1);
 }
-console.log(`Validierung erfolgreich: ${definitions.length} Seiten, SEO, Semantik, Navigation, Ressourcen, Sitemap, JSON-LD und Dateibudgets geprÃ¼ft.`);
+console.log(`Validierung erfolgreich: ${definitions.length} Seiten, SEO, Semantik, Navigation, Ressourcen, Sitemap, JSON-LD und Dateibudgets geprüft.`);
