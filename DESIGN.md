@@ -66,7 +66,9 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
   Kerndaten sowie das eindeutig zugeordnete Originalfoto bleiben auch
   geschlossen sichtbar; Details sind per Tastatur erreichbar. Desktop zeigt
   ruhige Querformate, mobil werden kompakte quadratische Ausschnitte zur
-  schnellen visuellen Orientierung verwendet.
+  schnellen visuellen Orientierung verwendet. Beim Öffnen erscheint dasselbe
+  Originalfoto vollständig, unbeschnitten und groß neben den Daten; mobil
+  nutzt die Großansicht die gesamte verfügbare Inhaltsbreite.
 - Bewegung unterstützt Orientierung und bleibt unter 260 ms; keine Scrollshow und keine dekorative Dauermotion.
 
 ## Verbote
