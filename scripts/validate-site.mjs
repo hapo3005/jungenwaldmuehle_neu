@@ -125,7 +125,7 @@ for(const definition of definitions){
     if(!ids.includes(match[1]))fail(file,`aria-controls verweist auf fehlendes Ziel: ${match[1]}`);
   }
 
-  const jsonLdBlocks=[...html.matchAll(/<script type="application\\/ld\\+json">([\\s\\S]*?)<\\/script>/gi)];
+  const jsonLdBlocks=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi)];
   if(indexable&&jsonLdBlocks.length!==1)fail(file,"indexierbare Seite benötigt genau einen JSON-LD-Block");
   if(!indexable&&jsonLdBlocks.length!==0)fail(file,"noindex-Seite darf keine Strukturdaten ausliefern");
   for(const match of jsonLdBlocks){
@@ -160,7 +160,7 @@ for(const definition of definitions){
     }
   }
 
-  for(const match of html.matchAll(/<img\\b[^>]*>/gi)){
+  for(const match of html.matchAll(/<img\b[^>]*>/gi)){
     const tag=match[0];
     const source=attr(tag,"src");
     if(!source){fail(file,"Bild ohne src");continue;}
@@ -279,17 +279,17 @@ for(const definition of definitions){
 
 const sitemap=fs.readFileSync(path.join(root,"sitemap.xml"),"utf8");
 if(!sitemap.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'))fail("sitemap.xml","Image-Sitemap-Namensraum fehlt");
-const sitemapEntries=[...sitemap.matchAll(/<url>([\\s\\S]*?)<\\/url>/g)].map(match=>match[1]);
-const sitemapUrls=sitemapEntries.map(entry=>entry.match(/<loc>([^<]+)<\\/loc>/)?.[1]).filter(Boolean);
+const sitemapEntries=[...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map(match=>match[1]);
+const sitemapUrls=sitemapEntries.map(entry=>entry.match(/<loc>([^<]+)<\/loc>/)?.[1]).filter(Boolean);
 const expectedSitemap=definitions.filter(page=>page.indexable).map(page=>page.canonical);
 if(new Set(sitemapUrls).size!==sitemapUrls.length)fail("sitemap.xml","doppelte URL");
 for(const url of expectedSitemap)if(!sitemapUrls.includes(url))fail("sitemap.xml",`URL fehlt: ${url}`);
 for(const url of sitemapUrls)if(!expectedSitemap.includes(url))fail("sitemap.xml",`unerwartete oder nicht indexierbare URL: ${url}`);
 for(const entry of sitemapEntries){
-  const url=entry.match(/<loc>([^<]+)<\\/loc>/)?.[1]||"unbekannt";
-  if(entry.match(/<lastmod>([^<]+)<\\/lastmod>/)?.[1]!=="2026-07-27")fail("sitemap.xml",`aktuelles und überprüftes lastmod fehlt: ${url}`);
-  const imageUrl=entry.match(/<image:loc>([^<]+)<\\/image:loc>/)?.[1];
-  const imageTitle=entry.match(/<image:title>([^<]+)<\\/image:title>/)?.[1];
+  const url=entry.match(/<loc>([^<]+)<\/loc>/)?.[1]||"unbekannt";
+  if(entry.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1]!=="2026-07-27")fail("sitemap.xml",`aktuelles und überprüftes lastmod fehlt: ${url}`);
+  const imageUrl=entry.match(/<image:loc>([^<]+)<\/image:loc>/)?.[1];
+  const imageTitle=entry.match(/<image:title>([^<]+)<\/image:title>/)?.[1];
   if(!imageUrl?.startsWith(`${baseUrl}/assets/images/`))fail("sitemap.xml",`Hauptbild fehlt: ${url}`);
   if(!imageTitle)fail("sitemap.xml",`Bildtitel fehlt: ${url}`);
 }
