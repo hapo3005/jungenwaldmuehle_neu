@@ -78,6 +78,8 @@
 ## Referenzqualität
 
 - [x] Keine generischen KI-Floskeln oder austauschbare Stockmotive
+- [x] Persönliche Texte folgen der Gastgeberstimme aus `docs/VOICE.md`; Daten und Rechtliches bleiben neutral
+- [ ] Endgültige persönliche Formulierungen von den jeweils genannten Personen im Betrieb freigegeben
 - [x] Gastronomie führt klar, Pferde differenzieren
 - [x] Startseite erzählt einen schlüssigen Besuchsweg
 - [x] Desktop und Mobil wurden visuell geprüft
@@ -112,3 +114,4 @@
 Die beiden betriebsseitigen Bestätigungen werden mit `docs/FREIGABE.md`
 strukturiert eingeholt. Die unterschriebene Fassung gehört nicht in das
 öffentliche Repository.
+
