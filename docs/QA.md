@@ -54,7 +54,7 @@
 - [x] Gastronomie führt klar, Pferde differenzieren
 - [x] Startseite erzählt einen schlüssigen Besuchsweg
 - [x] Desktop und Mobil wurden visuell geprüft
-- [ ] Vorher-/Nachher-Erkenntnisse sind für eine spätere Fallstudie dokumentierbar
+- [x] Vorher-/Nachher-Erkenntnisse sind in `docs/CASE-STUDY.md` faktenbasiert dokumentiert
 
 ## Technische Endabnahme
 
