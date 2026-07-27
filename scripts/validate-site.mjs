@@ -3,15 +3,15 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-18";
+const assetVersion="20260727-19";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
-  {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
-  {file:"reitschule.html",canonical:`${baseUrl}/reitschule.html`,current:"reitschule.html",indexable:true},
-  {file:"islandpferde.html",canonical:`${baseUrl}/islandpferde.html`,current:"islandpferde.html",indexable:true},
-  {file:"kontakt.html",canonical:`${baseUrl}/kontakt.html`,current:"kontakt.html",indexable:true},
-  {file:"impressum.html",canonical:`${baseUrl}/impressum.html`,current:null,indexable:false},
-  {file:"404.html",canonical:`${baseUrl}/404.html`,current:null,indexable:false,absoluteBase:true},
+  {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true,heroType:"feature"},
+  {file:"reitschule.html",canonical:`${baseUrl}/reitschule.html`,current:"reitschule.html",indexable:true,heroType:"feature"},
+  {file:"islandpferde.html",canonical:`${baseUrl}/islandpferde.html`,current:"islandpferde.html",indexable:true,heroType:"feature"},
+  {file:"kontakt.html",canonical:`${baseUrl}/kontakt.html`,current:"kontakt.html",indexable:true,heroType:"utility"},
+  {file:"impressum.html",canonical:`${baseUrl}/impressum.html`,current:null,indexable:false,heroType:"compact"},
+  {file:"404.html",canonical:`${baseUrl}/404.html`,current:null,indexable:false,absoluteBase:true,heroType:"compact"},
 ];
 const failures=[];
 const titles=new Map();
@@ -23,7 +23,7 @@ const localPath=value=>value.split(/[?#]/)[0].replace(/^\/+/,"");
 const textContent=value=>value.replace(/<[^>]+>/g," ").replace(/&(?:[a-z]+|#\d+);/gi,"x").replace(/\s+/g," ").trim();
 
 for(const definition of definitions){
-  const {file,canonical,current,indexable,absoluteBase=false}=definition;
+  const {file,canonical,current,indexable,absoluteBase=false,heroType}=definition;
   const rootPath=path.join(root,file);
   const sitePath=path.join(root,"_site",file);
   if(!fs.existsSync(rootPath)||!fs.existsSync(sitePath)){
@@ -68,6 +68,7 @@ for(const definition of definitions){
   if(count(html,/<nav\b[^>]*aria-label="Hauptnavigation"[^>]*>/gi)!==1)fail(file,"genau eine Hauptnavigation erforderlich");
   if(count(html,/<main\b/gi)!==1||!/<main id="main" tabindex="-1">/i.test(html))fail(file,"main benötigt eindeutiges Sprungziel und Fokusziel");
   if(count(html,/<h1\b/gi)!==1)fail(file,"genau eine H1 erforderlich");
+  if(heroType&&!new RegExp(`<section class="[^"]*\\bpage-hero--${heroType}\\b`,"i").test(html))fail(file,`Hero-Typ fehlt: ${heroType}`);
   const headings=[...html.matchAll(/<h([1-6])\b/gi)].map(match=>Number(match[1]));
   if(headings[0]!==1)fail(file,"Überschriftenfolge muss mit H1 beginnen");
   for(let index=1;index<headings.length;index++){
@@ -256,11 +257,14 @@ if(!/^User-agent: \*\s+Allow: \//m.test(robots))fail("robots.txt","Crawler-Freig
 if(!robots.includes(`Sitemap: ${baseUrl}/sitemap.xml`))fail("robots.txt","Sitemap-Verweis fehlt");
 
 const budgets=[
-  ["assets/styles.css",42_000],
+  ["assets/styles.css",42_500],
   ["assets/app.js",15_000],
 ];
 
 const css=fs.readFileSync(path.join(root,"assets/styles.css"),"utf8");
+for(const heroType of ["feature","utility","compact"]){
+  if(!new RegExp(`\\.page-hero--${heroType}\\{`).test(css))fail("assets/styles.css",`Hero-Systemtyp fehlt: ${heroType}`);
+}
 if(!/\.scroll-top\.is-visible\b/.test(css))fail("assets/styles.css","sichtbarer Zustand des Scroll-up-Buttons fehlt");
 if(!/@media\s*\(\s*prefers-reduced-motion\s*:\s*reduce\s*\)/.test(css))fail("assets/styles.css","Bewegungsreduktion fehlt");
 if(!/\.btn-call:after,\.text-link-call:after\{[^}]*mask:/i.test(css))fail("assets/styles.css","Telefon-Symbol für Anrufhandlungen fehlt");
