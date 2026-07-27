@@ -295,7 +295,7 @@ form{display:grid;gap:1.35rem}.field{display:grid;gap:.35rem}.field-row{display:
   .horses-grid{gap:0}
   .horses-copy{margin-bottom:2rem}
   .horses-wide img{display:block;width:100%;height:auto;aspect-ratio:700/394;object-fit:contain;object-position:center}
-  .horses-tall{width:min(78%,21rem);margin:clamp(.75rem,3vw,1rem) auto 0}
+  .horses-tall{width:100%;margin:clamp(.75rem,3vw,1rem) 0 0}
   .horses-tall img{display:block;width:100%;height:auto;aspect-ratio:700/531;object-fit:contain;object-position:center}
   .menu-preview h2{font-size:clamp(2.5rem,13vw,3.4rem)}
   .prose.card h2{font-size:clamp(2rem,9vw,2.5rem)}

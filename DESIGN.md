@@ -40,10 +40,9 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Asymmetrische Bildüberlagerungen bleiben ein Desktopmittel. Auf Mobilgeräten
   stehen Bilder in einer klaren Leserichtung ohne Überschneidung; feste
   Bedienelemente erhalten eine freie Kante.
-- Mobile Bildpaare bewahren ihre natürlichen Seitenverhältnisse. Ein
-  Hauptmotiv nutzt die Inhaltsbreite; ein kleineres Begleitmotiv wird
-  mittig geführt, damit die Hierarchie absichtlich und nicht wie ein
-  verrutschtes Raster wirkt.
+- Mobile Bildpaare bewahren ihre natürlichen Seitenverhältnisse und nutzen
+  dieselbe Inhaltsbreite. Unterschiedliche Bildhöhen ergeben sich nur aus
+  den echten Aufnahmeformaten, nicht aus dekorativen Einzügen.
 
 ## Logo
 
