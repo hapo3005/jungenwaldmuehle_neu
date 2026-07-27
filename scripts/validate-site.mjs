@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-17";
+const assetVersion="20260727-18";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
@@ -216,6 +216,17 @@ for(const definition of definitions){
   if(scriptSource!==`assets/app.js?v=${assetVersion}`)fail(file,"Skript-Version ist nicht aktuell");
   if(/<script src="https?:/i.test(html)||/<link rel="stylesheet" href="https?:/i.test(html))fail(file,"unerwartete externe Skripte oder Schriften gefunden");
 
+  for(const match of html.matchAll(/<a\b[^>]*>/gi)){
+    const tag=match[0];
+    const href=attr(tag,"href");
+    const classes=attr(tag,"class");
+    if(href==="tel:+4965347493854"&&/\bbtn\b/.test(classes)&&!/\bbtn-call\b/.test(classes))fail(file,"Telefon-Button ohne Telefon-Symbol");
+    if(href==="tel:+4965347493854"&&/\btext-link\b/.test(classes)&&!/\btext-link-call\b/.test(classes))fail(file,"Telefon-Textlink ohne Telefon-Symbol");
+  }
+  for(const match of html.matchAll(/<a\b[^>]*href="tel:\+4965347493854"[^>]*>\s*Tisch reservieren\s*<\/a>/gi)){
+    if(!/telefonisch/i.test(attr(match[0],"aria-label")))fail(file,"verkürzte Reservierungsbeschriftung benötigt einen eindeutigen zugänglichen Namen");
+  }
+
   for(const match of html.matchAll(/\shref="([^"]+)"/gi)){
     const href=match[1];
     if(/^tel:/i.test(href)&&href!=="tel:+4965347493854")fail(file,`abweichende Telefonnummer: ${href}`);
@@ -245,13 +256,14 @@ if(!/^User-agent: \*\s+Allow: \//m.test(robots))fail("robots.txt","Crawler-Freig
 if(!robots.includes(`Sitemap: ${baseUrl}/sitemap.xml`))fail("robots.txt","Sitemap-Verweis fehlt");
 
 const budgets=[
-  ["assets/styles.css",40_000],
+  ["assets/styles.css",42_000],
   ["assets/app.js",15_000],
 ];
 
 const css=fs.readFileSync(path.join(root,"assets/styles.css"),"utf8");
 if(!/\.scroll-top\.is-visible\b/.test(css))fail("assets/styles.css","sichtbarer Zustand des Scroll-up-Buttons fehlt");
 if(!/@media\s*\(\s*prefers-reduced-motion\s*:\s*reduce\s*\)/.test(css))fail("assets/styles.css","Bewegungsreduktion fehlt");
+if(!/\.btn-call:after,\.text-link-call:after\{[^}]*mask:/i.test(css))fail("assets/styles.css","Telefon-Symbol für Anrufhandlungen fehlt");
 if(/counter-reset\s*:\s*steps|content\s*:\s*"0"\s*counter\s*\(/i.test(css))fail("assets/styles.css","dekorative Schrittziffern dürfen nicht erzeugt werden");
 if(/h1,h2,h3\{[^}]*hyphens\s*:\s*auto/i.test(css))fail("assets/styles.css","große Überschriften dürfen nicht automatisch getrennt werden");
 

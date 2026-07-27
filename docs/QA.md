@@ -40,6 +40,8 @@
 - [x] Primäre Buttons mindestens 44 px hoch
 - [x] Speisekarten-Sprunglinks mindestens 44 px hoch
 - [x] Telefonreservierung im ersten mobilen Bildschirm erreichbar
+- [x] Hervorgehobene Telefonhandlungen sind visuell als Anruf erkennbar und
+      bleiben für Screenreader eindeutig beschriftet
 - [x] Mehrspaltige Inhalte werden einspaltig
 - [x] Pferde-Informationsreihen verlieren mobil ihre seitlichen Trennlinien
 - [x] Reitschulbereiche einschließlich Termine sind über fünf direkte Sprunglinks erreichbar
