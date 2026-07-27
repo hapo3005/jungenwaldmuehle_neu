@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-12";
+const assetVersion="20260727-13";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
@@ -177,6 +177,7 @@ for(const definition of definitions){
     for(const text of ['datetime="2026-10-12"','datetime="2026-10-14"',"09:00–17:00 Uhr","75 €","Teilnahme telefonisch anfragen"]){
       if(!html.includes(text))fail(file,`wesentlicher Termininhalt fehlt: ${text}`);
     }
+    if(!html.includes('class="event-visual"')||!html.includes('src="assets/images/horse-family.jpg"'))fail(file,"authentisches Terminmotiv fehlt");
   }
   if(file==="islandpferde.html"){
     for(const id of ["zuchtziel","magnus","verkaufspferde","pferdeanfrage"]){
@@ -264,3 +265,4 @@ if(failures.length){
   process.exit(1);
 }
 console.log(`Validierung erfolgreich: ${definitions.length} Seiten, SEO, Semantik, Navigation, Ressourcen, Sitemap, JSON-LD und Dateibudgets geprüft.`);
+

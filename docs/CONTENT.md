@@ -81,6 +81,11 @@ Rechtliche Primärquellen für die aktuelle Datenschutzhinweis-Struktur:
   Verkaufspferde-Seite und wurden anhand ihrer dortigen Zuordnung übernommen.
 - Die optimierten JPEG- und WebP-Dateien sind Ableitungen dieser
   Ausgangsdateien; es wurden keine Stock- oder KI-Fotografien ergänzt.
+- Das vom Auftraggeber verlinkte KI-Flyermotiv zur Tagesfreizeit wurde als
+  gestalterische Referenz geprüft, aber nicht als Fotografie übernommen. Der
+  Terminbereich nutzt stattdessen das reale Bestandsfoto
+  `assets/images/horse-family.jpg`; die Veranstaltungsangaben bleiben als
+  barrierefrei lesbarer HTML-Text erhalten.
 - Die Herkunftsdokumentation ersetzt keine Nutzungsfreigabe. Die Rechte für
   Website, Bearbeitung, Portfolio und Vorschaubilder müssen vom Betrieb
   schriftlich bestätigt werden.
@@ -125,3 +130,4 @@ Rechtliche Primärquellen für die aktuelle Datenschutzhinweis-Struktur:
   werden.
 - Terminänderungen werden zuerst gegen den offiziellen Betriebsauftritt
   geprüft; freie Plätze werden nie ohne persönliche Bestätigung versprochen.
+
