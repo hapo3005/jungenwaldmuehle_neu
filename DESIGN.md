@@ -10,6 +10,13 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Inhalte folgen dem Besuchsweg: Begehren, kulinarischer Beweis, Gastgeber, praktische Planung, sekundäres Pferdeangebot.
 - Asymmetrische Bild-Text-Kompositionen statt wiederholter Kartenraster.
 - Großzügige, aber nicht filmisch überdehnte Abstände; mobile Entscheidungen bleiben kompakt.
+- Die Hero-Hierarchie ist verbindlich: Die Startseite bleibt der immersive
+  Markenauftritt; Restaurant, Reitschule und Zucht verwenden dieselbe
+  großzügige Hauptbereich-Höhe; Kontakt nutzt eine kompaktere Service-Höhe
+  und rechtliche beziehungsweise technische Seiten einen kurzen Seitenkopf.
+- Gleiche Hero-Typen besitzen dieselbe Mindesthöhe und vertikale
+  Inhaltsausrichtung. Zusätzlicher Text darf die Fläche bei kleinen
+  Bildschirmhöhen vergrößern, wird aber niemals abgeschnitten.
 - Verschachtelte Inhaltsbereiche übernehmen nie automatisch die großzügigen Außenabstände der Hauptsektionen. Speisekarten-Kategorien folgen mobil in einem kompakten, gleichmäßigen Rhythmus ohne leere Zwischenflächen.
 - Eine feine horizontale Linie und klare Flächenwechsel strukturieren, nicht Schattenboxen.
 

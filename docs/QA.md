@@ -42,6 +42,10 @@
 - [x] Telefonreservierung im ersten mobilen Bildschirm erreichbar
 - [x] Hervorgehobene Telefonhandlungen sind visuell als Anruf erkennbar und
       bleiben für Screenreader eindeutig beschriftet
+- [x] Restaurant, Reitschule und Zucht verwenden auf jeder geprüften Breite
+      dieselbe Hauptbereich-Hero-Höhe
+- [x] Kontakt und rechtliche Seiten folgen ihren bewusst kompakteren,
+      einheitlich definierten Hero-Typen
 - [x] Mehrspaltige Inhalte werden einspaltig
 - [x] Pferde-Informationsreihen verlieren mobil ihre seitlichen Trennlinien
 - [x] Reitschulbereiche einschließlich Termine sind über fünf direkte Sprunglinks erreichbar
