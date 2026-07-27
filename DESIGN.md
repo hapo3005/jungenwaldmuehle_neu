@@ -10,6 +10,7 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Inhalte folgen dem Besuchsweg: Begehren, kulinarischer Beweis, Gastgeber, praktische Planung, sekundäres Pferdeangebot.
 - Asymmetrische Bild-Text-Kompositionen statt wiederholter Kartenraster.
 - Großzügige, aber nicht filmisch überdehnte Abstände; mobile Entscheidungen bleiben kompakt.
+- Verschachtelte Inhaltsbereiche übernehmen nie automatisch die großzügigen Außenabstände der Hauptsektionen. Speisekarten-Kategorien folgen mobil in einem kompakten, gleichmäßigen Rhythmus ohne leere Zwischenflächen.
 - Eine feine horizontale Linie und klare Flächenwechsel strukturieren, nicht Schattenboxen.
 
 ## Farbe
