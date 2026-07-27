@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-4";
+const assetVersion="20260727-6";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
@@ -81,6 +81,7 @@ for(const definition of definitions){
   if(current&&attr(currentLinks[0]?.[0]||"","href")!==current)fail(file,"falscher Navigationspunkt ist als aktuell markiert");
 
   if(/Konzeptentwurf|vor Veröffentlichung|Entwurfsstand|localhost|TODO|FIXME|Lorem ipsum/i.test(html))fail(file,"Entwurfs- oder Platzhaltertext gefunden");
+  if(/&shy;|\u00ad|<wbr\b/i.test(html))fail(file,"manuelle Worttrennung in ausgelieferter Seite gefunden");
   if(/06534\s*<br\b[^>]*>\s*7493854/i.test(html))fail(file,"Telefonnummer darf nicht künstlich umgebrochen werden");
   if(/class="[^"]*\bbtn\b[^"]*"[^>]*href="tel:\+4965347493854"[^>]*>\s*06534\s+7493854/i.test(html))fail(file,"Telefon-Button benötigt eine verständliche Handlungsbezeichnung");
   if(/href=(?:""|''|"#"|'#')/i.test(html))fail(file,"leerer Link gefunden");
@@ -220,6 +221,7 @@ const css=fs.readFileSync(path.join(root,"assets/styles.css"),"utf8");
 if(!/\.scroll-top\.is-visible\b/.test(css))fail("assets/styles.css","sichtbarer Zustand des Scroll-up-Buttons fehlt");
 if(!/@media\s*\(\s*prefers-reduced-motion\s*:\s*reduce\s*\)/.test(css))fail("assets/styles.css","Bewegungsreduktion fehlt");
 if(/counter-reset\s*:\s*steps|content\s*:\s*"0"\s*counter\s*\(/i.test(css))fail("assets/styles.css","dekorative Schrittziffern dürfen nicht erzeugt werden");
+if(/h1,h2,h3\{[^}]*hyphens\s*:\s*auto/i.test(css))fail("assets/styles.css","große Überschriften dürfen nicht automatisch getrennt werden");
 
 for(const [file,maximum] of budgets){
   const size=fs.statSync(path.join(root,file)).size;

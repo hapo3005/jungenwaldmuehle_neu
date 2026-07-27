@@ -26,7 +26,9 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 
 - Display: charaktervolle, lokal eingebundene oder robuste Serifenschrift; bis dahin Georgia als ehrlicher Fallback.
 - Text und Navigation: nüchterner System-Sans-Stack.
-- Überschriften bleiben breit, höchstens drei Zeilen und verwenden keine künstlichen Zeilenumbrüche auf Mobilgeräten.
+- Überschriften bleiben breit, höchstens drei Zeilen und werden niemals
+  automatisch innerhalb eines Wortes getrennt. Bewusste Desktop-Umbrüche
+  werden auf Mobilgeräten wieder flexibel.
 - Kleine Kennzeichnungen erscheinen in Satzform, nicht als überall wiederholte Großbuchstaben-Eyebrows.
 
 ## Bilder
