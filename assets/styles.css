@@ -3,7 +3,7 @@
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
 main:focus{outline:none}
-img{display:block;max-width:100%}
+img{display:block;max-width:100%;background:var(--paper-deep)}
 a{color:inherit;overflow-wrap:anywhere}
 button,input,textarea,select{font:inherit}
 :focus-visible{outline:3px solid var(--ochre);outline-offset:4px}
@@ -46,7 +46,7 @@ p{max-width:68ch;text-wrap:pretty}
 .text-link.light{color:var(--white)}
 .actions{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
 .home-hero{position:relative;min-height:50rem;height:min(92dvh,59rem);padding:0;color:var(--white);overflow:hidden}
-.home-hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 56%;filter:saturate(.82) contrast(1.04)}
+.home-hero-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 56%;filter:saturate(.86) contrast(1.035)}
 .home-hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,23,16,.81) 0,rgba(8,23,16,.46) 48%,rgba(8,23,16,.12) 76%),linear-gradient(0deg,rgba(8,23,16,.48),transparent 52%)}
 .home-hero-inner{height:100%;position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:4rem;padding-bottom:clamp(3rem,7vh,5rem)}
 .home-hero-copy{max-width:52rem;min-width:0}
@@ -64,11 +64,11 @@ p{max-width:68ch;text-wrap:pretty}
 .round-link-icon{display:grid;place-items:center;width:2rem;height:2rem;border:1px solid var(--line);border-radius:50%;font-family:var(--sans);font-size:1rem;font-weight:500;transition:background-color 180ms var(--ease),border-color 180ms var(--ease),color 180ms var(--ease),transform 160ms var(--ease)}
 .food-story{background:var(--paper-deep);overflow:hidden}
 .food-grid{display:grid;grid-template-columns:1.15fr .85fr .6fr;gap:clamp(1.5rem,4vw,4rem);align-items:center}
-.food-main img{width:100%;height:clamp(30rem,52vw,47rem);object-fit:cover}
+.food-main img{width:100%;height:auto;aspect-ratio:7/5;object-fit:cover;object-position:center}
 .food-copy p:not(.kicker){color:var(--muted);font-size:1.05rem}
 .food-copy h2{font-size:clamp(2.8rem,4.7vw,4.7rem)}
 .food-cake{align-self:end;margin:0 0 -12rem}
-.food-cake img{height:27rem;width:100%;object-fit:cover}
+.food-cake img{height:auto;width:100%;aspect-ratio:492/700;object-fit:cover}
 .food-cake figcaption{margin-top:.7rem;font-family:var(--serif);font-style:italic;color:var(--muted)}
 .food-main{margin:0}
 .menu-preview{background:var(--forest);color:var(--white);padding-top:clamp(8rem,12vw,12rem)}
@@ -90,9 +90,9 @@ p{max-width:68ch;text-wrap:pretty}
 .home-event small{color:var(--muted)}
 .home-event:active{transform:scale(.99)}
 .horses-wide,.horses-tall{margin:0}
-.horses-wide img{display:block;width:100%;height:auto;aspect-ratio:700/394;object-fit:contain}
+.horses-wide img{width:100%;aspect-ratio:700/442;object-fit:cover}
 .horses-tall{width:55%;margin-left:auto;margin-top:-4rem}
-.horses-tall img{display:block;width:100%;height:auto;aspect-ratio:700/531;object-fit:contain}
+.horses-tall img{width:100%;aspect-ratio:960/639;object-fit:cover}
 .visit-section{border-top:1px solid var(--line)}
 .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,8vw,8rem)}
 .visit-facts{border-top:1px solid var(--ink)}
@@ -107,7 +107,7 @@ p{max-width:68ch;text-wrap:pretty}
 .page-hero h1{font-size:clamp(3.5rem,6.7vw,6.5rem);max-width:13ch;margin:.4rem 0 1rem}
 .page-hero p{max-width:39rem;font-size:1.2rem;color:rgba(255,255,255,.8)}
 .page-hero-media{position:absolute;inset:0}
-.page-hero-media img{width:100%;height:100%;object-fit:cover}
+.page-hero-media img{width:100%;height:100%;object-fit:cover;object-position:center}
 .page-hero.has-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,23,16,.9),rgba(8,23,16,.45) 65%,rgba(8,23,16,.2))}
 .eyebrow{margin-bottom:1rem;color:var(--ochre-on-paper);font-size:.77rem;font-weight:760;letter-spacing:.12em;text-transform:uppercase}
 .page-hero .eyebrow{color:#e3c28f}
@@ -123,8 +123,9 @@ p{max-width:68ch;text-wrap:pretty}
 .desktop-break{display:none}
 .prose p{color:var(--muted)}
 .gallery{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;align-items:end}
-.gallery img{width:100%;height:32rem;object-fit:cover}
-.gallery img:last-child{height:23rem}
+.gallery img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center}
+.gallery img:last-child{height:auto;aspect-ratio:3/4}
+.equine-gallery img:last-child{aspect-ratio:7/6}
 .section-head{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:end;margin-bottom:3rem}
 .section-head h2{margin:0}
 .section-head p{color:var(--muted)}
@@ -145,7 +146,10 @@ p{max-width:68ch;text-wrap:pretty}
 .step{border-top:1px solid var(--ink);padding-top:1.6rem}.step h3{font-size:1.4rem;margin-top:0}.step p{color:var(--muted)}
 .availability-note,.notice{margin:2rem 0 0;padding:1rem 0;border-top:1px solid var(--ochre);color:var(--muted)}
 .anchor-section{scroll-margin-top:1rem}
-.equine-hero .page-hero-media img{object-position:center 45%}
+.equine-hero--school .page-hero-media img{object-position:center 52%}
+.equine-hero--breeding .page-hero-media img{object-position:center 46%}
+.contact-hero .page-hero-media img{object-position:center 48%}
+.contact-hero.has-media:after{background:linear-gradient(90deg,rgba(8,23,16,.92),rgba(8,23,16,.52) 58%,rgba(8,23,16,.15))}
 .horse-quicklinks .container{grid-template-columns:repeat(5,minmax(0,1fr))}
 .event-section{background:var(--paper-deep)}
 .event-grid{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:clamp(3rem,8vw,8rem);align-items:start}
@@ -185,7 +189,7 @@ p{max-width:68ch;text-wrap:pretty}
 .pension-section{background:var(--paper-deep)}
 .pension-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(3rem,8vw,8rem);align-items:center}
 .pension-grid figure{margin:0}
-.pension-grid figure img{width:100%;height:clamp(31rem,52vw,45rem);object-fit:cover;object-position:center}
+.pension-grid figure img{width:100%;height:auto;aspect-ratio:7/6;object-fit:cover;object-position:center}
 .pension-copy>p:not(.kicker):not(.lead):not(.availability-note){color:var(--muted)}
 .facility-list{margin:2rem 0 0;border-top:1px solid var(--ink)}
 .facility-list div{display:grid;grid-template-columns:minmax(6.5rem,.4fr) minmax(0,1fr);gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
@@ -197,7 +201,7 @@ p{max-width:68ch;text-wrap:pretty}
 .breeding-bridge p:not(.kicker){color:rgba(255,255,255,.72)}
 .breeding-bridge .btn{margin-top:1rem}
 .breeding-bridge figure{margin:0}
-.breeding-bridge img{width:100%;height:clamp(25rem,42vw,36rem);object-fit:cover}
+.breeding-bridge img{width:100%;height:auto;aspect-ratio:6/5;object-fit:cover;object-position:center}
 .stallion-section{background:var(--forest-dark);color:var(--white)}
 .stallion-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);grid-template-areas:"copy visual" "metrics visual" "offspring offspring";gap:clamp(2.5rem,6vw,6rem) clamp(3rem,7vw,7rem);align-items:start}
 .stallion-copy{grid-area:copy;align-self:end}
@@ -300,11 +304,11 @@ form{display:grid;gap:1.35rem}.field{display:grid;gap:.35rem}.field-row{display:
 @media(min-width:681px) and (max-width:980px){
   .horses-grid{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);grid-template-rows:auto auto;gap:1rem}
   .horses-copy{grid-column:1/-1;grid-row:auto;padding-top:0;margin-bottom:1rem}
-  .horses-wide img{display:block;width:100%;height:auto;aspect-ratio:700/394;object-fit:contain}
+  .horses-wide img{width:100%;aspect-ratio:700/442;object-fit:cover}
   .horses-tall{width:100%;margin:0;align-self:end}
-  .horses-tall img{display:block;width:100%;height:auto;aspect-ratio:700/531;object-fit:contain}
+  .horses-tall img{width:100%;aspect-ratio:960/639;object-fit:cover}
 }
-@media(max-width:680px){.container{width:min(calc(100% - 1.5rem),var(--max))}section{padding:4.8rem 0}.nav{height:5.5rem}.brand img{width:2.75rem;height:2.75rem}.brand small{display:none}.home-hero{height:auto;min-height:88dvh}.home-hero-image{object-position:58% center}.home-hero-shade{background:linear-gradient(0deg,rgba(8,23,16,.9),rgba(8,23,16,.12) 78%)}.home-hero-inner{min-height:88dvh;padding-top:8rem;padding-bottom:max(2rem,env(safe-area-inset-bottom))}.home-hero h1{font-size:clamp(3rem,15vw,4.8rem);max-width:9ch}.home-hero-copy>p:not(.kicker){font-size:1rem}.home-hero .actions{align-items:flex-start}.home-hero .btn{min-width:min(100%,15rem)}.intro-grid,.food-grid,.menu-preview-grid,.horses-grid,.visit-grid,.section-head,.contact{grid-template-columns:1fr}.intro-grid{gap:1rem}.round-link{grid-column:auto;justify-self:stretch;width:100%;margin-top:1.25rem}.food-main img{height:26rem}.food-copy{padding-top:2rem}.menu-preview{padding-top:5.5rem}.horses-copy{grid-row:auto;padding:0}.horses-wide img{height:22rem}.horses-tall{width:56%;margin-top:-5rem}.horses-tall img{height:16rem}.visit-facts p{grid-template-columns:1fr}.page-hero--feature{min-height:clamp(38rem,74svh,44rem);padding:8rem 0 max(3rem,env(safe-area-inset-bottom))}.page-hero--utility{min-height:58svh;padding:8rem 0 max(3rem,env(safe-area-inset-bottom))}.page-hero--compact{padding:8rem 0 max(3rem,env(safe-area-inset-bottom))}.page-hero h1{font-size:clamp(3rem,13vw,3.5rem)}.restaurant-quicklinks .container{width:100%;grid-template-columns:repeat(3,minmax(0,1fr))}.restaurant-quicklinks a{padding:.7rem .35rem;font-size:.74rem}.restaurant-quicklinks a:first-child{border-left:0}.restaurant-quicklinks a:last-child{border-right:0}.gallery{grid-template-columns:1fr}.gallery img,.gallery img:last-child{height:22rem}.menu-jumps{grid-template-columns:repeat(2,minmax(0,1fr))}.menu-jumps a:nth-child(3){border-left:0;border-top:1px solid var(--line)}.menu-jumps a:nth-child(4){border-top:1px solid var(--line)}.menu-board{grid-template-columns:1fr;gap:clamp(3.5rem,12vw,4.5rem)}.menu-category-seasonal{padding-top:1.5rem}.menu-category h3{font-size:clamp(2rem,10vw,2.7rem)}.menu-item{gap:.35rem 1rem}.menu-item p{grid-column:1/3}.menu-item>span{white-space:nowrap}.menu-item-options dl div{gap:.75rem}.menu-service{grid-template-columns:1fr}.menu-service .btn{width:100%}.field-row{grid-template-columns:1fr}.map-panel{display:grid;min-height:0}.map-panel .btn{width:100%}.footer-lead{padding-bottom:3.5rem}.footer-grid{grid-template-columns:1fr;gap:1.5rem}.visit-section .actions,.contact .actions{align-items:flex-start}.visit-section .btn,.contact .btn{width:100%}.scroll-top{right:max(.9rem,env(safe-area-inset-right));bottom:max(.9rem,env(safe-area-inset-bottom));width:3.35rem;height:3.35rem}}
+@media(max-width:680px){.container{width:min(calc(100% - 1.5rem),var(--max))}section{padding:4.8rem 0}.nav{height:5.5rem}.brand img{width:2.75rem;height:2.75rem}.brand small{display:none}.home-hero{height:auto;min-height:88dvh}.home-hero-image{object-position:58% center}.home-hero-shade{background:linear-gradient(0deg,rgba(8,23,16,.9),rgba(8,23,16,.12) 78%)}.home-hero-inner{min-height:88dvh;padding-top:8rem;padding-bottom:max(2rem,env(safe-area-inset-bottom))}.home-hero h1{font-size:clamp(3rem,15vw,4.8rem);max-width:9ch}.home-hero-copy>p:not(.kicker){font-size:1rem}.home-hero .actions{align-items:flex-start}.home-hero .btn{min-width:min(100%,15rem)}.intro-grid,.food-grid,.menu-preview-grid,.horses-grid,.visit-grid,.section-head,.contact{grid-template-columns:1fr}.intro-grid{gap:1rem}.round-link{grid-column:auto;justify-self:stretch;width:100%;margin-top:1.25rem}.food-main img{height:auto;aspect-ratio:7/5}.food-copy{padding-top:2rem}.menu-preview{padding-top:5.5rem}.horses-copy{grid-row:auto;padding:0}.horses-wide img{height:auto}.horses-tall{width:100%;margin-top:1rem}.horses-tall img{height:auto}.visit-facts p{grid-template-columns:1fr}.page-hero--feature{min-height:clamp(38rem,74svh,44rem);padding:8rem 0 max(3rem,env(safe-area-inset-bottom))}.page-hero--utility{min-height:58svh;padding:8rem 0 max(3rem,env(safe-area-inset-bottom))}.page-hero--compact{padding:8rem 0 max(3rem,env(safe-area-inset-bottom))}.page-hero h1{font-size:clamp(3rem,13vw,3.5rem)}.restaurant-quicklinks .container{width:100%;grid-template-columns:repeat(3,minmax(0,1fr))}.restaurant-quicklinks a{padding:.7rem .35rem;font-size:.74rem}.restaurant-quicklinks a:first-child{border-left:0}.restaurant-quicklinks a:last-child{border-right:0}.gallery{grid-template-columns:1fr;gap:1rem}.gallery img,.gallery img:last-child,.equine-gallery img:last-child{height:auto;aspect-ratio:auto}.menu-jumps{grid-template-columns:repeat(2,minmax(0,1fr))}.menu-jumps a:nth-child(3){border-left:0;border-top:1px solid var(--line)}.menu-jumps a:nth-child(4){border-top:1px solid var(--line)}.menu-board{grid-template-columns:1fr;gap:clamp(3.5rem,12vw,4.5rem)}.menu-category-seasonal{padding-top:1.5rem}.menu-category h3{font-size:clamp(2rem,10vw,2.7rem)}.menu-item{gap:.35rem 1rem}.menu-item p{grid-column:1/3}.menu-item>span{white-space:nowrap}.menu-item-options dl div{gap:.75rem}.menu-service{grid-template-columns:1fr}.menu-service .btn{width:100%}.field-row{grid-template-columns:1fr}.map-panel{display:grid;min-height:0}.map-panel .btn{width:100%}.footer-lead{padding-bottom:3.5rem}.footer-grid{grid-template-columns:1fr;gap:1.5rem}.visit-section .actions,.contact .actions{align-items:flex-start}.visit-section .btn,.contact .btn{width:100%}.scroll-top{right:max(.9rem,env(safe-area-inset-right));bottom:max(.9rem,env(safe-area-inset-bottom));width:3.35rem;height:3.35rem}}
 @media(max-width:360px){.container{width:calc(100% - 1.25rem)}.brand strong{font-size:1.05rem}.home-hero h1{font-size:2.45rem}.home-hero .kicker{font-size:.68rem}.page-hero--feature h1 br{display:none}.actions{gap:.65rem}.menu-item strong{font-size:1.05rem}.menu-item span{font-size:.9rem}.footer-lead h2{font-size:2.75rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal-ready [data-reveal]{opacity:1;transform:none}}
 @media(max-width:680px){
@@ -317,9 +321,9 @@ form{display:grid;gap:1.35rem}.field{display:grid;gap:.35rem}.field-row{display:
   .horses-story{padding-bottom:clamp(6.5rem,18vw,8rem)}
   .horses-grid{gap:0}
   .horses-copy{margin-bottom:2rem}
-  .horses-wide img{display:block;width:100%;height:auto;aspect-ratio:700/394;object-fit:contain;object-position:center}
+  .horses-wide img{width:100%;aspect-ratio:700/442;object-fit:cover;object-position:center}
   .horses-tall{width:100%;margin:clamp(.75rem,3vw,1rem) 0 0}
-  .horses-tall img{display:block;width:100%;height:auto;aspect-ratio:700/531;object-fit:contain;object-position:center}
+  .horses-tall img{width:100%;aspect-ratio:960/639;object-fit:cover;object-position:center}
   .menu-preview h2{font-size:clamp(2.5rem,13vw,3.4rem)}
   .prose.card h2{font-size:clamp(2rem,9vw,2.5rem)}
   .menu-lines span{overflow-wrap:anywhere}
@@ -328,7 +332,8 @@ form{display:grid;gap:1.35rem}.field{display:grid;gap:.35rem}.field-row{display:
   .horse-quicklinks a:nth-child(3){border-top:1px solid rgba(255,255,255,.18)}
   .horse-quicklinks a:nth-child(4){border-top:1px solid rgba(255,255,255,.18);border-right:0}
   .horse-quicklinks a:nth-child(5){grid-column:1/-1;border-top:1px solid rgba(255,255,255,.18);border-right:0}
-  .equine-hero .page-hero-media img{object-position:58% center}
+  .equine-hero--school .page-hero-media img{object-position:28% center}
+  .equine-hero--breeding .page-hero-media img{object-position:58% center}
   .equine-hero .page-hero-actions .btn{width:100%}
   .event-dates time{padding:1.25rem .75rem 1.25rem 0}
   .event-dates time+time{padding-left:.75rem}
@@ -340,10 +345,10 @@ form{display:grid;gap:1.35rem}.field{display:grid;gap:.35rem}.field-row{display:
   .service-ledger{grid-template-columns:1fr}
   .service-ledger article,.service-ledger article:nth-child(even){padding:1.5rem 0;border-left:0}
   .pension-grid,.breeding-bridge-grid,.stallion-grid,.horse-inquiry-grid{grid-template-columns:1fr}
-  .pension-grid figure img{height:clamp(20rem,95vw,27rem)}
+  .pension-grid figure img{height:auto;aspect-ratio:auto}
   .facility-list div{grid-template-columns:1fr;gap:.2rem}
   .breeding-bridge figure{grid-row:1}
-  .breeding-bridge img{height:clamp(20rem,90vw,28rem)}
+  .breeding-bridge img{height:auto;aspect-ratio:auto}
   .stallion-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
   .stallion-metrics div{display:block;padding:1rem}
   .stallion-metrics div:nth-child(odd){padding-left:0;border-right:1px solid rgba(255,255,255,.2)}

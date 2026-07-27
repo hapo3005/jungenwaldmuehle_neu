@@ -10,6 +10,10 @@
 - [x] Navigation lässt sich per Tastatur öffnen, schließen und verlassen.
 - [x] Fokus ist auf allen interaktiven Elementen sichtbar.
 - [x] Bedeutungsvolle Bilder haben passende Alternativtexte.
+- [x] Große Inhaltsbilder verwenden responsive Bildquellen mit der
+      bestmöglichen Originaldatei als großes Fallback.
+- [x] Bildausschnitte und Fokuspositionen wurden je Motiv auf Mobil und
+      Desktop geprüft; mobile Inhaltsbilder bewahren ihr natürliches Format.
 - [x] Keine horizontale Überbreite bei 320, 390, 768 und 1440 px.
 - [x] Primäre Handlung ist im ersten mobilen Bildschirm verständlich.
 - [x] Öffnungszeiten, Telefonnummer und Route sind mobil schnell erreichbar.
@@ -73,6 +77,10 @@
 - [x] Mobile Navigation bei 320, 390 und 768 px geöffnet, geschlossen und per Escape bedient
 - [x] Kritische Bildressourcen mit HTTP-Status 200 geprüft
 - [x] Hero-Bild lädt mobil die 640-px-Variante und auf großen Ansichten die passende größere Quelle
+- [x] Restaurant-, Reit-, Zucht- und Kontaktbilder liefern abhängig von
+      Darstellungsbreite 480-, 720- oder Originalvarianten aus.
+- [x] Automatische Prüfung erkennt identische verwendete Bilddateien auch
+      dann, wenn sie unter verschiedenen Dateinamen eingebunden werden.
 - [ ] Abschließender Sichttest auf realem iPhone und Android-Gerät
 
 ## Referenzqualität

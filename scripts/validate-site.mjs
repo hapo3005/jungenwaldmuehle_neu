@@ -1,9 +1,10 @@
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-21";
+const assetVersion="20260727-22";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true,breadcrumb:true,heroType:"feature"},
@@ -17,6 +18,7 @@ const failures=[];
 const titles=new Map();
 const descriptions=new Map();
 const contentImageUsage=new Map();
+const contentImageHashUsage=new Map();
 const fail=(page,message)=>failures.push(`${page}: ${message}`);
 const count=(text,pattern)=>(text.match(pattern)||[]).length;
 const attr=(tag,name)=>tag.match(new RegExp(`\\s${name}="([^"]*)"`,"i"))?.[1];
@@ -172,6 +174,15 @@ for(const definition of definitions){
       const locations=contentImageUsage.get(source)||[];
       locations.push(file);
       contentImageUsage.set(source,locations);
+      if(!source.startsWith("assets/images/verkaufspferde/")){
+        const imagePath=path.join(root,localPath(source));
+        if(fs.existsSync(imagePath)){
+          const digest=crypto.createHash("sha256").update(fs.readFileSync(imagePath)).digest("hex");
+          const hashed=contentImageHashUsage.get(digest)||[];
+          hashed.push({source,file});
+          contentImageHashUsage.set(digest,hashed);
+        }
+      }
     }
     const srcset=attr(tag,"srcset");
     if(srcset){
@@ -291,6 +302,13 @@ for(const [source,locations] of contentImageUsage){
     const uses=locations.filter(location=>location===page).length;
     if(uses>1)fail(page,`Motiv wird innerhalb der Seite wiederholt: ${source}`);
   }
+}
+
+for(const matches of contentImageHashUsage.values()){
+  const uniqueSources=[...new Set(matches.map(match=>match.source))];
+  if(uniqueSources.length<2)continue;
+  const details=matches.map(match=>`${match.source} in ${match.file}`).join(", ");
+  fail("Bildbestand",`identische Bilddatei unter verschiedenen Namen verwendet: ${details}`);
 }
 
 const sitemap=fs.readFileSync(path.join(root,"sitemap.xml"),"utf8");
