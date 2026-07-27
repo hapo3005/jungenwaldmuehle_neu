@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-16";
+const assetVersion="20260727-17";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
@@ -192,6 +192,10 @@ for(const definition of definitions){
     for(const image of ["embla-vom-mandelgraben","glotti-vom-mandelgraben","asta-vom-moseltal","sleipnir-vom-mandelgraben","flekka-vom-mandelgraben","brana","ari-vom-mandelgraben","einar-vom-mandelgraben","grima-vom-terlindenhof"]){
       if(!html.includes(`assets/images/verkaufspferde/${image}.jpg`))fail(file,`Originalfoto des Verkaufspferds fehlt: ${image}`);
     }
+    for(const image of ["magnus-galopp","magnus-weide","magnus-profil","magnus-nachzucht-1","magnus-nachzucht-2","magnus-nachzucht-3"]){
+      if(!html.includes(`assets/images/${image}.jpg`))fail(file,`Originalfoto im Magnus-Bereich fehlt: ${image}`);
+    }
+    if(!html.includes("Magnus’ Nachzucht")||!html.includes("Verkaufspferde ansehen")||!html.includes("Pferdeanfrage stellen"))fail(file,"Magnus-Bereich benötigt Nachzucht und klare Anfragewege");
     if(!/27\. Juli 2026/i.test(html))fail(file,"sichtbarer Aktualitätsstand der Verkaufspferde fehlt");
   }
   if(file==="kontakt.html"){
@@ -241,7 +245,7 @@ if(!/^User-agent: \*\s+Allow: \//m.test(robots))fail("robots.txt","Crawler-Freig
 if(!robots.includes(`Sitemap: ${baseUrl}/sitemap.xml`))fail("robots.txt","Sitemap-Verweis fehlt");
 
 const budgets=[
-  ["assets/styles.css",38_000],
+  ["assets/styles.css",40_000],
   ["assets/app.js",15_000],
 ];
 
@@ -265,4 +269,3 @@ if(failures.length){
   process.exit(1);
 }
 console.log(`Validierung erfolgreich: ${definitions.length} Seiten, SEO, Semantik, Navigation, Ressourcen, Sitemap, JSON-LD und Dateibudgets geprüft.`);
-

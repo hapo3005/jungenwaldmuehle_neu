@@ -30,6 +30,10 @@
 - Die Islandpferdezucht „vom Mandelgraben“ besteht seit über 20 Jahren; Zuchtziele sind ein kompakter Typ, klarer Kopf und taktklarer Tölt.
 - Zuchthengst Magnus vom Mandelgraben: HB1, Interieur 8,1, Exterieur 8,0,
   Gang 7,9.
+- Der offizielle Betriebsauftritt beschreibt Magnus’ Nachzucht als lernwillig,
+  gehorsam, unerschrocken, leicht verladefromm und als Freizeitpferde mit viel
+  Tölt. Drei Magnus-Aufnahmen und drei dort unmittelbar unter „Magnus
+  momentane Nachzucht“ veröffentlichte Originalfotos wurden übernommen.
 - Am 27. Juli 2026 waren Embla, Glotti, Asta, Sleipnir, Flekka, Brana, Ari,
   Einar und Grima als Verkaufspferde veröffentlicht. Merkmale, Abstammung und
   transparente Eignungshinweise wurden gekürzt, aber inhaltlich aus dem
@@ -130,4 +134,3 @@ Rechtliche Primärquellen für die aktuelle Datenschutzhinweis-Struktur:
   werden.
 - Terminänderungen werden zuerst gegen den offiziellen Betriebsauftritt
   geprüft; freie Plätze werden nie ohne persönliche Bestätigung versprochen.
-
