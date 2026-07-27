@@ -6,10 +6,10 @@ const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
 const assetVersion="20260727-21";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
-  {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true,heroType:"feature"},
-  {file:"reitschule.html",canonical:`${baseUrl}/reitschule.html`,current:"reitschule.html",indexable:true,heroType:"feature"},
-  {file:"islandpferde.html",canonical:`${baseUrl}/islandpferde.html`,current:"islandpferde.html",indexable:true,heroType:"feature"},
-  {file:"kontakt.html",canonical:`${baseUrl}/kontakt.html`,current:"kontakt.html",indexable:true,heroType:"utility"},
+  {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true,breadcrumb:true,heroType:"feature"},
+  {file:"reitschule.html",canonical:`${baseUrl}/reitschule.html`,current:"reitschule.html",indexable:true,breadcrumb:true,heroType:"feature"},
+  {file:"islandpferde.html",canonical:`${baseUrl}/islandpferde.html`,current:"islandpferde.html",indexable:true,breadcrumb:true,heroType:"feature"},
+  {file:"kontakt.html",canonical:`${baseUrl}/kontakt.html`,current:"kontakt.html",indexable:true,breadcrumb:true,heroType:"utility"},
   {file:"impressum.html",canonical:`${baseUrl}/impressum.html`,current:null,indexable:false,heroType:"compact"},
   {file:"404.html",canonical:`${baseUrl}/404.html`,current:null,indexable:false,absoluteBase:true,heroType:"compact"},
 ];
@@ -23,7 +23,7 @@ const localPath=value=>value.split(/[?#]/)[0].replace(/^\/+/,"");
 const textContent=value=>value.replace(/<[^>]+>/g," ").replace(/&(?:[a-z]+|#\d+);/gi,"x").replace(/\s+/g," ").trim();
 
 for(const definition of definitions){
-  const {file,canonical,current,indexable,absoluteBase=false,heroType}=definition;
+  const {file,canonical,current,indexable,breadcrumb=false,absoluteBase=false,heroType}=definition;
   const rootPath=path.join(root,file);
   const sitePath=path.join(root,"_site",file);
   if(!fs.existsSync(rootPath)||!fs.existsSync(sitePath)){
@@ -61,8 +61,20 @@ for(const definition of definitions){
   if(html.match(/<meta property="og:title" content="([^"]+)">/i)?.[1]===undefined)fail(file,"Open-Graph-Titel fehlt");
   if(html.match(/<meta property="og:description" content="([^"]+)">/i)?.[1]!==description)fail(file,"Open-Graph-Beschreibung weicht ab");
   if(html.match(/<meta property="og:url" content="([^"]+)">/i)?.[1]!==canonical)fail(file,"Open-Graph-URL weicht ab");
-  if(indexable&&/<meta name="robots" content="noindex">/i.test(html))fail(file,"indexierbare Seite ist auf noindex gesetzt");
-  if(!indexable&&!/<meta name="robots" content="noindex">/i.test(html))fail(file,"nicht indexierbare Seite benötigt noindex");
+  const robotsValue=html.match(/<meta name="robots" content="([^"]+)">/i)?.[1];
+  if(indexable&&robotsValue!=="index,follow,max-image-preview:large")fail(file,"indexierbare Seite benötigt vollständige Robots- und Bildvorschau-Freigabe");
+  if(!indexable&&robotsValue!=="noindex,follow")fail(file,"nicht indexierbare Seite benötigt noindex,follow");
+  if(indexable){
+    const ogImage=html.match(/<meta property="og:image" content="([^"]+)">/i)?.[1];
+    const ogImageAlt=html.match(/<meta property="og:image:alt" content="([^"]+)">/i)?.[1];
+    if(!ogImage?.startsWith(`${baseUrl}/assets/images/`))fail(file,"absolute Open-Graph-Bild-URL fehlt");
+    if(!ogImageAlt)fail(file,"Open-Graph-Bildbeschreibung fehlt");
+    if(html.match(/<meta name="twitter:card" content="([^"]+)">/i)?.[1]!=="summary_large_image")fail(file,"Twitter/X Large-Image-Card fehlt");
+    if(!html.match(/<meta name="twitter:title" content="([^"]+)">/i)?.[1])fail(file,"Twitter/X-Titel fehlt");
+    if(html.match(/<meta name="twitter:description" content="([^"]+)">/i)?.[1]!==description)fail(file,"Twitter/X-Beschreibung weicht ab");
+    if(html.match(/<meta name="twitter:image" content="([^"]+)">/i)?.[1]!==ogImage)fail(file,"Twitter/X-Bild weicht vom Open-Graph-Bild ab");
+    if(html.match(/<meta name="twitter:image:alt" content="([^"]+)">/i)?.[1]!==ogImageAlt)fail(file,"Twitter/X-Bildbeschreibung weicht ab");
+  }
 
   if(count(html,/<header\b/gi)!==1||count(html,/<footer\b/gi)!==1)fail(file,"Header oder Footer ist nicht eindeutig");
   if(count(html,/<nav\b[^>]*aria-label="Hauptnavigation"[^>]*>/gi)!==1)fail(file,"genau eine Hauptnavigation erforderlich");
@@ -113,22 +125,42 @@ for(const definition of definitions){
     if(!ids.includes(match[1]))fail(file,`aria-controls verweist auf fehlendes Ziel: ${match[1]}`);
   }
 
-  const jsonLdBlocks=[...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi)];
+  const jsonLdBlocks=[...html.matchAll(/<script type="application\\/ld\\+json">([\\s\\S]*?)<\\/script>/gi)];
   if(indexable&&jsonLdBlocks.length!==1)fail(file,"indexierbare Seite benötigt genau einen JSON-LD-Block");
-  if(!indexable&&jsonLdBlocks.length!==0)fail(file,"noindex-Seite darf keine Restaurant-Strukturdaten ausliefern");
+  if(!indexable&&jsonLdBlocks.length!==0)fail(file,"noindex-Seite darf keine Strukturdaten ausliefern");
   for(const match of jsonLdBlocks){
     try{
       const data=JSON.parse(match[1]);
-      for(const key of ["@context","@type","name","url","telephone","email","address","openingHoursSpecification"]){
-        if(!data[key])fail(file,`JSON-LD-Feld fehlt: ${key}`);
+      if(data["@context"]!=="https://schema.org"||!Array.isArray(data["@graph"]))fail(file,"JSON-LD benötigt einen Schema.org-Graphen");
+      const graph=Array.isArray(data["@graph"])?data["@graph"]:[];
+      const byType=type=>graph.find(item=>item["@type"]===type);
+      const restaurant=byType("Restaurant");
+      const website=byType("WebSite");
+      const webpage=byType("WebPage");
+      const breadcrumbs=byType("BreadcrumbList");
+      if(!restaurant||!website||!webpage)fail(file,"Restaurant-, WebSite- oder WebPage-Strukturdaten fehlen");
+      if(restaurant){
+        for(const key of ["@id","name","alternateName","description","url","logo","image","telephone","email","servesCuisine","acceptsReservations","hasMenu","address","openingHoursSpecification","hasMap","sameAs"]){
+          if(restaurant[key]===undefined||restaurant[key]===null||restaurant[key]==="")fail(file,`Restaurant-Strukturdaten fehlen: ${key}`);
+        }
+        if(restaurant.url!==`${baseUrl}/`)fail(file,"JSON-LD-Unternehmens-URL ist falsch");
+        if(restaurant.hasMenu!==`${baseUrl}/restaurant.html#speisekarte`)fail(file,"strukturierter Speisekarten-Link ist falsch");
+        if(restaurant.acceptsReservations!==true)fail(file,"strukturierte Reservierungsangabe fehlt");
       }
-      if(data.url!==`${baseUrl}/`)fail(file,"JSON-LD-Unternehmens-URL ist falsch");
+      if(webpage){
+        if(webpage.url!==canonical)fail(file,"WebPage-Strukturdaten verwenden eine falsche URL");
+        if(webpage.description!==description)fail(file,"WebPage-Strukturdaten verwenden eine abweichende Beschreibung");
+        if(!webpage.primaryImageOfPage?.url)fail(file,"WebPage-Strukturdaten benötigen ein Hauptbild");
+      }
+      if(breadcrumb&&!breadcrumbs)fail(file,"Unterseite benötigt strukturierte Breadcrumb-Daten");
+      if(!breadcrumb&&breadcrumbs)fail(file,"Startseite darf keine unnötigen Breadcrumb-Daten ausliefern");
+      if(breadcrumb&&breadcrumbs?.itemListElement?.[1]?.item!==canonical)fail(file,"Breadcrumb-Ziel ist falsch");
     }catch(error){
       fail(file,`ungültiges JSON-LD: ${error.message}`);
     }
   }
 
-  for(const match of html.matchAll(/<img\b[^>]*>/gi)){
+  for(const match of html.matchAll(/<img\\b[^>]*>/gi)){
     const tag=match[0];
     const source=attr(tag,"src");
     if(!source){fail(file,"Bild ohne src");continue;}
@@ -246,11 +278,21 @@ for(const definition of definitions){
 }
 
 const sitemap=fs.readFileSync(path.join(root,"sitemap.xml"),"utf8");
-const sitemapUrls=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match=>match[1]);
+if(!sitemap.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'))fail("sitemap.xml","Image-Sitemap-Namensraum fehlt");
+const sitemapEntries=[...sitemap.matchAll(/<url>([\\s\\S]*?)<\\/url>/g)].map(match=>match[1]);
+const sitemapUrls=sitemapEntries.map(entry=>entry.match(/<loc>([^<]+)<\\/loc>/)?.[1]).filter(Boolean);
 const expectedSitemap=definitions.filter(page=>page.indexable).map(page=>page.canonical);
 if(new Set(sitemapUrls).size!==sitemapUrls.length)fail("sitemap.xml","doppelte URL");
 for(const url of expectedSitemap)if(!sitemapUrls.includes(url))fail("sitemap.xml",`URL fehlt: ${url}`);
 for(const url of sitemapUrls)if(!expectedSitemap.includes(url))fail("sitemap.xml",`unerwartete oder nicht indexierbare URL: ${url}`);
+for(const entry of sitemapEntries){
+  const url=entry.match(/<loc>([^<]+)<\\/loc>/)?.[1]||"unbekannt";
+  if(entry.match(/<lastmod>([^<]+)<\\/lastmod>/)?.[1]!=="2026-07-27")fail("sitemap.xml",`aktuelles und überprüftes lastmod fehlt: ${url}`);
+  const imageUrl=entry.match(/<image:loc>([^<]+)<\\/image:loc>/)?.[1];
+  const imageTitle=entry.match(/<image:title>([^<]+)<\\/image:title>/)?.[1];
+  if(!imageUrl?.startsWith(`${baseUrl}/assets/images/`))fail("sitemap.xml",`Hauptbild fehlt: ${url}`);
+  if(!imageTitle)fail("sitemap.xml",`Bildtitel fehlt: ${url}`);
+}
 
 const robots=fs.readFileSync(path.join(root,"robots.txt"),"utf8");
 if(!/^User-agent: \*\s+Allow: \//m.test(robots))fail("robots.txt","Crawler-Freigabe fehlt");
