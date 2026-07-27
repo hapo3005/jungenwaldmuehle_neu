@@ -40,6 +40,10 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Asymmetrische Bildüberlagerungen bleiben ein Desktopmittel. Auf Mobilgeräten
   stehen Bilder in einer klaren Leserichtung ohne Überschneidung; feste
   Bedienelemente erhalten eine freie Kante.
+- Mobile Bildpaare bewahren ihre natürlichen Seitenverhältnisse. Ein
+  Hauptmotiv nutzt die Inhaltsbreite; ein kleineres Begleitmotiv wird
+  mittig geführt, damit die Hierarchie absichtlich und nicht wie ein
+  verrutschtes Raster wirkt.
 
 ## Logo
 
@@ -81,3 +85,4 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Keine Pillen, Glaseffekte, Farbverläufe auf Text, Icon-Kacheln oder „Premium“-Floskeln.
 - Keine unbestätigten Preise, Verfügbarkeiten oder Gästestimmen als Tatsachen.
 - Keine konkurrierenden primären Handlungsaufforderungen im ersten Bildschirm.
+
