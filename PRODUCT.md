@@ -10,7 +10,11 @@ web
 
 Primäre Besucher sind Urlauber an der Mittelmosel, die während eines Ausflugs, einer Wanderung oder Radtour gut essen und einen besonderen Ort erleben möchten. Hinzu kommen regionale Stammgäste, Paare und Freundesgruppen sowie Familien, für die die Pferde und die naturnahe Lage einen zusätzlichen Besuchsanlass schaffen.
 
-Sekundäre Zielgruppen sind Interessierte an Ponyhof, Reitangeboten und Islandpferden. Diese Anliegen brauchen einen eigenen, klaren Kontaktweg, dürfen den gastronomischen Hauptnutzen aber nicht verwässern.
+Eine zweite eigenständige Kundengruppe sucht Reitunterricht, Ausbildung und
+Beritt, Pferdepension, Islandpferdezucht oder ein Verkaufspferd. Diese
+Pferdeangebote sind ein wichtiger betrieblicher Leistungsbereich mit eigenen
+Informations- und Kontaktwegen; sie bleiben in der Navigation klar vom
+Restaurantbesuch unterscheidbar.
 
 ## Product Purpose
 
@@ -31,7 +35,8 @@ Viele Besucher entscheiden mobil und kurzfristig während eines Moselaufenthalts
 - Das bisherige `mailto:`-Formular ist kein verlässlicher Reservierungskanal.
 - Öffnungszeiten und Gastgeberangaben werden nur aus dokumentierten Quellen übernommen; konkrete Speisen und Preise erscheinen erst nach aktueller Freigabe des Betriebs.
 - Restaurant/Hofcafé ist der primäre wirtschaftliche Pfad.
-- Ponyhof/Reitschule und Islandpferde bleiben eigenständige Sekundärpfade.
+- Ponyhof/Reitschule/Pferdepension und Zucht/Verkauf sind eigenständige
+  wirtschaftliche Pfade mit qualifizierenden Detailinformationen.
 - Keine erfundenen Auszeichnungen, Kapazitäten, Verfügbarkeiten oder Wirkungszahlen.
 
 ## Brand Commitments

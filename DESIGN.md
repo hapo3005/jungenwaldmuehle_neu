@@ -61,6 +61,10 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Hover nur auf Geräten mit präzisem Zeiger.
 - Mobile Navigation ist ein klarer, bildschirmfüllender Entscheidungsraum mit sofort sichtbarer Telefonnummer.
 - Abläufe werden über Überschriften und feine Trennlinien gegliedert; dekorative Schrittziffern werden nicht verwendet.
+- Wechselnde Verkaufspferde erscheinen in einem redaktionellen,
+  aufklappbaren Verzeichnis statt in austauschbaren Karten. Name und
+  Kerndaten bleiben auch geschlossen sichtbar; Details sind per Tastatur
+  erreichbar.
 - Bewegung unterstützt Orientierung und bleibt unter 260 ms; keine Scrollshow und keine dekorative Dauermotion.
 
 ## Verbote

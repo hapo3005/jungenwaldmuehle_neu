@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-7";
+const assetVersion="20260727-8";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
@@ -166,6 +166,24 @@ for(const definition of definitions){
     }
     if(!/Stand Juli 2026/i.test(html))fail(file,"sichtbarer Aktualitätsstand der Speisekarte fehlt");
   }
+  if(file==="reitschule.html"){
+    for(const id of ["unterricht","ausbildung","pension","zucht"]){
+      if(!ids.includes(id))fail(file,`Reitschul-Sprungziel fehlt: ${id}`);
+    }
+    for(const text of ["Pferdewirtin","Trainer C","Korrekturreiten","Pferdepension"]){
+      if(!html.includes(text))fail(file,`wesentlicher Reitschulinhalt fehlt: ${text}`);
+    }
+  }
+  if(file==="islandpferde.html"){
+    for(const id of ["zuchtziel","magnus","verkaufspferde","pferdeanfrage"]){
+      if(!ids.includes(id))fail(file,`Zucht-Sprungziel fehlt: ${id}`);
+    }
+    if(count(html,/class="horse-profile"/gi)!==9)fail(file,"neun veröffentlichte Verkaufspferde erforderlich");
+    for(const horse of ["Embla","Glotti","Asta","Sleipnir","Flekka","Brana","Ari","Einar","Grima"]){
+      if(!html.includes(horse))fail(file,`veröffentlichtes Verkaufspferd fehlt: ${horse}`);
+    }
+    if(!/27\. Juli 2026/i.test(html))fail(file,"sichtbarer Aktualitätsstand der Verkaufspferde fehlt");
+  }
   if(file==="kontakt.html"){
     if(count(html,/class="phone-callout"/gi)!==1)fail(file,"Kontaktseite benötigt genau eine hervorgehobene, einzeilige Rufnummer");
     if(!/class="phone-number">06534 7493854<\/span>/i.test(html))fail(file,"sichtbare Rufnummer fehlt im Kontaktbereich");
@@ -213,7 +231,7 @@ if(!/^User-agent: \*\s+Allow: \//m.test(robots))fail("robots.txt","Crawler-Freig
 if(!robots.includes(`Sitemap: ${baseUrl}/sitemap.xml`))fail("robots.txt","Sitemap-Verweis fehlt");
 
 const budgets=[
-  ["assets/styles.css",30_000],
+  ["assets/styles.css",36_000],
   ["assets/app.js",15_000],
 ];
 

@@ -41,6 +41,9 @@
 - [x] Telefonreservierung im ersten mobilen Bildschirm erreichbar
 - [x] Mehrspaltige Inhalte werden einspaltig
 - [x] Pferde-Informationsreihen verlieren mobil ihre seitlichen Trennlinien
+- [x] Reitschulbereiche sind über vier direkte Sprunglinks erreichbar
+- [x] Verkaufspferde sind mobil als tastaturbedienbare Details gegliedert
+- [x] Verfügbarkeit und Stand der Verkaufspferde werden transparent benannt
 - [x] Kartenansicht und große Bilder erhalten mobile Höhen
 - [x] Horizontale Seitenüberläufe werden verhindert
 - [x] Bewegungsreduktion wird respektiert

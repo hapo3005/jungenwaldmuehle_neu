@@ -14,7 +14,21 @@
 - Reitlehrerin Chantal ist ausgebildete Pferdewirtin (Spezialreitweise Gangreiten) und Trainer C.
 - Reitunterricht findet montags bis freitags für Anfänger und Fortgeschrittene ab fünf Jahren statt.
 - Einzel- und Gruppenunterricht, Probestunden, externe Einzelstunden und begleitete Ausritte für geübte Reiter werden angeboten; Wintergruppen umfassen höchstens vier Personen.
+- Ausbildung und Beritt von Jungpferden sowie Korrekturreiten werden
+  angeboten.
+- Die Pferde leben ganzjährig auf großen Weiden mit Schattenplätzen im Sommer
+  und Offenstall im Winter. Zur Anlage gehören überdachte Rundhalle,
+  Reitplatz, Putzplatz, zwei Sattelkammern, Krankenboxen und Aufzuchtweiden.
+- Der Betriebsauftritt weist am 27. Juli 2026 freie Einstellplätze aus; die
+  neue Seite fordert deshalb ausdrücklich eine persönliche Bestätigung.
 - Die Islandpferdezucht „vom Mandelgraben“ besteht seit über 20 Jahren; Zuchtziele sind ein kompakter Typ, klarer Kopf und taktklarer Tölt.
+- Zuchthengst Magnus vom Mandelgraben: HB1, Interieur 8,1, Exterieur 8,0,
+  Gang 7,9.
+- Am 27. Juli 2026 waren Embla, Glotti, Asta, Sleipnir, Flekka, Brana, Ari,
+  Einar und Grima als Verkaufspferde veröffentlicht. Merkmale, Abstammung und
+  transparente Eignungshinweise wurden gekürzt, aber inhaltlich aus dem
+  Betriebsauftritt übernommen. Die Live-Seite verspricht keine fortdauernde
+  Verfügbarkeit.
 - Saison 2026 laut regionaler Tourismusinformation:
   - 1. April bis 31. Oktober: Samstag bis Dienstag, 11:30–21:00 Uhr
   - 1. November bis 31. März: Samstag und Sonntag, 11:30–21:00 Uhr
@@ -33,6 +47,8 @@ Quellen:
 - bestehende Restaurantseite und veröffentlichte Speisekarte:
   https://jungenwaldmuehle.simdif.com/restaurant.html
 - aktuelle Reitschul- und Zuchtseite: https://jungenwaldmuehle.simdif.com/reitschule.html
+- aktuelle Verkaufspferde:
+  https://jungenwaldmuehle.simdif.com/verkaufspferde.html
 - Faszination Mosel, Projektbericht mit Bildnachweis „Fotos (c) Britta Böhm“:
   https://www.faszinationmosel.info/2022/09/29/lag-mosel-leader-projekt-restaurant-und-hofcafe-jungenwaldmuehle-in-brauneberg/
 

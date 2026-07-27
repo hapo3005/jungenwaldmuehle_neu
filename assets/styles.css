@@ -135,6 +135,65 @@ p{max-width:68ch;text-wrap:pretty}
 .horse-details p{color:var(--muted);margin:0}
 .step{border-top:1px solid var(--ink);padding-top:1.6rem}.step h3{font-size:1.4rem;margin-top:0}.step p{color:var(--muted)}
 .availability-note,.notice{margin:2rem 0 0;padding:1rem 0;border-top:1px solid var(--ochre);color:var(--muted)}
+.anchor-section{scroll-margin-top:1rem}
+.equine-hero .page-hero-media img{object-position:center 45%}
+.horse-quicklinks .container{grid-template-columns:repeat(4,minmax(0,1fr))}
+.equine-services{background:var(--forest);color:var(--white)}
+.equine-services .section-head p{color:rgba(255,255,255,.72)}
+.service-ledger{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(255,255,255,.55)}
+.service-ledger article{min-width:0;padding:2rem clamp(1.25rem,4vw,3.5rem) 2.25rem 0;border-bottom:1px solid rgba(255,255,255,.2)}
+.service-ledger article:nth-child(even){padding-right:0;padding-left:clamp(1.25rem,4vw,3.5rem);border-left:1px solid rgba(255,255,255,.2)}
+.service-ledger span{display:block;margin-bottom:.7rem;color:#e3c28f;font-size:.73rem;font-weight:760;letter-spacing:.09em;text-transform:uppercase}
+.service-ledger h3{margin:.1rem 0 .75rem;font-size:clamp(1.8rem,3vw,2.55rem)}
+.service-ledger p{margin:0;color:rgba(255,255,255,.72)}
+.pension-section{background:var(--paper-deep)}
+.pension-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(3rem,8vw,8rem);align-items:center}
+.pension-grid figure{margin:0}
+.pension-grid figure img{width:100%;height:clamp(31rem,52vw,45rem);object-fit:cover;object-position:center}
+.pension-copy>p:not(.kicker):not(.lead):not(.availability-note){color:var(--muted)}
+.facility-list{margin:2rem 0 0;border-top:1px solid var(--ink)}
+.facility-list div{display:grid;grid-template-columns:minmax(6.5rem,.4fr) minmax(0,1fr);gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.facility-list dt{color:var(--muted);font-size:.8rem}
+.facility-list dd{margin:0;font-weight:700}
+.pension-copy>.text-link{margin-top:1rem}
+.breeding-bridge{background:var(--forest-dark);color:var(--white);border-bottom:1px solid rgba(255,255,255,.16)}
+.breeding-bridge-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(3rem,8vw,8rem);align-items:center}
+.breeding-bridge p:not(.kicker){color:rgba(255,255,255,.72)}
+.breeding-bridge .btn{margin-top:1rem}
+.breeding-bridge figure{margin:0}
+.breeding-bridge img{width:100%;height:clamp(25rem,42vw,36rem);object-fit:cover}
+.stallion-section{background:var(--forest-dark);color:var(--white)}
+.stallion-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(20rem,.8fr);gap:clamp(3rem,9vw,9rem);align-items:end}
+.stallion-grid h2{margin-top:0}
+.stallion-grid p:not(.kicker){color:rgba(255,255,255,.73)}
+.stallion-metrics{margin:0;border-top:1px solid rgba(255,255,255,.6)}
+.stallion-metrics div{display:flex;align-items:baseline;justify-content:space-between;gap:2rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.2)}
+.stallion-metrics dt{color:rgba(255,255,255,.64);font-size:.8rem}
+.stallion-metrics dd{margin:0;font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);line-height:1;font-variant-numeric:tabular-nums}
+.catalog-head{align-items:start}
+.catalog-head .text-link{margin-top:.75rem}
+.catalog-intro{margin-bottom:clamp(2.5rem,5vw,4rem);padding:1.5rem 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
+.catalog-intro p{margin:0;color:var(--muted)}
+.horse-catalog{border-top:1px solid var(--ink)}
+.horse-profile{border-bottom:1px solid var(--line)}
+.horse-profile summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.4rem 3rem;align-items:center;position:relative;padding:1.55rem 3.2rem 1.55rem 0;cursor:pointer;list-style:none;transition:color 160ms var(--ease),transform 140ms var(--ease)}
+.horse-profile summary::-webkit-details-marker{display:none}
+.horse-profile summary:after{content:"+";position:absolute;right:.25rem;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:1.8rem;font-weight:400;line-height:1}
+.horse-profile[open] summary:after{content:"−"}
+.horse-profile summary:active{transform:scale(.99)}
+.horse-profile-name{font-family:var(--serif);font-size:clamp(1.55rem,2.7vw,2.15rem);line-height:1.12}
+.horse-profile-meta{color:var(--muted);font-size:.8rem;text-align:right}
+.horse-profile-body{display:grid;grid-template-columns:minmax(13rem,.7fr) minmax(0,1.3fr);gap:clamp(2rem,7vw,7rem);padding:0 0 2.2rem}
+.horse-profile-body dl{margin:0}
+.horse-profile-body dl div{display:grid;grid-template-columns:5rem minmax(0,1fr);gap:1rem;padding:.5rem 0;border-top:1px solid var(--line)}
+.horse-profile-body dt{color:var(--muted);font-size:.76rem}
+.horse-profile-body dd{margin:0;font-size:.88rem;font-weight:650}
+.horse-profile-body p{margin:0;color:var(--muted)}
+.horse-inquiry{background:var(--forest);color:var(--white)}
+.horse-inquiry-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(3rem,8vw,8rem);align-items:end}
+.horse-inquiry h2{margin:0}
+.horse-inquiry p:not(.kicker){color:rgba(255,255,255,.74)}
+.horse-inquiry .actions{margin-top:2rem}
 .cta-band{background:var(--forest);color:var(--white);text-align:center}.cta-band h2{font-size:clamp(2.8rem,5vw,4.7rem)}.cta-band p{margin:0 auto 2rem;color:rgba(255,255,255,.76)}
 .menu-section{background:var(--paper-deep);scroll-margin-top:1rem}
 .menu-jumps{display:grid;grid-template-columns:repeat(4,1fr);margin-bottom:clamp(3rem,6vw,5rem);border-top:1px solid var(--ink);border-bottom:1px solid var(--line)}
@@ -174,6 +233,7 @@ form{display:grid;gap:1.35rem}.field{display:grid;gap:.35rem}.field-row{display:
 .footer-grid strong{color:var(--white)}.footer-grid a{display:inline-flex;align-items:center;min-height:2.75rem;text-underline-offset:.25rem}.legal{padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.15);font-size:.8rem;color:rgba(255,255,255,.68)}.legal a{display:inline-flex;align-items:center;min-height:2.75rem}
 .scroll-top{--scroll-progress:0deg;position:fixed;right:max(1.25rem,env(safe-area-inset-right));bottom:max(1.25rem,env(safe-area-inset-bottom));z-index:90;width:3.6rem;height:3.6rem;display:grid;place-items:center;padding:3px;border:0;border-radius:50%;background:conic-gradient(var(--ochre) var(--scroll-progress),rgba(242,238,228,.42) 0);color:var(--paper);box-shadow:0 .85rem 2rem rgba(8,23,16,.24),0 .2rem .55rem rgba(8,23,16,.16);opacity:0;visibility:hidden;transform:translateY(.65rem) scale(.96);pointer-events:none;transition:opacity 180ms var(--ease),transform 220ms var(--ease),visibility 0s 220ms;cursor:pointer}.scroll-top:before{content:"";position:absolute;inset:3px;border-radius:inherit;background:var(--forest);box-shadow:inset 0 0 0 1px rgba(242,238,228,.17);transition:background-color 180ms var(--ease),transform 160ms var(--ease)}.scroll-top.is-visible{opacity:1;visibility:visible;transform:none;pointer-events:auto;transition-delay:0s}.scroll-top.is-visible:active{transform:scale(.96)}.scroll-top svg{position:relative;z-index:1;width:1.25rem;height:1.25rem;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:transform 160ms var(--ease)}
 @media (hover:hover) and (pointer:fine){.btn-primary:hover{background:var(--forest-dark);border-color:var(--forest-dark);box-shadow:0 .45rem 1rem rgba(8,23,16,.15)}.btn-light:hover{background:var(--white);border-color:rgba(23,55,43,.38);box-shadow:0 .45rem 1rem rgba(8,23,16,.12)}.btn:hover:after,.text-link:hover:after{transform:translateX(.18rem)}.text-link:hover:before{transform:scaleX(1);opacity:.85}.round-link:hover{border-color:var(--ochre);color:var(--forest)}.round-link:hover .round-link-icon{background:var(--forest);border-color:var(--forest);color:var(--white);transform:translate(.12rem,-.12rem)}.toggle:hover{background:rgba(14,37,28,.34);border-color:var(--white)}.nav-reserve:hover{color:#e3c28f}.nav-primary a:hover:after{right:0}.horse-links a:hover{color:var(--ochre)}.restaurant-quicklinks a:hover{background:rgba(255,255,255,.08);color:#e3c28f}.menu-jumps a:hover{background:var(--paper);color:var(--forest)}.phone-callout:hover{border-top-color:var(--ochre-on-paper);color:var(--forest)}.phone-callout:hover .phone-callout-action>span{transform:translateX(.18rem)}.scroll-top:hover:before{background:var(--forest-dark);transform:scale(.96)}.scroll-top:hover svg{transform:translateY(-.12rem)}}
+@media (hover:hover) and (pointer:fine){.horse-profile summary:hover{color:var(--ochre-on-paper)}}
 .reveal-ready [data-reveal]{opacity:0;transform:translateY(1rem);transition:opacity 620ms var(--ease),transform 620ms var(--ease);transition-delay:var(--reveal-delay,0ms);will-change:opacity,transform}
 .reveal-ready [data-reveal].is-visible{opacity:1;transform:none;will-change:auto}
 @media(max-width:980px){.toggle{display:block;position:relative;z-index:2;min-width:3rem;min-height:3rem}.links{position:fixed;inset:0;z-index:1;background:var(--forest-dark);padding:7rem max(1.5rem,env(safe-area-inset-right)) max(2rem,env(safe-area-inset-bottom)) max(1.5rem,env(safe-area-inset-left));display:flex;flex-direction:column;align-items:stretch;justify-content:space-between;gap:2rem;overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;transform:translateY(-1rem);transition:opacity 180ms var(--ease),transform 220ms var(--ease),visibility 0s 220ms}.links.open{opacity:1;visibility:visible;transform:none;transition-delay:0s}.nav-primary{display:flex;flex-direction:column;align-items:flex-start;gap:.35rem}.nav-primary a{display:flex;align-items:center;min-height:3.25rem;font-family:var(--serif);font-size:clamp(1.85rem,7vw,3.6rem);font-weight:500}.nav-reserve{display:block;border:0;border-top:1px solid rgba(255,255,255,.25);padding:1.4rem 0 .5rem;min-height:4.5rem}.nav-reserve strong{font-size:1.5rem}.toggle[aria-expanded=true] span:first-child{transform:translateY(4px) rotate(45deg)}.toggle[aria-expanded=true] span:last-child{transform:translateY(-4px) rotate(-45deg)}.home-hero-inner{align-items:flex-end}.visit-note{display:none}.intro-grid{grid-template-columns:1fr 2fr}.round-link{grid-column:2}.food-grid{grid-template-columns:1.1fr .9fr}.food-cake{display:none}.horses-grid{gap:2rem}.trio,.steps{grid-template-columns:1fr}.horse-details article,.horse-details article+article{padding:1.5rem 0;border-left:0}.content{grid-template-columns:1fr}.footer-lead{display:block}.footer-lead .btn{margin-top:2rem}}
@@ -196,6 +256,28 @@ form{display:grid;gap:1.35rem}.field{display:grid;gap:.35rem}.field-row{display:
   .menu-preview h2{font-size:clamp(2.5rem,13vw,3.4rem)}
   .prose.card h2{font-size:clamp(2rem,9vw,2.5rem)}
   .menu-lines span{overflow-wrap:anywhere}
+  .horse-quicklinks .container{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .horse-quicklinks a{justify-content:flex-start;padding:.8rem 1rem;font-size:.76rem}
+  .horse-quicklinks a:nth-child(3){border-top:1px solid rgba(255,255,255,.18)}
+  .horse-quicklinks a:nth-child(4){border-top:1px solid rgba(255,255,255,.18);border-right:0}
+  .equine-hero .page-hero-media img{object-position:58% center}
+  .equine-hero .page-hero-actions .btn{width:100%}
+  .service-ledger{grid-template-columns:1fr}
+  .service-ledger article,.service-ledger article:nth-child(even){padding:1.5rem 0;border-left:0}
+  .pension-grid,.breeding-bridge-grid,.stallion-grid,.horse-inquiry-grid{grid-template-columns:1fr}
+  .pension-grid figure img{height:clamp(20rem,95vw,27rem)}
+  .facility-list div{grid-template-columns:1fr;gap:.2rem}
+  .breeding-bridge figure{grid-row:1}
+  .breeding-bridge img{height:clamp(20rem,90vw,28rem)}
+  .stallion-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stallion-metrics div{display:block;padding:1rem}
+  .stallion-metrics div:nth-child(odd){padding-left:0;border-right:1px solid rgba(255,255,255,.2)}
+  .stallion-metrics dt{margin-bottom:.35rem}
+  .horse-profile summary{grid-template-columns:1fr;gap:.35rem;padding:1.35rem 2.5rem 1.35rem 0}
+  .horse-profile-meta{text-align:left;line-height:1.45}
+  .horse-profile-body{grid-template-columns:1fr;gap:1.5rem;padding-bottom:2rem}
+  .horse-inquiry .actions{align-items:flex-start}
+  .horse-inquiry .btn{width:100%}
 }
 @media(max-width:360px){
   h2,.prose h2,.contact h2{font-size:clamp(2.1rem,12vw,2.7rem)}
