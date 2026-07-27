@@ -15,5 +15,8 @@ Kontaktdaten, saisonale Öffnungszeiten und Gastgeberangaben sind in `docs/CONTE
 
 `npm run check` baut und synchronisiert alle Seiten, prüft SEO, Semantik,
 Navigation, interne Ressourcen, Sitemap, strukturierte Daten und Dateibudgets
-und führt zusätzlich den projektlokalen Impeccable-Detektor aus. Dafür ist nach
-der Installation der Projektabhängigkeiten kein externer Paketabruf nötig.
+und führt zusätzlich eine simulierte Laufzeitprüfung für Navigation,
+Fokusführung, Scroll-up-Button und Bewegungsreduktion sowie den projektlokalen
+Impeccable-Detektor aus. Dafür ist nach der Installation der
+Projektabhängigkeiten kein externer Paketabruf nötig. Pull Requests durchlaufen
+dieselbe Qualitätsprüfung automatisch in GitHub Actions.
