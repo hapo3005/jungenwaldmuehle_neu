@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-2";
+const assetVersion="20260727-3";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
@@ -213,6 +213,7 @@ const budgets=[
 const css=fs.readFileSync(path.join(root,"assets/styles.css"),"utf8");
 if(!/\.scroll-top\.is-visible\b/.test(css))fail("assets/styles.css","sichtbarer Zustand des Scroll-up-Buttons fehlt");
 if(!/@media\s*\(\s*prefers-reduced-motion\s*:\s*reduce\s*\)/.test(css))fail("assets/styles.css","Bewegungsreduktion fehlt");
+if(/counter-reset\s*:\s*steps|content\s*:\s*"0"\s*counter\s*\(/i.test(css))fail("assets/styles.css","dekorative Schrittziffern dürfen nicht erzeugt werden");
 
 for(const [file,maximum] of budgets){
   const size=fs.statSync(path.join(root,file)).size;
