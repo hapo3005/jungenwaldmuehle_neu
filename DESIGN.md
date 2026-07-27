@@ -77,6 +77,9 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
   schnellen visuellen Orientierung verwendet. Beim Öffnen erscheint dasselbe
   Originalfoto vollständig, unbeschnitten und groß neben den Daten; mobil
   nutzt die Großansicht die gesamte verfügbare Inhaltsbreite.
+- Zuchttiere werden nicht als reine Datenblöcke gezeigt. Belegte Originalfotos,
+  Charakterbeschreibung, Eintragungsdaten und Nachzucht bilden eine ruhige
+  redaktionelle Einheit mit einem klaren Weg zu Pferdeauswahl und Anfrage.
 - Bewegung unterstützt Orientierung und bleibt unter 260 ms; keine Scrollshow und keine dekorative Dauermotion.
 
 ## Verbote
@@ -85,4 +88,3 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Keine Pillen, Glaseffekte, Farbverläufe auf Text, Icon-Kacheln oder „Premium“-Floskeln.
 - Keine unbestätigten Preise, Verfügbarkeiten oder Gästestimmen als Tatsachen.
 - Keine konkurrierenden primären Handlungsaufforderungen im ersten Bildschirm.
-

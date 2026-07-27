@@ -49,6 +49,25 @@ Die Dateien liegen unverändert als die dort ausgelieferten JPEG-Motive unter
 `assets/images/verkaufspferde/`. Es wurden weder Pferde ergänzt noch Bilder
 generiert oder Pferden anhand einer Vermutung zugeordnet.
 
+Am 27. Juli 2026 wurden außerdem sechs Originalfotografien aus dem Magnus-
+Bereich der offiziellen Reitschul- und Zuchtseite übernommen:
+
+- `magnus-galopp.jpg`
+- `magnus-weide.jpg`
+- `magnus-profil.jpg`
+- `magnus-nachzucht-1.jpg`
+- `magnus-nachzucht-2.jpg`
+- `magnus-nachzucht-3.jpg`
+
+Die ersten drei Dateien stehen dort unmittelbar beim Abschnitt
+„Zuchthengst“. Die drei Nachzuchtbilder stehen unmittelbar unter „Magnus
+momentane Nachzucht“. Die Nachzuchtdateien wurden ausschließlich technisch
+komprimiert; Bildinhalt und Zuordnung wurden nicht verändert.
+
+Quelle:
+
+- https://jungenwaldmuehle.simdif.com/reitschule.html
+
 Der Projektbericht der Regionalinitiative Faszination Mosel vom
 29. September 2022 kennzeichnet die dort veröffentlichten Fotos mit
 „Fotos (c) Britta Böhm“. Das ist ein hilfreicher Herkunftshinweis, beweist

@@ -55,6 +55,9 @@
 - [x] Verkaufspferde-Fotos bleiben mobil kompakt und ohne Layoutsprung erfassbar
 - [x] Jedes Verkaufspferd zeigt beim Öffnen sein vollständiges Originalfoto in einer großen Detailansicht
 - [x] Pferde-Großansichten bleiben mobil unbeschnitten und nutzen die verfügbare Inhaltsbreite
+- [x] Magnus wird mit drei belegten Originalaufnahmen statt als reiner Datenblock vorgestellt
+- [x] Drei veröffentlichte Nachzuchtbilder sind eindeutig vom Verkaufspferde-Katalog getrennt
+- [x] Magnus-Bereich führt direkt zu Verkaufspferden und Pferdeanfrage
 - [x] Kartenansicht und große Bilder erhalten mobile Höhen
 - [x] Horizontale Seitenüberläufe werden verhindert
 - [x] Bewegungsreduktion wird respektiert
@@ -103,4 +106,3 @@
 Die beiden betriebsseitigen Bestätigungen werden mit `docs/FREIGABE.md`
 strukturiert eingeholt. Die unterschriebene Fassung gehört nicht in das
 öffentliche Repository.
-
