@@ -61,6 +61,9 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
   Kreise oder generische Pillen.
 - Rufnummern stehen immer ungebrochen und zurückhaltend; Buttons benennen die
   konkrete Handlung statt nur eine nackte Telefonnummer zu zeigen.
+- Hervorgehobene `tel:`-Handlungen tragen ein einheitliches, ruhiges
+  Telefon-Symbol anstelle des allgemeinen Richtungspfeils. Das Symbol ergänzt
+  die konkrete Beschriftung, ersetzt sie aber nicht.
 - Buttons reagieren beim Drücken dezent mit `scale(.97)`.
 - Hover nur auf Geräten mit präzisem Zeiger.
 - Mobile Navigation ist ein klarer, bildschirmfüllender Entscheidungsraum mit sofort sichtbarer Telefonnummer.
