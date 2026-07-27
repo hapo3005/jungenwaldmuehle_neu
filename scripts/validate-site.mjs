@@ -175,7 +175,7 @@ for(const definition of definitions){
     for(const text of ["Pferdewirtin","Trainer C","Korrekturreiten","Pferdepension"]){
       if(!html.includes(text))fail(file,`wesentlicher Reitschulinhalt fehlt: ${text}`);
     }
-    for(const text of ['datetime="2026-10-12"','datetime="2026-10-14"',"09:00–17:00 Uhr","75 €","Teilnahme telefonisch anfragen"]){
+    for(const text of ['datetime="2026-10-12"','datetime="2026-10-14"',"09:00–17:00 Uhr","75 €","Teilnahme anfragen"]){
       if(!html.includes(text))fail(file,`wesentlicher Termininhalt fehlt: ${text}`);
     }
     if(!html.includes('class="event-visual"')||!html.includes('src="assets/images/horse-family.jpg"'))fail(file,"authentisches Terminmotiv fehlt");
