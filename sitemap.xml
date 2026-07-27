@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://hapo3005.github.io/jungenwaldmuehle_neu/</loc></url>
-  <url><loc>https://hapo3005.github.io/jungenwaldmuehle_neu/restaurant.html</loc></url>
-  <url><loc>https://hapo3005.github.io/jungenwaldmuehle_neu/reitschule.html</loc></url>
-  <url><loc>https://hapo3005.github.io/jungenwaldmuehle_neu/islandpferde.html</loc></url>
-  <url><loc>https://hapo3005.github.io/jungenwaldmuehle_neu/kontakt.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://hapo3005.github.io/jungenwaldmuehle_neu/</loc>
+    <lastmod>2026-07-27</lastmod>
+    <image:image>
+      <image:loc>https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/terrace-enhanced.webp</image:loc>
+      <image:title>Terrasse der Jungenwaldmühle bei Brauneberg</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://hapo3005.github.io/jungenwaldmuehle_neu/restaurant.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <image:image>
+      <image:loc>https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/restaurant-fireplace.jpg</image:loc>
+      <image:title>Restaurant der Jungenwaldmühle mit Kamin</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://hapo3005.github.io/jungenwaldmuehle_neu/reitschule.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <image:image>
+      <image:loc>https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/horses.jpg</image:loc>
+      <image:title>Islandpferde auf der Weide der Jungenwaldmühle</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://hapo3005.github.io/jungenwaldmuehle_neu/islandpferde.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <image:image>
+      <image:loc>https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/foals.jpg</image:loc>
+      <image:title>Junge Islandpferde vom Mandelgraben</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://hapo3005.github.io/jungenwaldmuehle_neu/kontakt.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <image:image>
+      <image:loc>https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/terrace-enhanced.webp</image:loc>
+      <image:title>Jungenwaldmühle bei Brauneberg</image:title>
+    </image:image>
+  </url>
 </urlset>
