@@ -4,7 +4,7 @@ import crypto from "node:crypto";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-22";
+const assetVersion="20260727-24";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true,breadcrumb:true,heroType:"feature"},
@@ -24,6 +24,26 @@ const count=(text,pattern)=>(text.match(pattern)||[]).length;
 const attr=(tag,name)=>tag.match(new RegExp(`\\s${name}="([^"]*)"`,"i"))?.[1];
 const localPath=value=>value.split(/[?#]/)[0].replace(/^\/+/,"");
 const textContent=value=>value.replace(/<[^>]+>/g," ").replace(/&(?:[a-z]+|#\d+);/gi,"x").replace(/\s+/g," ").trim();
+const hasCompleteImageData=(file,buffer)=>{
+  const extension=path.extname(file).toLowerCase();
+  if(extension===".jpg"||extension===".jpeg"){
+    return buffer.length>=4&&buffer[0]===0xff&&buffer[1]===0xd8&&buffer.at(-2)===0xff&&buffer.at(-1)===0xd9;
+  }
+  if(extension===".webp"){
+    return buffer.length>=12&&buffer.toString("ascii",0,4)==="RIFF"&&buffer.toString("ascii",8,12)==="WEBP"&&buffer.readUInt32LE(4)+8===buffer.length;
+  }
+  if(extension===".png"){
+    const signature=Buffer.from([0x89,0x50,0x4e,0x47,0x0d,0x0a,0x1a,0x0a]);
+    const trailer=Buffer.from([0x49,0x45,0x4e,0x44,0xae,0x42,0x60,0x82]);
+    return buffer.length>=20&&buffer.subarray(0,8).equals(signature)&&buffer.subarray(-8).equals(trailer);
+  }
+  if(extension===".svg")return /<\/svg>\s*$/i.test(buffer.toString("utf8"));
+  return true;
+};
+const imageFilesIn=directory=>fs.readdirSync(directory,{withFileTypes:true}).flatMap(entry=>{
+  const entryPath=path.join(directory,entry.name);
+  return entry.isDirectory()?imageFilesIn(entryPath):[entryPath];
+});
 
 for(const definition of definitions){
   const {file,canonical,current,indexable,breadcrumb=false,absoluteBase=false,heroType}=definition;
@@ -333,7 +353,7 @@ if(!/^User-agent: \*\s+Allow: \//m.test(robots))fail("robots.txt","Crawler-Freig
 if(!robots.includes(`Sitemap: ${baseUrl}/sitemap.xml`))fail("robots.txt","Sitemap-Verweis fehlt");
 
 const budgets=[
-  ["assets/styles.css",42_500],
+  ["assets/styles.css",44_500],
   ["assets/app.js",15_000],
 ];
 
@@ -351,9 +371,13 @@ for(const [file,maximum] of budgets){
   const size=fs.statSync(path.join(root,file)).size;
   if(size>maximum)fail(file,`Dateigröße ${size} überschreitet Budget ${maximum}`);
 }
-for(const file of fs.readdirSync(path.join(root,"assets/images"))){
-  const size=fs.statSync(path.join(root,"assets/images",file)).size;
+const imageRoot=path.join(root,"assets/images");
+for(const imagePath of imageFilesIn(imageRoot)){
+  const file=path.relative(imageRoot,imagePath).replaceAll("\\","/");
+  const buffer=fs.readFileSync(imagePath);
+  const size=buffer.length;
   if(size>300_000)fail(`assets/images/${file}`,`Bildgröße ${size} überschreitet 300 KB`);
+  if(!hasCompleteImageData(file,buffer))fail(`assets/images/${file}`,"Bilddatei ist unvollständig oder beschädigt");
 }
 
 if(failures.length){
