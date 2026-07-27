@@ -45,6 +45,8 @@
 - [x] Der nächste Ferientermin ist auf Start- und Reitschulseite auffindbar
 - [x] Termin, Uhrzeit, Alter, Beitrag, enthaltene Verpflegung und Mitbringliste stimmen mit dem Betriebsauftritt überein
 - [x] Der Terminbereich verspricht keine Verfügbarkeit und führt zur telefonischen Anfrage
+- [x] Das verlinkte KI-Flyermotiv wurde nicht als vermeintlich authentisches Foto eingesetzt; die plakatartige Wirkung entsteht mit einem realen Bestandsmotiv
+- [x] Terminmotiv, Daten, Leistungen und telefonische Anfrage bleiben mobil in einer eindeutigen Leserichtung
 - [x] Verkaufspferde sind mobil als tastaturbedienbare Details gegliedert
 - [x] Verfügbarkeit und Stand der Verkaufspferde werden transparent benannt
 - [x] Jedem Verkaufspferd ist sein offizielles Originalfoto eindeutig zugeordnet
@@ -99,3 +101,4 @@
 Die beiden betriebsseitigen Bestätigungen werden mit `docs/FREIGABE.md`
 strukturiert eingeholt. Die unterschriebene Fassung gehört nicht in das
 öffentliche Repository.
+
