@@ -187,6 +187,12 @@ form{display:grid;gap:1.35rem}.field{display:grid;gap:.35rem}.field-row{display:
   .home-hero .actions{flex-direction:column;align-items:flex-start;gap:.4rem}
   .home-hero .btn{width:100%;min-width:0}
   .links{width:100vw;max-width:100vw}
+  .horses-story{padding-bottom:clamp(6.5rem,18vw,8rem)}
+  .horses-grid{gap:0}
+  .horses-copy{margin-bottom:2rem}
+  .horses-wide img{display:block;height:clamp(13.35rem,67vw,25rem);object-position:center}
+  .horses-tall{width:min(80%,22rem);margin:1rem auto 0 0}
+  .horses-tall img{display:block;height:auto;aspect-ratio:4/3;object-position:center}
   .menu-preview h2{font-size:clamp(2.5rem,13vw,3.4rem)}
   .prose.card h2{font-size:clamp(2rem,9vw,2.5rem)}
   .menu-lines span{overflow-wrap:anywhere}
