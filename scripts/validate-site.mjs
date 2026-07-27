@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-10";
+const assetVersion="20260727-11";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
@@ -180,6 +180,7 @@ for(const definition of definitions){
     }
     if(count(html,/class="horse-profile"/gi)!==9)fail(file,"neun veröffentlichte Verkaufspferde erforderlich");
     if(count(html,/class="horse-profile-image"/gi)!==9)fail(file,"jedes veröffentlichte Verkaufspferd benötigt ein Originalfoto");
+    if(count(html,/class="horse-profile-focus"/gi)!==9)fail(file,"jedes Verkaufspferd benötigt eine vollständige Großansicht");
     for(const horse of ["Embla","Glotti","Asta","Sleipnir","Flekka","Brana","Ari","Einar","Grima"]){
       if(!html.includes(horse))fail(file,`veröffentlichtes Verkaufspferd fehlt: ${horse}`);
     }

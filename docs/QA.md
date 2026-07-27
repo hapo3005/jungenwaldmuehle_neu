@@ -46,6 +46,8 @@
 - [x] Verfügbarkeit und Stand der Verkaufspferde werden transparent benannt
 - [x] Jedem Verkaufspferd ist sein offizielles Originalfoto eindeutig zugeordnet
 - [x] Verkaufspferde-Fotos bleiben mobil kompakt und ohne Layoutsprung erfassbar
+- [x] Jedes Verkaufspferd zeigt beim Öffnen sein vollständiges Originalfoto in einer großen Detailansicht
+- [x] Pferde-Großansichten bleiben mobil unbeschnitten und nutzen die verfügbare Inhaltsbreite
 - [x] Kartenansicht und große Bilder erhalten mobile Höhen
 - [x] Horizontale Seitenüberläufe werden verhindert
 - [x] Bewegungsreduktion wird respektiert
