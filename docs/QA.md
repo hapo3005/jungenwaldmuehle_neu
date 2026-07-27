@@ -46,6 +46,7 @@
 - [x] Alle Kernseiten bei 390 px ohne horizontalen Überlauf geprüft
 - [x] Mobile Navigation bei 320, 390 und 768 px geöffnet, geschlossen und per Escape bedient
 - [x] Kritische Bildressourcen mit HTTP-Status 200 geprüft
+- [x] Hero-Bild lädt mobil die 640-px-Variante und auf großen Ansichten die passende größere Quelle
 - [ ] Abschließender Sichttest auf realem iPhone und Android-Gerät
 
 ## Referenzqualität
@@ -85,4 +86,3 @@
 Die beiden betriebsseitigen Bestätigungen werden mit `docs/FREIGABE.md`
 strukturiert eingeholt. Die unterschriebene Fassung gehört nicht in das
 öffentliche Repository.
-
