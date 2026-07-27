@@ -78,23 +78,6 @@ Rechtliche Primärquellen für die aktuelle Datenschutzhinweis-Struktur:
 
 ## Bildherkunft
 
-- Für die eigenständige Bildwelt der Unterseiten wurden am 27. Juli 2026
-  weitere Originalfotos aus dem offiziellen Betriebsauftritt übernommen:
-
-  | Einsatz | Originaldatei im Projekt | Quelle |
-  | --- | --- | --- |
-  | Reitschule – Hero | `reitschule-hero.webp` | `https://jungenwaldmuehle.simdif.com/images/public/sd_655250a86d624.jpg` |
-  | Offenstall/Hofanlage | `offenstall-aussen.webp` | `https://jungenwaldmuehle.simdif.com/images/public/sd_65536328c5351.jpg` |
-  | Überdachte Rundhalle | `rundhalle.webp` | `https://jungenwaldmuehle.simdif.com/images/public/sd_6553633b7c85b.jpg` |
-  | Pferdepension | `pferdepension-weide.webp` | `https://jungenwaldmuehle.simdif.com/images/public/sd_66490fababdd4.jpg` |
-  | Reitblick/Landschaft | `reitblick-mosellandschaft.webp` | `https://jungenwaldmuehle.simdif.com/images/public/sd_65526fe2e36e5.jpg` |
-  | Zucht – Hero | `stute-mit-fohlen.webp` | `https://jungenwaldmuehle.simdif.com/images/public/sd_68e9f68bc2c16.jpg` |
-  | Islandpferdeherde | `islandpferde-herde.webp` | `https://jungenwaldmuehle.simdif.com/images/public/sd_655b8e08c1226.jpg` |
-  | Islandpferd/Weinberge | `islandpferd-weinberge.webp` | `https://jungenwaldmuehle.simdif.com/images/public/sd_68e9f764c0378.jpg` |
-  | Stute/Fohlen | `stute-fohlen-wiese.webp` | `https://jungenwaldmuehle.simdif.com/images/public/sd_68e9f710aa4c2.jpg` |
-  | Restaurantgericht | `restaurant-burger.webp` | `https://jungenwaldmuehle.simdif.com/images/public/sd_66ebebba4e644.jpg` |
-  | Kontakt – Luftbild | `jungenwaldmuehle-luftbild.webp` | `https://jungenwaldmuehle.simdif.com/images/public/sd_655237c9e6dbe.jpg` |
-
 - Die allgemeinen Betriebsfotografien stammen aus dem ursprünglichen
   Projektbestand und lassen sich bis zum Upload durch den Repositoryinhaber in
   Commit `71c2de494865646e681686431b1af8301fa3b058` zurückverfolgen.
