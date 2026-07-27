@@ -130,6 +130,26 @@ for(const definition of definitions){
     if(attr(tag,"alt")===undefined)fail(file,`Bild ohne alt: ${source}`);
     if(!/^\d+$/.test(attr(tag,"width")||"")||!/^\d+$/.test(attr(tag,"height")||""))fail(file,`Bild ohne Abmessungen: ${source}`);
     if(!/^https?:|^data:/.test(source)&&!fs.existsSync(path.join(root,localPath(source))))fail(file,`Bilddatei fehlt: ${source}`);
+    const srcset=attr(tag,"srcset");
+    if(srcset){
+      if(!attr(tag,"sizes"))fail(file,`responsives Bild ohne sizes: ${source}`);
+      for(const candidate of srcset.split(",")){
+        const candidateSource=candidate.trim().split(/\s+/)[0];
+        if(!candidateSource)continue;
+        if(!/^https?:|^data:/.test(candidateSource)&&!fs.existsSync(path.join(root,localPath(candidateSource))))fail(file,`srcset-Bilddatei fehlt: ${candidateSource}`);
+      }
+    }
+    if(source==="assets/images/terrace-enhanced.webp"){
+      for(const expected of ["assets/images/terrace-enhanced-640.webp 640w","assets/images/terrace-enhanced-800.webp 800w","assets/images/terrace-enhanced.webp 1108w"]){
+        if(!srcset?.includes(expected))fail(file,`Terrassenbild benötigt responsive Variante: ${expected}`);
+      }
+    }
+  }
+
+  if(file==="index.html"){
+    const heroPreload=html.match(/<link rel="preload" as="image"[^>]*>/i)?.[0]||"";
+    if(!attr(heroPreload,"imagesrcset")?.includes("assets/images/terrace-enhanced-800.webp 800w"))fail(file,"Hero-Preload muss das responsive Bildset verwenden");
+    if(attr(heroPreload,"imagesizes")!=="100vw")fail(file,"Hero-Preload benötigt imagesizes=100vw");
   }
 
   for(const match of html.matchAll(/<link\b[^>]*\shref="([^"]+)"[^>]*>/gi)){
@@ -196,4 +216,3 @@ if(failures.length){
   process.exit(1);
 }
 console.log(`Validierung erfolgreich: ${definitions.length} Seiten, SEO, Semantik, Navigation, Ressourcen, Sitemap, JSON-LD und Dateibudgets geprüft.`);
-

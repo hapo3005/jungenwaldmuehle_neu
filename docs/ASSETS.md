@@ -23,6 +23,9 @@ JPEG-Dateien sind technisch optimierte Ableitungen dieser Ausgangsdateien.
 `restaurant-hero-enhanced.webp` und `terrace-enhanced.webp` sind ebenfalls
 Ableitungen der jeweiligen Ausgangsfotografien. Es wurden keine Stock- oder
 KI-Fotografien ergänzt.
+`terrace-enhanced-640.webp` und `terrace-enhanced-800.webp` sind reine
+skalierte und komprimierte Varianten von `terrace-enhanced.webp`; Bildinhalt
+und Ausschnitt wurden nicht verändert.
 
 Der Projektbericht der Regionalinitiative Faszination Mosel vom
 29. September 2022 kennzeichnet die dort veröffentlichten Fotos mit

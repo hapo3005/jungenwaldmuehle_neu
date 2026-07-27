@@ -109,4 +109,3 @@ for(let attempt=1;attempt<=retries;attempt++){
 }
 console.error(lastError.message);
 process.exit(1);
-

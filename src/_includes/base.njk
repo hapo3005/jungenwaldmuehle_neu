@@ -24,7 +24,7 @@
 <meta property="og:image:height" content="{{ imageH }}">
 <meta name="twitter:card" content="summary_large_image">
 {%- endif %}
-{%- if preloadHero %}<link rel="preload" as="image" href="{{ image }}" fetchpriority="high">{%- endif %}
+{%- if preloadHero %}<link rel="preload" as="image" href="{{ image }}"{% if imageSrcset %} imagesrcset="{{ imageSrcset }}" imagesizes="{{ imageSizes or '100vw' }}"{% endif %} fetchpriority="high">{%- endif %}
 <link rel="stylesheet" href="assets/styles.css?v=20260726-6">
 </head>
 <body>
@@ -109,4 +109,3 @@
 {%- if jsonLd %}<script type="application/ld+json">{{ jsonLd | safe }}</script>{%- endif %}
 </body>
 </html>
-
