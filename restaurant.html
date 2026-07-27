@@ -3,8 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Speisekarte, regionale Küche und hausgemachte Kuchen in der historischen Jungenwaldmühle – mit Öffnungszeiten, Anfahrt und Reservierung.">
-<title>Restaurant &amp; Hofcafé | Jungenwaldmühle</title>
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="description" content="Aktuelle Speisekarte, frisch gekochte regionale Küche und hausgemachte Kuchen im Restaurant & Hofcafé Jungenwaldmühle bei Brauneberg an der Mosel.">
+<title>Speisekarte & Restaurant in Brauneberg | Jungenwaldmühle</title>
 <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/images/logo.png">
 <meta name="theme-color" content="#17372b">
@@ -12,13 +13,18 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Jungenwaldmühle">
-<meta property="og:title" content="Restaurant &amp; Hofcafé | Jungenwaldmühle">
-<meta property="og:description" content="Speisekarte, regionale Küche und hausgemachte Kuchen in der historischen Jungenwaldmühle – mit Öffnungszeiten, Anfahrt und Reservierung.">
+<meta property="og:title" content="Restaurant & Hofcafé Jungenwaldmühle – Speisekarte und Öffnungszeiten">
+<meta property="og:description" content="Aktuelle Speisekarte, frisch gekochte regionale Küche und hausgemachte Kuchen im Restaurant & Hofcafé Jungenwaldmühle bei Brauneberg an der Mosel.">
 <meta property="og:url" content="https://hapo3005.github.io/jungenwaldmuehle_neu/restaurant.html">
-<meta property="og:image" content="https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/restaurant-table.jpg">
-<meta property="og:image:width" content="539">
-<meta property="og:image:height" content="700">
+<meta property="og:image" content="https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/restaurant-fireplace.jpg">
+<meta property="og:image:width" content="700">
+<meta property="og:image:height" content="501">
+<meta property="og:image:alt" content="Restaurant der Jungenwaldmühle mit Kamin und historischen Bruchsteinwänden">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Restaurant & Hofcafé Jungenwaldmühle – Speisekarte und Öffnungszeiten">
+<meta name="twitter:description" content="Aktuelle Speisekarte, frisch gekochte regionale Küche und hausgemachte Kuchen im Restaurant & Hofcafé Jungenwaldmühle bei Brauneberg an der Mosel.">
+<meta name="twitter:image" content="https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/restaurant-fireplace.jpg">
+<meta name="twitter:image:alt" content="Restaurant der Jungenwaldmühle mit Kamin und historischen Bruchsteinwänden">
 <link rel="stylesheet" href="assets/styles.css?v=20260727-21">
 </head>
 <body>
@@ -318,39 +324,124 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "name": "Jungenwaldmühle",
-  "url": "https://hapo3005.github.io/jungenwaldmuehle_neu/",
-  "image": "https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/terrace-enhanced.webp",
-  "telephone": "+49 6534 7493854",
-  "email": "jungenwaldmuehle1@gmail.com",
-  "servesCuisine": "Regionale deutsche Küche",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Jungenwaldmühle 1",
-    "postalCode": "54472",
-    "addressLocality": "Brauneberg",
-    "addressCountry": "DE"
-  },
-  "openingHoursSpecification": [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday"],
-      "opens": "11:30",
-      "closes": "21:00",
-      "validFrom": "2026-04-01",
-      "validThrough": "2026-10-31"
+      "@type": "Restaurant",
+      "@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/#restaurant",
+      "name": "Jungenwaldmühle",
+      "alternateName": "Restaurant & Hofcafé Jungenwaldmühle",
+      "description": "Historische Wassermühle mit Restaurant, Hofcafé und Ponyhof bei Brauneberg an der Mosel.",
+      "url": "https://hapo3005.github.io/jungenwaldmuehle_neu/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/logo.png"
+      },
+      "image": [
+        {
+          "@type": "ImageObject",
+          "url": "https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/terrace-enhanced.webp"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/restaurant-fireplace.jpg"
+        }
+      ],
+      "telephone": "+4965347493854",
+      "email": "jungenwaldmuehle1@gmail.com",
+      "servesCuisine": [
+        "Regionale deutsche Küche",
+        "Hausgemachte Kuchen"
+      ],
+      "acceptsReservations": true,
+      "hasMenu": "https://hapo3005.github.io/jungenwaldmuehle_neu/restaurant.html#speisekarte",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jungenwaldmühle 1",
+        "postalCode": "54472",
+        "addressLocality": "Brauneberg",
+        "addressRegion": "Rheinland-Pfalz",
+        "addressCountry": "DE"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "Sunday",
+            "Monday",
+            "Tuesday"
+          ],
+          "opens": "11:30",
+          "closes": "21:00",
+          "validFrom": "2026-04-01",
+          "validThrough": "2026-10-31"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "11:30",
+          "closes": "21:00",
+          "validFrom": "2026-11-01",
+          "validThrough": "2027-03-31"
+        }
+      ],
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Jungenwaldm%C3%BChle%201%2C%2054472%20Brauneberg",
+      "sameAs": [
+        "https://jungenwaldmuehle.simdif.com/",
+        "https://www.visitmosel.de/gastgeber-arrangements/poi/jungenwaldmuehle"
+      ]
     },
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Saturday", "Sunday"],
-      "opens": "11:30",
-      "closes": "21:00",
-      "validFrom": "2026-11-01",
-      "validThrough": "2027-03-31"
+      "@type": "WebSite",
+      "@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/#website",
+      "url": "https://hapo3005.github.io/jungenwaldmuehle_neu/",
+      "name": "Jungenwaldmühle",
+      "inLanguage": "de-DE",
+      "publisher": {
+        "@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/#restaurant"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/restaurant.html#webpage",
+      "url": "https://hapo3005.github.io/jungenwaldmuehle_neu/restaurant.html",
+      "name": "Speisekarte & Restaurant in Brauneberg | Jungenwaldmühle",
+      "description": "Aktuelle Speisekarte, frisch gekochte regionale Küche und hausgemachte Kuchen im Restaurant & Hofcafé Jungenwaldmühle bei Brauneberg an der Mosel.",
+      "inLanguage": "de-DE",
+      "isPartOf": {
+        "@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/#website"
+      },
+      "about": {
+        "@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/#restaurant"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/restaurant-fireplace.jpg",
+        "caption": "Restaurant der Jungenwaldmühle mit Kamin und historischen Bruchsteinwänden"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/restaurant.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://hapo3005.github.io/jungenwaldmuehle_neu/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Restaurant & Speisekarte",
+          "item": "https://hapo3005.github.io/jungenwaldmuehle_neu/restaurant.html"
+        }
+      ]
     }
-  ],
-  "hasMap": "https://www.google.com/maps/search/?api=1&query=Jungenwaldm%C3%BChle%201%2C%2054472%20Brauneberg"
+  ]
 }
 </script>
 </body>
