@@ -51,6 +51,16 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Mobile Bildpaare bewahren ihre natürlichen Seitenverhältnisse und nutzen
   dieselbe Inhaltsbreite. Unterschiedliche Bildhöhen ergeben sich nur aus
   den echten Aufnahmeformaten, nicht aus dekorativen Einzügen.
+- Die bestmögliche Originaldatei bleibt das große Fallback. Kleinere,
+  hochwertig abgeleitete Varianten werden über `srcset` und realistische
+  `sizes` nur an schmalere Ansichten ausgeliefert; Originale werden nie
+  hochskaliert.
+- Jedes große Motiv erhält einen inhaltlich begründeten Ausschnitt. Mobile
+  Inhaltsbilder zeigen grundsätzlich das natürliche Aufnahmeformat, während
+  Hero-Bilder mit seitenbezogenen Fokuspositionen geführt werden.
+- Dasselbe Foto darf weder unter gleichem noch unter anderem Dateinamen in
+  mehreren sichtbaren Inhaltsbereichen wiederholt werden. Ausgenommen sind
+  Vorschaubild und zugehörige Großansicht desselben Verkaufspferds.
 
 ## Logo
 

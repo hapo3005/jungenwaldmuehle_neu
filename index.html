@@ -7,7 +7,8 @@
 <title>Restaurant &amp; Hofcafé in Brauneberg an der Mosel | Jungenwaldmühle</title>
 <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/images/logo.png">
-<meta name="theme-color" content="#17372b"><meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#17372b">
+<meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="https://hapo3005.github.io/jungenwaldmuehle_neu/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
@@ -24,7 +25,7 @@
 <meta name="twitter:description" content="Regionale Küche und hausgemachte Kuchen in einer historischen Wassermühle zwischen Brauneberg und Burgen. Öffnungszeiten, Anfahrt und Tischreservierung.">
 <meta name="twitter:image" content="https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/terrace-enhanced.webp">
 <meta name="twitter:image:alt" content="Terrasse der Jungenwaldmühle im Grünen bei Brauneberg"><link rel="preload" as="image" href="assets/images/terrace-enhanced.webp" imagesrcset="assets/images/terrace-enhanced-640.webp 640w, assets/images/terrace-enhanced-800.webp 800w, assets/images/terrace-enhanced.webp 1108w" imagesizes="100vw" fetchpriority="high">
-<link rel="stylesheet" href="assets/styles.css?v=20260727-21">
+<link rel="stylesheet" href="assets/styles.css?v=20260727-22">
 </head>
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a>
@@ -80,7 +81,7 @@
   <section class="food-story">
     <div class="container food-grid">
       <figure class="food-main">
-        <img src="assets/images/dish.jpg" alt="Frisch angerichtetes Hauptgericht aus der Küche der Jungenwaldmühle" width="700" height="499" loading="lazy" decoding="async">
+        <img src="assets/images/dish.jpg" srcset="assets/images/dish-480.jpg 480w, assets/images/dish.jpg 700w" sizes="(max-width: 680px) calc(100vw - 1.5rem), 42vw" alt="Frisch angerichtetes Hauptgericht aus der Küche der Jungenwaldmühle" width="700" height="499" loading="lazy" decoding="async">
       </figure>
       <div class="food-copy">
         <p class="kicker">Aus Küche und Backstube</p>
@@ -126,8 +127,8 @@
           <a href="islandpferde.html">Unsere Islandpferde <span>↗</span></a>
         </div>
       </div>
-      <figure class="horses-wide"><img src="assets/images/islandpferde-herde.webp" alt="Islandpferdeherde auf einer Weide der Jungenwaldmühle" width="700" height="442" loading="lazy" decoding="async"></figure>
-      <figure class="horses-tall"><img src="assets/images/stute-mit-fohlen.webp" alt="Islandpferdestute mit Fohlen auf einer Blumenwiese" width="960" height="639" loading="lazy" decoding="async"></figure>
+      <figure class="horses-wide"><img src="assets/images/islandpferde-herde.jpg" srcset="assets/images/islandpferde-herde-480.jpg 480w, assets/images/islandpferde-herde.jpg 700w" sizes="(max-width: 680px) calc(100vw - 1.5rem), 55vw" alt="Islandpferdeherde auf einer Weide der Jungenwaldmühle" width="700" height="442" loading="lazy" decoding="async"></figure>
+      <figure class="horses-tall"><img src="assets/images/stute-mit-fohlen.jpg" srcset="assets/images/stute-mit-fohlen-480.jpg 480w, assets/images/stute-mit-fohlen-720.jpg 720w, assets/images/stute-mit-fohlen.jpg 960w" sizes="(max-width: 680px) calc(100vw - 1.5rem), 32vw" alt="Islandpferdestute mit Fohlen auf einer Blumenwiese" width="960" height="639" loading="lazy" decoding="async"></figure>
     </div>
   </section>
 
@@ -168,7 +169,7 @@
   </div>
   <div class="container legal">© <span data-year></span> Jungenwaldmühle · <a href="impressum.html">Impressum & Datenschutz</a></div>
 </footer>
-<script src="assets/app.js?v=20260727-21"></script>
+<script src="assets/app.js?v=20260727-22"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -196,10 +197,7 @@
       ],
       "telephone": "+4965347493854",
       "email": "jungenwaldmuehle1@gmail.com",
-      "servesCuisine": [
-        "Regionale deutsche Küche",
-        "Hausgemachte Kuchen"
-      ],
+      "servesCuisine": ["Regionale deutsche Küche", "Hausgemachte Kuchen"],
       "acceptsReservations": true,
       "hasMenu": "https://hapo3005.github.io/jungenwaldmuehle_neu/restaurant.html#speisekarte",
       "address": {
@@ -213,12 +211,7 @@
       "openingHoursSpecification": [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Saturday",
-            "Sunday",
-            "Monday",
-            "Tuesday"
-          ],
+          "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday"],
           "opens": "11:30",
           "closes": "21:00",
           "validFrom": "2026-04-01",
@@ -226,10 +219,7 @@
         },
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Saturday",
-            "Sunday"
-          ],
+          "dayOfWeek": ["Saturday", "Sunday"],
           "opens": "11:30",
           "closes": "21:00",
           "validFrom": "2026-11-01",
@@ -248,9 +238,7 @@
       "url": "https://hapo3005.github.io/jungenwaldmuehle_neu/",
       "name": "Jungenwaldmühle",
       "inLanguage": "de-DE",
-      "publisher": {
-        "@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/#restaurant"
-      }
+      "publisher": {"@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/#restaurant"}
     },
     {
       "@type": "WebPage",
@@ -259,12 +247,8 @@
       "name": "Restaurant & Hofcafé in Brauneberg an der Mosel | Jungenwaldmühle",
       "description": "Regionale Küche und hausgemachte Kuchen in einer historischen Wassermühle zwischen Brauneberg und Burgen. Öffnungszeiten, Anfahrt und Tischreservierung.",
       "inLanguage": "de-DE",
-      "isPartOf": {
-        "@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/#website"
-      },
-      "about": {
-        "@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/#restaurant"
-      },
+      "isPartOf": {"@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/#website"},
+      "about": {"@id": "https://hapo3005.github.io/jungenwaldmuehle_neu/#restaurant"},
       "primaryImageOfPage": {
         "@type": "ImageObject",
         "url": "https://hapo3005.github.io/jungenwaldmuehle_neu/assets/images/terrace-enhanced.webp",
