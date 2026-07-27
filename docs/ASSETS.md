@@ -78,6 +78,37 @@ Quelle:
 
 - https://www.faszinationmosel.info/2022/09/29/lag-mosel-leader-projekt-restaurant-und-hofcafe-jungenwaldmuehle-in-brauneberg/
 
+## Zusätzliche Betriebsfotografien für eindeutige Seitenmotive
+
+Am 27. Juli 2026 wurden zehn weitere, reale Betriebsmotive aus dem offiziellen
+Webauftritt und dem dokumentierten Projektbericht übernommen. Zu jedem
+Ausgangsfoto liegt zusätzlich eine technisch optimierte WebP-Ableitung vor:
+
+- `islandpferde-herde` – Islandpferdeherde auf der Weide
+- `islandpferd-weinberge` – Islandpferd in der Mosellandschaft
+- `jungenwaldmuehle-luftbild` – Luftaufnahme der Jungenwaldmühle
+- `pferdepension-weide` – Pferde auf der Weide
+- `reitblick-mosellandschaft` – Blick vom Pferd in die Mosellandschaft
+- `reitschule-hero` – Islandpferd in Bewegung
+- `restaurant-burger` – angerichtetes Gericht aus der Restaurantküche
+- `rundhalle` – überdachte Rundhalle
+- `stute-fohlen-wiese` – Stute und Fohlen auf der Weide
+- `stute-mit-fohlen` – Stute mit Fohlen auf einer Blumenwiese
+
+Quellen:
+
+- https://jungenwaldmuehle.simdif.com/
+- https://jungenwaldmuehle.simdif.com/reitschule.html
+- https://www.faszinationmosel.info/2022/09/29/lag-mosel-leader-projekt-restaurant-und-hofcafe-jungenwaldmuehle-in-brauneberg/
+
+Die Motive wurden inhaltlich zugeordnet und nicht durch Stock- oder
+KI-Fotografien ergänzt. Die JPEG-Dateien bewahren den übernommenen
+Ausgangsstand; die gleichnamigen WebP-Dateien dienen der komprimierten
+Auslieferung. Die neue automatische Qualitätsprüfung verhindert künftig
+unbeabsichtigte Wiederholungen eines allgemeinen Motivs innerhalb einer Seite
+oder auf mehreren Hauptseiten. Ausgenommen sind die Verkaufspferde, bei denen
+Vorschaubild und vergrößerte Detailansicht bewusst dieselbe Aufnahme zeigen.
+
 ## Erforderliche Freigabe
 
 Vor einer endgültigen Kundenübergabe muss der Betrieb schriftlich bestätigen,

@@ -16,6 +16,7 @@ const definitions=[
 const failures=[];
 const titles=new Map();
 const descriptions=new Map();
+const contentImageUsage=new Map();
 const fail=(page,message)=>failures.push(`${page}: ${message}`);
 const count=(text,pattern)=>(text.match(pattern)||[]).length;
 const attr=(tag,name)=>tag.match(new RegExp(`\\s${name}="([^"]*)"`,"i"))?.[1];
@@ -167,6 +168,11 @@ for(const definition of definitions){
     if(attr(tag,"alt")===undefined)fail(file,`Bild ohne alt: ${source}`);
     if(!/^\d+$/.test(attr(tag,"width")||"")||!/^\d+$/.test(attr(tag,"height")||""))fail(file,`Bild ohne Abmessungen: ${source}`);
     if(!/^https?:|^data:/.test(source)&&!fs.existsSync(path.join(root,localPath(source))))fail(file,`Bilddatei fehlt: ${source}`);
+    if(source.startsWith("assets/images/")&&source!=="assets/images/logo.svg"){
+      const locations=contentImageUsage.get(source)||[];
+      locations.push(file);
+      contentImageUsage.set(source,locations);
+    }
     const srcset=attr(tag,"srcset");
     if(srcset){
       if(!attr(tag,"sizes"))fail(file,`responsives Bild ohne sizes: ${source}`);
@@ -274,6 +280,16 @@ for(const definition of definitions){
       const escaped=anchor.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
       if(!new RegExp(`\\sid=["']${escaped}["']`,"i").test(targetHtml))fail(file,`Sprungziel fehlt: ${href}`);
     }
+  }
+}
+
+for(const [source,locations] of contentImageUsage){
+  if(source.startsWith("assets/images/verkaufspferde/"))continue;
+  const uniquePages=[...new Set(locations)];
+  if(uniquePages.length>1)fail("Bildbestand",`Motiv wird auf mehreren Seiten wiederholt: ${source} (${uniquePages.join(", ")})`);
+  for(const page of uniquePages){
+    const uses=locations.filter(location=>location===page).length;
+    if(uses>1)fail(page,`Motiv wird innerhalb der Seite wiederholt: ${source}`);
   }
 }
 
