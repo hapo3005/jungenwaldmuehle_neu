@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-1";
+const assetVersion="20260727-2";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
@@ -64,7 +64,8 @@ for(const definition of definitions){
   if(indexable&&/<meta name="robots" content="noindex">/i.test(html))fail(file,"indexierbare Seite ist auf noindex gesetzt");
   if(!indexable&&!/<meta name="robots" content="noindex">/i.test(html))fail(file,"nicht indexierbare Seite benötigt noindex");
 
-  if(count(html,/<header\b/gi)!==1||count(html,/<nav\b/gi)!==1||count(html,/<footer\b/gi)!==1)fail(file,"Header, Navigation oder Footer ist nicht eindeutig");
+  if(count(html,/<header\b/gi)!==1||count(html,/<footer\b/gi)!==1)fail(file,"Header oder Footer ist nicht eindeutig");
+  if(count(html,/<nav\b[^>]*aria-label="Hauptnavigation"[^>]*>/gi)!==1)fail(file,"genau eine Hauptnavigation erforderlich");
   if(count(html,/<main\b/gi)!==1||!/<main id="main" tabindex="-1">/i.test(html))fail(file,"main benötigt eindeutiges Sprungziel und Fokusziel");
   if(count(html,/<h1\b/gi)!==1)fail(file,"genau eine H1 erforderlich");
   const headings=[...html.matchAll(/<h([1-6])\b/gi)].map(match=>Number(match[1]));
@@ -150,6 +151,17 @@ for(const definition of definitions){
     const heroPreload=html.match(/<link rel="preload" as="image"[^>]*>/i)?.[0]||"";
     if(!attr(heroPreload,"imagesrcset")?.includes("assets/images/terrace-enhanced-800.webp 800w"))fail(file,"Hero-Preload muss das responsive Bildset verwenden");
     if(attr(heroPreload,"imagesizes")!=="100vw")fail(file,"Hero-Preload benötigt imagesizes=100vw");
+  }
+
+  if(file==="restaurant.html"){
+    for(const id of ["speisekarte","vorspeisen","hauptgerichte","saisonkarte","dessert","zeiten"]){
+      if(!ids.includes(id))fail(file,`Speisekarten-Sprungziel fehlt: ${id}`);
+    }
+    if(count(html,/class="menu-item(?:\s|")/gi)<19)fail(file,"Speisekarte enthält nicht alle veröffentlichten Gerichte");
+    for(const href of ["#speisekarte","#vorspeisen","#hauptgerichte","#saisonkarte","#dessert","#zeiten","kontakt.html#anfahrt"]){
+      if(!html.includes(`href="${href}"`))fail(file,`Restaurant-Direktlink fehlt: ${href}`);
+    }
+    if(!/Stand Juli 2026/i.test(html))fail(file,"sichtbarer Aktualitätsstand der Speisekarte fehlt");
   }
 
   for(const match of html.matchAll(/<link\b[^>]*\shref="([^"]+)"[^>]*>/gi)){
