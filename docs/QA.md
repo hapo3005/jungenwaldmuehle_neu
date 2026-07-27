@@ -76,3 +76,7 @@
 - [ ] Bildrechte durch den Betrieb schriftlich bestätigt
 - [ ] Betriebsinhaber und Rechtsform sowie – soweit vorhanden – Vertretungsberechtigte, Register-, Umsatzsteuer- oder Wirtschafts-Identifikationsnummer durch den Betrieb oder Rechtsberater bestätigt
 - [ ] Abschließender Sicht- und Bedienungstest auf realem iPhone und Android-Gerät
+
+Die beiden betriebsseitigen Bestätigungen werden mit `docs/FREIGABE.md`
+strukturiert eingeholt. Die unterschriebene Fassung gehört nicht in das
+öffentliche Repository.

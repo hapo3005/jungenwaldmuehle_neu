@@ -9,7 +9,7 @@
 Semantische Struktur, Skip-Link, sichtbare Fokuszustände, responsive Navigation, Alternativtexte, Formular-Labels und `prefers-reduced-motion`.
 
 ## Vor Veröffentlichung
-Kontaktdaten, saisonale Öffnungszeiten und Gastgeberangaben sind in `docs/CONTENT.md` mit Quellen dokumentiert. Konkrete Speisen und Preise werden erst nach aktueller Freigabe des Betriebs veröffentlicht. Bildrechte und betriebsindividuelle Pflichtangaben bleiben vor der endgültigen kommerziellen Übernahme durch den Betrieb zu bestätigen.
+Kontaktdaten, saisonale Öffnungszeiten und Gastgeberangaben sind in `docs/CONTENT.md` mit Quellen dokumentiert. Konkrete Speisen und Preise werden erst nach aktueller Freigabe des Betriebs veröffentlicht. Bildrechte und betriebsindividuelle Pflichtangaben bleiben vor der endgültigen kommerziellen Übernahme durch den Betrieb zu bestätigen. Dafür steht mit `docs/FREIGABE.md` eine konkrete, faktenneutrale Freigabevorlage bereit.
 
 ## Lokale Prüfung
 
