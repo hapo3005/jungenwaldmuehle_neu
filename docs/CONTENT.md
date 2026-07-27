@@ -85,6 +85,10 @@ Rechtliche Primärquellen für die aktuelle Datenschutzhinweis-Struktur:
   Verkaufspferde-Seite und wurden anhand ihrer dortigen Zuordnung übernommen.
 - Die optimierten JPEG- und WebP-Dateien sind Ableitungen dieser
   Ausgangsdateien; es wurden keine Stock- oder KI-Fotografien ergänzt.
+- Zehn weitere reale Betriebsmotive aus dem offiziellen Auftritt und dem
+  dokumentierten Projektbericht ersetzen wiederholte Bilder. Jede Hauptseite
+  verwendet nun ein eigenes Leitmotiv; allgemeine Inhaltsbilder werden nicht
+  seitenübergreifend wiederholt.
 - Das vom Auftraggeber verlinkte KI-Flyermotiv zur Tagesfreizeit wurde als
   gestalterische Referenz geprüft, aber nicht als Fotografie übernommen. Der
   Terminbereich nutzt stattdessen das reale Bestandsfoto
