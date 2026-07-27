@@ -73,6 +73,8 @@
 - [x] Laufzeitsimulation prüft Menü, Fokusfalle, Escape, Breakpoint-Wechsel, Scrollfortschritt und Bewegungsreduktion
 - [x] Pull Requests und Deployments führen den vollständigen Qualitätscheck automatisiert aus
 - [x] Reale nicht vorhandene URL liefert die markengerechte 404-Seite mit Noindex
+- [x] Verschachtelte unbekannte URLs laden die 404-Seite mit korrekten Styles, Logo und Rücklinks
+- [x] Nach jedem Deployment werden alle Live-Seiten, die verschachtelte 404-Seite und lokale Ressourcen automatisch geprüft
 - [x] Browserkonsole im finalen Live-Stand ohne Fehler
 - [x] Verwendete Kernfarbpaare erfüllen mindestens WCAG AA; gemessene Kontraste 5,33:1 bis 16,15:1
 - [x] Alle Fotografien bis zum ursprünglichen Upload im Repository zurückverfolgt; keine Stock- oder KI-Fotografien ergänzt
@@ -83,3 +85,4 @@
 Die beiden betriebsseitigen Bestätigungen werden mit `docs/FREIGABE.md`
 strukturiert eingeholt. Die unterschriebene Fassung gehört nicht in das
 öffentliche Repository.
+

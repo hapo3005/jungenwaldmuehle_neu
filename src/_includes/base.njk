@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+{%- if useAbsoluteBase %}<base href="{{ site.baseUrl }}/">{%- endif %}
 <meta name="description" content="{{ description }}">
 <title>{{ title }}</title>
 <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
@@ -108,3 +109,4 @@
 {%- if jsonLd %}<script type="application/ld+json">{{ jsonLd | safe }}</script>{%- endif %}
 </body>
 </html>
+
