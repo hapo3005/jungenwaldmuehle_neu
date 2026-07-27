@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-11";
+const assetVersion="20260727-12";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
@@ -154,6 +154,7 @@ for(const definition of definitions){
     const heroPreload=html.match(/<link rel="preload" as="image"[^>]*>/i)?.[0]||"";
     if(!attr(heroPreload,"imagesrcset")?.includes("assets/images/terrace-enhanced-800.webp 800w"))fail(file,"Hero-Preload muss das responsive Bildset verwenden");
     if(attr(heroPreload,"imagesizes")!=="100vw")fail(file,"Hero-Preload benötigt imagesizes=100vw");
+    if(!html.includes('href="reitschule.html#termine"'))fail(file,"Startseiten-Hinweis auf den aktuellen Ferientermin fehlt");
   }
 
   if(file==="restaurant.html"){
@@ -167,11 +168,14 @@ for(const definition of definitions){
     if(!/Stand Juli 2026/i.test(html))fail(file,"sichtbarer Aktualitätsstand der Speisekarte fehlt");
   }
   if(file==="reitschule.html"){
-    for(const id of ["unterricht","ausbildung","pension","zucht"]){
+    for(const id of ["termine","unterricht","ausbildung","pension","zucht"]){
       if(!ids.includes(id))fail(file,`Reitschul-Sprungziel fehlt: ${id}`);
     }
     for(const text of ["Pferdewirtin","Trainer C","Korrekturreiten","Pferdepension"]){
       if(!html.includes(text))fail(file,`wesentlicher Reitschulinhalt fehlt: ${text}`);
+    }
+    for(const text of ['datetime="2026-10-12"','datetime="2026-10-14"',"09:00–17:00 Uhr","75 €","Teilnahme telefonisch anfragen"]){
+      if(!html.includes(text))fail(file,`wesentlicher Termininhalt fehlt: ${text}`);
     }
   }
   if(file==="islandpferde.html"){
@@ -236,7 +240,7 @@ if(!/^User-agent: \*\s+Allow: \//m.test(robots))fail("robots.txt","Crawler-Freig
 if(!robots.includes(`Sitemap: ${baseUrl}/sitemap.xml`))fail("robots.txt","Sitemap-Verweis fehlt");
 
 const budgets=[
-  ["assets/styles.css",36_000],
+  ["assets/styles.css",38_000],
   ["assets/app.js",15_000],
 ];
 

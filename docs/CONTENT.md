@@ -21,6 +21,12 @@
   Reitplatz, Putzplatz, zwei Sattelkammern, Krankenboxen und Aufzuchtweiden.
 - Der Betriebsauftritt weist am 27. Juli 2026 freie Einstellplätze aus; die
   neue Seite fordert deshalb ausdrücklich eine persönliche Bestätigung.
+- Der Betriebsauftritt veröffentlicht am 27. Juli 2026 für die Herbstferien
+  die Tagesfreizeit „Rund um das Pferd“ am 12. und 14. Oktober 2026,
+  jeweils von 09:00 bis 17:00 Uhr für Kinder und Jugendliche ab sechs Jahren.
+  Der veröffentlichte Tagesbeitrag beträgt 75 € einschließlich Getränken,
+  Mittagessen sowie Eis oder Kuchen am Nachmittag. Die neue Seite verspricht
+  keine freien Plätze und fordert eine telefonische Bestätigung.
 - Die Islandpferdezucht „vom Mandelgraben“ besteht seit über 20 Jahren; Zuchtziele sind ein kompakter Typ, klarer Kopf und taktklarer Tölt.
 - Zuchthengst Magnus vom Mandelgraben: HB1, Interieur 8,1, Exterieur 8,0,
   Gang 7,9.
@@ -51,6 +57,8 @@ Quellen:
 - aktuelle Reitschul- und Zuchtseite: https://jungenwaldmuehle.simdif.com/reitschule.html
 - aktuelle Verkaufspferde:
   https://jungenwaldmuehle.simdif.com/verkaufspferde.html
+- aktuelle Termine und Ferienangebote:
+  https://jungenwaldmuehle.simdif.com/termine_2024.html
 - Faszination Mosel, Projektbericht mit Bildnachweis „Fotos (c) Britta Böhm“:
   https://www.faszinationmosel.info/2022/09/29/lag-mosel-leader-projekt-restaurant-und-hofcafe-jungenwaldmuehle-in-brauneberg/
 
@@ -108,3 +116,12 @@ Rechtliche Primärquellen für die aktuelle Datenschutzhinweis-Struktur:
   dauerhafte Verfügbarkeit einzelner saisonaler Gerichte.
 - Interne Links führen direkt zu `restaurant.html#speisekarte`,
   `restaurant.html#zeiten` und `kontakt.html#anfahrt`.
+
+## Pflege der Termine
+
+- Veröffentlichter Stand der Tagesfreizeit: 27. Juli 2026.
+- Der Startseitenhinweis und der Terminblock müssen nach dem 14. Oktober 2026
+  entfernt oder mit einem vom Betrieb bestätigten Folgetermin aktualisiert
+  werden.
+- Terminänderungen werden zuerst gegen den offiziellen Betriebsauftritt
+  geprüft; freie Plätze werden nie ohne persönliche Bestätigung versprochen.

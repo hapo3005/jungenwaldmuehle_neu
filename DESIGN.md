@@ -61,6 +61,10 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Hover nur auf Geräten mit präzisem Zeiger.
 - Mobile Navigation ist ein klarer, bildschirmfüllender Entscheidungsraum mit sofort sichtbarer Telefonnummer.
 - Abläufe werden über Überschriften und feine Trennlinien gegliedert; dekorative Schrittziffern werden nicht verwendet.
+- Zeitlich begrenzte Angebote erscheinen als redaktioneller Terminblock auf
+  der fachlich zugehörigen Seite. Datum, Leistung, Preis und Anfrageweg sind
+  ohne ausklappbare Zusatzebene erfassbar; die Startseite verwendet nur einen
+  kompakten, datierten Hinweis statt eines allgemeinen News-Rasters.
 - Wechselnde Verkaufspferde erscheinen in einem redaktionellen,
   aufklappbaren Verzeichnis statt in austauschbaren Karten. Name und
   Kerndaten sowie das eindeutig zugeordnete Originalfoto bleiben auch
