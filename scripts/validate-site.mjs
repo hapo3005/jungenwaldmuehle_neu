@@ -84,6 +84,13 @@ for(const definition of definitions){
     if(!/\stype="button"/i.test(tag[0]))fail(file,"Button ohne expliziten type=button");
     if(!attr(tag[0],"aria-label")&&!textContent(tag[0]))fail(file,"Button ohne zugänglichen Namen");
   }
+  const scrollButtons=[...html.matchAll(/<button\b[^>]*\bclass="[^"]*\bscroll-top\b[^"]*"[^>]*>/gi)];
+  if(scrollButtons.length!==1)fail(file,"genau ein Scroll-up-Button erforderlich");
+  else{
+    const scrollButton=scrollButtons[0][0];
+    if(attr(scrollButton,"aria-label")!=="Zum Seitenanfang")fail(file,"Scroll-up-Button benötigt eindeutigen zugänglichen Namen");
+    if(attr(scrollButton,"tabindex")!=="-1")fail(file,"Scroll-up-Button muss vor der Laufzeitinitialisierung aus der Tab-Reihenfolge entfernt sein");
+  }
   for(const match of html.matchAll(/<a\b[^>]*>([\s\S]*?)<\/a>/gi)){
     const tag=match[0].match(/^<a\b[^>]*>/i)?.[0]||"";
     if(!attr(tag,"href"))fail(file,"Link ohne href");
@@ -167,6 +174,11 @@ const budgets=[
   ["assets/styles.css",30_000],
   ["assets/app.js",15_000],
 ];
+
+const css=fs.readFileSync(path.join(root,"assets/styles.css"),"utf8");
+if(!/\.scroll-top\.is-visible\b/.test(css))fail("assets/styles.css","sichtbarer Zustand des Scroll-up-Buttons fehlt");
+if(!/@media\s*\(\s*prefers-reduced-motion\s*:\s*reduce\s*\)/.test(css))fail("assets/styles.css","Bewegungsreduktion fehlt");
+
 for(const [file,maximum] of budgets){
   const size=fs.statSync(path.join(root,file)).size;
   if(size>maximum)fail(file,`Dateigröße ${size} überschreitet Budget ${maximum}`);

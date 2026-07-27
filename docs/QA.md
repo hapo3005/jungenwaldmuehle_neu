@@ -69,6 +69,9 @@
 - [x] 35 Live-Kombinationen aus sieben Seiten und fünf Breiten ohne Überlauf, defekte Bilder oder zu kleine nicht-inline Bedienelemente
 - [x] Mobile Navigation öffnet und schließt korrekt, hält den Fokus und reagiert auf Escape
 - [x] Scroll-up-Button funktioniert per Touch/Klick; Tastaturpfad verwendet keine Bewegung
+- [x] Scroll-up-Button startet bereits im HTML außerhalb der Tab-Reihenfolge
+- [x] Laufzeitsimulation prüft Menü, Fokusfalle, Escape, Breakpoint-Wechsel, Scrollfortschritt und Bewegungsreduktion
+- [x] Pull Requests und Deployments führen den vollständigen Qualitätscheck automatisiert aus
 - [x] Reale nicht vorhandene URL liefert die markengerechte 404-Seite mit Noindex
 - [x] Browserkonsole im finalen Live-Stand ohne Fehler
 - [x] Verwendete Kernfarbpaare erfüllen mindestens WCAG AA; gemessene Kontraste 5,33:1 bis 16,15:1
