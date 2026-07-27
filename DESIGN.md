@@ -50,6 +50,8 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Primäre CTAs sind ruhige, rechteckige Flächen mit klarer Pfeilführung;
   sekundäre CTAs erscheinen als redaktionelle Linienlinks statt als isolierte
   Kreise oder generische Pillen.
+- Rufnummern stehen immer ungebrochen und zurückhaltend; Buttons benennen die
+  konkrete Handlung statt nur eine nackte Telefonnummer zu zeigen.
 - Buttons reagieren beim Drücken dezent mit `scale(.97)`.
 - Hover nur auf Geräten mit präzisem Zeiger.
 - Mobile Navigation ist ein klarer, bildschirmfüllender Entscheidungsraum mit sofort sichtbarer Telefonnummer.

@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-3";
+const assetVersion="20260727-4";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
@@ -81,6 +81,8 @@ for(const definition of definitions){
   if(current&&attr(currentLinks[0]?.[0]||"","href")!==current)fail(file,"falscher Navigationspunkt ist als aktuell markiert");
 
   if(/Konzeptentwurf|vor Veröffentlichung|Entwurfsstand|localhost|TODO|FIXME|Lorem ipsum/i.test(html))fail(file,"Entwurfs- oder Platzhaltertext gefunden");
+  if(/06534\s*<br\b[^>]*>\s*7493854/i.test(html))fail(file,"Telefonnummer darf nicht künstlich umgebrochen werden");
+  if(/class="[^"]*\bbtn\b[^"]*"[^>]*href="tel:\+4965347493854"[^>]*>\s*06534\s+7493854/i.test(html))fail(file,"Telefon-Button benötigt eine verständliche Handlungsbezeichnung");
   if(/href=(?:""|''|"#"|'#')/i.test(html))fail(file,"leerer Link gefunden");
   if(/<iframe\b/i.test(html))fail(file,"unerwartete externe Einbettung gefunden");
   if(/<form\b/i.test(html))fail(file,"unerwartetes Formular gefunden");
@@ -162,6 +164,10 @@ for(const definition of definitions){
       if(!html.includes(`href="${href}"`))fail(file,`Restaurant-Direktlink fehlt: ${href}`);
     }
     if(!/Stand Juli 2026/i.test(html))fail(file,"sichtbarer Aktualitätsstand der Speisekarte fehlt");
+  }
+  if(file==="kontakt.html"){
+    if(count(html,/class="phone-callout"/gi)!==1)fail(file,"Kontaktseite benötigt genau eine hervorgehobene, einzeilige Rufnummer");
+    if(!/class="phone-number">06534 7493854<\/span>/i.test(html))fail(file,"sichtbare Rufnummer fehlt im Kontaktbereich");
   }
 
   for(const match of html.matchAll(/<link\b[^>]*\shref="([^"]+)"[^>]*>/gi)){
