@@ -11,7 +11,7 @@ const definitions=[
   {file:"islandpferde.html",canonical:`${baseUrl}/islandpferde.html`,current:"islandpferde.html",indexable:true},
   {file:"kontakt.html",canonical:`${baseUrl}/kontakt.html`,current:"kontakt.html",indexable:true},
   {file:"impressum.html",canonical:`${baseUrl}/impressum.html`,current:null,indexable:false},
-  {file:"404.html",canonical:`${baseUrl}/404.html`,current:null,indexable:false},
+  {file:"404.html",canonical:`${baseUrl}/404.html`,current:null,indexable:false,absoluteBase:true},
 ];
 const failures=[];
 const titles=new Map();
@@ -23,7 +23,7 @@ const localPath=value=>value.split(/[?#]/)[0].replace(/^\/+/,"");
 const textContent=value=>value.replace(/<[^>]+>/g," ").replace(/&(?:[a-z]+|#\d+);/gi,"x").replace(/\s+/g," ").trim();
 
 for(const definition of definitions){
-  const {file,canonical,current,indexable}=definition;
+  const {file,canonical,current,indexable,absoluteBase=false}=definition;
   const rootPath=path.join(root,file);
   const sitePath=path.join(root,"_site",file);
   if(!fs.existsSync(rootPath)||!fs.existsSync(sitePath)){
@@ -41,6 +41,9 @@ for(const definition of definitions){
   if(!/<meta charset="utf-8">/i.test(html))fail(file,"UTF-8-Metadatum fehlt");
   if(/[ÃÂ�]/.test(html))fail(file,"möglicherweise fehlerhafte Zeichenkodierung gefunden");
   if(!/<meta name="viewport" content="width=device-width,initial-scale=1">/i.test(html))fail(file,"Viewport-Metadatum fehlt");
+  const baseHref=html.match(/<base href="([^"]+)">/i)?.[1];
+  if(absoluteBase&&baseHref!==`${baseUrl}/`)fail(file,"404-Seite benötigt eine absolute Basis-URL für verschachtelte Fehlerpfade");
+  if(!absoluteBase&&baseHref)fail(file,"unerwartete Basis-URL auf regulärer Seite");
   if(/<!--[\s\S]*?-->/g.test(html))fail(file,"interner HTML-Kommentar wird öffentlich ausgeliefert");
 
   const title=html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]?.trim();
@@ -193,3 +196,4 @@ if(failures.length){
   process.exit(1);
 }
 console.log(`Validierung erfolgreich: ${definitions.length} Seiten, SEO, Semantik, Navigation, Ressourcen, Sitemap, JSON-LD und Dateibudgets geprüft.`);
+
