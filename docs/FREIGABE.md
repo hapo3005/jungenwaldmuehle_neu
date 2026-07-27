@@ -42,6 +42,8 @@ Nicht bestätigte Felder dürfen nicht als neue Tatsachen in die Website
   gelten für 2026.
 - [ ] Die Angaben zu Gastgebern, Küche, Backstube, Reitschule und
   Islandpferdezucht sind korrekt.
+- [ ] Die persönlichen Formulierungen geben die Sprache und Haltung des
+  Betriebs glaubwürdig wieder.
 - [ ] Telefonische Tischreservierung ist der gewünschte primäre Kontaktweg.
 - [ ] Es fehlen keine geschäftlich wichtigen Angebote oder Einschränkungen.
 
@@ -106,3 +108,4 @@ Die bestätigten Angaben werden mit Datum in `docs/CONTENT.md` dokumentiert.
 Erst danach werden neue betriebliche oder rechtliche Tatsachen veröffentlicht.
 Die unterschriebene Freigabe selbst gehört wegen personenbezogener Daten nicht
 in das öffentliche Repository.
+
