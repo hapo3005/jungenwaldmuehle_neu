@@ -63,8 +63,10 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Abläufe werden über Überschriften und feine Trennlinien gegliedert; dekorative Schrittziffern werden nicht verwendet.
 - Wechselnde Verkaufspferde erscheinen in einem redaktionellen,
   aufklappbaren Verzeichnis statt in austauschbaren Karten. Name und
-  Kerndaten bleiben auch geschlossen sichtbar; Details sind per Tastatur
-  erreichbar.
+  Kerndaten sowie das eindeutig zugeordnete Originalfoto bleiben auch
+  geschlossen sichtbar; Details sind per Tastatur erreichbar. Desktop zeigt
+  ruhige Querformate, mobil werden kompakte quadratische Ausschnitte zur
+  schnellen visuellen Orientierung verwendet.
 - Bewegung unterstützt Orientierung und bleibt unter 260 ms; keine Scrollshow und keine dekorative Dauermotion.
 
 ## Verbote

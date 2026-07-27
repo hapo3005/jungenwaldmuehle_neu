@@ -29,6 +29,8 @@
   transparente Eignungshinweise wurden gekürzt, aber inhaltlich aus dem
   Betriebsauftritt übernommen. Die Live-Seite verspricht keine fortdauernde
   Verfügbarkeit.
+- Jedem dieser neun Verkaufspferde ist auf der neuen Seite das unmittelbar
+  zugehörige Originalfoto aus dem offiziellen Betriebsauftritt zugeordnet.
 - Saison 2026 laut regionaler Tourismusinformation:
   - 1. April bis 31. Oktober: Samstag bis Dienstag, 11:30–21:00 Uhr
   - 1. November bis 31. März: Samstag und Sonntag, 11:30–21:00 Uhr
@@ -64,9 +66,11 @@ Rechtliche Primärquellen für die aktuelle Datenschutzhinweis-Struktur:
 
 ## Bildherkunft
 
-- Alle verwendeten Fotografien stammen aus dem ursprünglichen Projektbestand
-  und lassen sich bis zum Upload durch den Repositoryinhaber in Commit
-  `71c2de494865646e681686431b1af8301fa3b058` zurückverfolgen.
+- Die allgemeinen Betriebsfotografien stammen aus dem ursprünglichen
+  Projektbestand und lassen sich bis zum Upload durch den Repositoryinhaber in
+  Commit `71c2de494865646e681686431b1af8301fa3b058` zurückverfolgen.
+- Die neun Verkaufspferde-Fotografien stammen aus der offiziellen
+  Verkaufspferde-Seite und wurden anhand ihrer dortigen Zuordnung übernommen.
 - Die optimierten JPEG- und WebP-Dateien sind Ableitungen dieser
   Ausgangsdateien; es wurden keine Stock- oder KI-Fotografien ergänzt.
 - Die Herkunftsdokumentation ersetzt keine Nutzungsfreigabe. Die Rechte für
