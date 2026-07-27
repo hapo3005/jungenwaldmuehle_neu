@@ -42,6 +42,10 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 ## Bilder
 
 - Ausschließlich reale Bilder der Jungenwaldmühle, ihrer Speisen, Räume, Terrasse und Pferde.
+- Jede Hauptseite erhält ein eigenes Leitmotiv. Startseitenbilder werden nicht
+  erneut als Hero- oder Inhaltsbilder einer Unterseite eingesetzt.
+- Fotos erfüllen eine konkrete Beweisfunktion: Reitanlage bei Unterricht und
+  Pension, Pferde bei Zucht, Gericht bei Küche, Luftbild bei Anfahrt.
 - Großzügige, redaktionelle Ausschnitte; keine Collagen aus vielen gleichwertigen Kacheln.
 - Keine KI-Bilder, Stockfotos, künstlichen Lichtlecks oder generischen Textur-Overlays.
 - Bildausschnitte auf Mobilgeräten bewusst per `object-position` führen.

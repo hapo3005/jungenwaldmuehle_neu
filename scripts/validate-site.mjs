@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-21";
+const assetVersion="20260727-22";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true,heroType:"feature"},
@@ -178,7 +178,12 @@ for(const definition of definitions){
     for(const text of ['datetime="2026-10-12"','datetime="2026-10-14"',"09:00–17:00 Uhr","75 €","Teilnahme telefonisch anfragen"]){
       if(!html.includes(text))fail(file,`wesentlicher Termininhalt fehlt: ${text}`);
     }
-    if(!html.includes('class="event-visual"')||!html.includes('src="assets/images/horse-family.jpg"'))fail(file,"authentisches Terminmotiv fehlt");
+    for(const image of ["reitschule-hero.webp","reitblick-mosellandschaft.webp","offenstall-aussen.webp","rundhalle.webp","pferdepension-weide.webp","stute-fohlen-wiese.webp"]){
+      if(!html.includes(`assets/images/${image}`))fail(file,`Reitschul-Originalfoto fehlt: ${image}`);
+    }
+    for(const repeated of ["horse-family.jpg","horses.jpg","foals.jpg"]){
+      if(html.includes(`assets/images/${repeated}`))fail(file,`wiederholtes Startseitenmotiv auf der Reitschulseite: ${repeated}`);
+    }
   }
   if(file==="islandpferde.html"){
     for(const id of ["zuchtziel","magnus","verkaufspferde","pferdeanfrage"]){
@@ -196,10 +201,14 @@ for(const definition of definitions){
     for(const image of ["magnus-galopp","magnus-weide","magnus-profil","magnus-nachzucht-1","magnus-nachzucht-2","magnus-nachzucht-3"]){
       if(!html.includes(`assets/images/${image}.jpg`))fail(file,`Originalfoto im Magnus-Bereich fehlt: ${image}`);
     }
+    for(const image of ["stute-mit-fohlen.webp","islandpferd-weinberge.webp","islandpferde-herde.webp"]){
+      if(!html.includes(`assets/images/${image}`))fail(file,`Zucht-Originalfoto fehlt: ${image}`);
+    }
     if(!html.includes("Magnus’ Nachzucht")||!html.includes("Verkaufspferde ansehen")||!html.includes("Pferdeanfrage stellen"))fail(file,"Magnus-Bereich benötigt Nachzucht und klare Anfragewege");
     if(!/27\. Juli 2026/i.test(html))fail(file,"sichtbarer Aktualitätsstand der Verkaufspferde fehlt");
   }
   if(file==="kontakt.html"){
+    if(!html.includes("assets/images/jungenwaldmuehle-luftbild.webp"))fail(file,"eigenstÃ¤ndiges Kontakt-Herobild fehlt");
     if(count(html,/class="phone-callout"/gi)!==1)fail(file,"Kontaktseite benötigt genau eine hervorgehobene, einzeilige Rufnummer");
     if(!/class="phone-number">06534 7493854<\/span>/i.test(html))fail(file,"sichtbare Rufnummer fehlt im Kontaktbereich");
   }
