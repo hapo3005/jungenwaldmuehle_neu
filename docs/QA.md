@@ -47,7 +47,7 @@
 - [x] Der Terminbereich verspricht keine Verfügbarkeit und führt zur telefonischen Anfrage
 - [x] Das verlinkte KI-Flyermotiv wurde nicht als vermeintlich authentisches Foto eingesetzt; die plakatartige Wirkung entsteht mit einem realen Bestandsmotiv
 - [x] Terminmotiv, Daten, Leistungen und telefonische Anfrage bleiben mobil in einer eindeutigen Leserichtung
-- [x] Das Pferde-Bildpaar der Startseite behält mobil seine natürlichen Ausschnitte und eine bewusst mittige Hierarchie
+- [x] Das Pferde-Bildpaar der Startseite behält mobil seine natürlichen Ausschnitte und exakt dieselbe Inhaltsbreite
 - [x] Verkaufspferde sind mobil als tastaturbedienbare Details gegliedert
 - [x] Verfügbarkeit und Stand der Verkaufspferde werden transparent benannt
 - [x] Jedem Verkaufspferd ist sein offizielles Originalfoto eindeutig zugeordnet
