@@ -30,6 +30,16 @@ Quellen:
 - Faszination Mosel, Projektbericht mit Bildnachweis „Fotos (c) Britta Böhm“:
   https://www.faszinationmosel.info/2022/09/29/lag-mosel-leader-projekt-restaurant-und-hofcafe-jungenwaldmuehle-in-brauneberg/
 
+Rechtliche Primärquellen für die aktuelle Datenschutzhinweis-Struktur:
+
+- § 5 DDG: https://www.gesetze-im-internet.de/ddg/__5.html
+- Art. 13 DSGVO: https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679
+- GitHub-Pages-Datensammlung:
+  https://docs.github.com/de/pages/getting-started-with-github-pages/what-is-github-pages#datensammlung
+- Google-Datenschutzerklärung: https://policies.google.com/privacy?hl=de
+- Google-Rahmenbedingungen für internationale Datenübermittlungen:
+  https://policies.google.com/privacy/frameworks?hl=de
+
 ## Bildherkunft
 
 - Alle verwendeten Fotografien stammen aus dem ursprünglichen Projektbestand
