@@ -149,7 +149,7 @@ for(const definition of definitions){
       }
       if(webpage){
         if(webpage.url!==canonical)fail(file,"WebPage-Strukturdaten verwenden eine falsche URL");
-        if(webpage.description!==description)fail(file,"WebPage-Strukturdaten verwenden eine abweichende Beschreibung");
+        if(webpage.description!==description.replace(/&amp;/g,"&"))fail(file,"WebPage-Strukturdaten verwenden eine abweichende Beschreibung");
         if(!webpage.primaryImageOfPage?.url)fail(file,"WebPage-Strukturdaten benötigen ein Hauptbild");
       }
       if(breadcrumb&&!breadcrumbs)fail(file,"Unterseite benötigt strukturierte Breadcrumb-Daten");
