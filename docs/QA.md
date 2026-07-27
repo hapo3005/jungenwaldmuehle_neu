@@ -13,13 +13,15 @@
 - [x] Keine horizontale Überbreite bei 320, 390, 768 und 1440 px.
 - [x] Primäre Handlung ist im ersten mobilen Bildschirm verständlich.
 - [x] Öffnungszeiten, Telefonnummer und Route sind mobil schnell erreichbar.
+- [x] Speisekarte ist mobil ohne PDF, Zoom oder horizontales Seitenscrollen lesbar.
+- [x] Kategorien, Reservierung, Öffnungszeiten und Anfahrt sind direkt verlinkt.
 - [x] `prefers-reduced-motion` wird respektiert.
 - [x] Konsole enthält keine Fehler.
 
 ## Vor Veröffentlichung fachlich bestätigen
 
 - [x] Saisonöffnungszeiten aus VisitMosel und Ortsplan Brauneberg 2026
-- [x] Unbestätigte Speisekarte und Preise aus der Live-Seite entfernt
+- [x] Veröffentlichte Speisekarte und Preise vom bestehenden Betriebsauftritt mit sichtbarem Stand Juli 2026 übernommen
 - [x] Namen und berufliche Angaben der Gastgeber aus VisitMosel
 - [ ] Bildrechte
 - [x] Impressum und Datenschutz für den aktuellen statischen GitHub-Pages-Stand ergänzt
@@ -35,6 +37,7 @@
 - [x] Menü schließt beim Wechsel auf Desktop
 - [x] Safe-Area-Abstände für moderne Smartphones berücksichtigt
 - [x] Primäre Buttons mindestens 44 px hoch
+- [x] Speisekarten-Sprunglinks mindestens 44 px hoch
 - [x] Telefonreservierung im ersten mobilen Bildschirm erreichbar
 - [x] Mehrspaltige Inhalte werden einspaltig
 - [x] Pferde-Informationsreihen verlieren mobil ihre seitlichen Trennlinien

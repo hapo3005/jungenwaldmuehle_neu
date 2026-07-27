@@ -19,6 +19,10 @@
   - 1. April bis 31. Oktober: Samstag bis Dienstag, 11:30–21:00 Uhr
   - 1. November bis 31. März: Samstag und Sonntag, 11:30–21:00 Uhr
   - Warme Küche: bis 19:30 Uhr; im Sommer laut VisitMosel ab 12:00 Uhr
+- Speisekarte und Preise, übernommen vom bestehenden Betriebsauftritt am
+  27. Juli 2026. Die Seite weist selbst darauf hin, dass die Karte gelegentlich
+  wechselt; die Spargelkarte ist saisonal und wird deshalb auf der neuen Seite
+  ausdrücklich als Angebot nach Verfügbarkeit gekennzeichnet.
 - Reale Bilddateien unter `assets/images/`
 
 Quellen:
@@ -26,6 +30,8 @@ Quellen:
 - VisitMosel: https://www.visitmosel.de/wein-kulinarik/gastro/restaurant-und-hofcafe-jungenwaldmuehle
 - Ortsplan Brauneberg 2026: https://www.brauneberg.de/wp-content/uploads/2026/03/Ortsplan_2026_final.pdf
 - bestehender Kontaktauftritt: https://jungenwaldmuehle.simdif.com/contact.html
+- bestehende Restaurantseite und veröffentlichte Speisekarte:
+  https://jungenwaldmuehle.simdif.com/restaurant.html
 - aktuelle Reitschul- und Zuchtseite: https://jungenwaldmuehle.simdif.com/reitschule.html
 - Faszination Mosel, Projektbericht mit Bildnachweis „Fotos (c) Britta Böhm“:
   https://www.faszinationmosel.info/2022/09/29/lag-mosel-leader-projekt-restaurant-und-hofcafe-jungenwaldmuehle-in-brauneberg/
@@ -56,7 +62,6 @@ Rechtliche Primärquellen für die aktuelle Datenschutzhinweis-Struktur:
 
 - Berufsausbildung oder frühere Stationen von Christian Böhm.
 - Berufsausbildung von Britta Böhm.
-- Konkrete Speisen, Zutaten und Preise.
 - Angebote, Zielalter, Termine und Preise von Ponyhof/Reitschule.
 - Verfügbarkeit von Islandpferden.
 - Sonderöffnungen an Feiertagen und Brückentagen.
@@ -73,3 +78,13 @@ Rechtliche Primärquellen für die aktuelle Datenschutzhinweis-Struktur:
 1. Primär: telefonisch Tisch reservieren.
 2. Sekundär: Route öffnen und Öffnungszeiten prüfen.
 3. Pferdeanliegen: telefonisch oder per klarer Kontaktanfrage; bis zu einem echten Formularbackend keine vorgetäuschte Formularübermittlung.
+
+## Pflege der Speisekarte
+
+- Veröffentlichter Stand der übernommenen Karte: 27. Juli 2026.
+- Preis- oder Angebotsänderungen des Betriebs müssen zeitnah in
+  `src/restaurant.njk` nachgeführt werden.
+- Die öffentliche Seite benennt den Stand sichtbar und verspricht keine
+  dauerhafte Verfügbarkeit einzelner saisonaler Gerichte.
+- Interne Links führen direkt zu `restaurant.html#speisekarte`,
+  `restaurant.html#zeiten` und `kontakt.html#anfahrt`.
