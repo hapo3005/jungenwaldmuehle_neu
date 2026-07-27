@@ -1,0 +1,50 @@
+# Bild- und Markenassets
+
+## Herkunft der Fotografien
+
+Die neun verwendeten Ausgangsfotografien wurden am 21. Juli 2026 durch den
+Repositoryinhaber `hapo3005` in Commit
+`71c2de494865646e681686431b1af8301fa3b058` hochgeladen:
+
+- `cakes.jpg`
+- `dish.jpg`
+- `foals.jpg`
+- `horse-family.jpg`
+- `horses.jpg`
+- `restaurant-fireplace.jpg`
+- `restaurant-hero.jpg`
+- `restaurant-table.jpg`
+- `terrace.jpg`
+
+Die Blob-Identitäten dieses Uploads stimmen bei allen neun Dateien mit dem
+ersten Repositorybestand in Commit
+`4515975c4680ce7aaaf3dd7178c14e5414603a98` überein. Die heute ausgelieferten
+JPEG-Dateien sind technisch optimierte Ableitungen dieser Ausgangsdateien.
+`restaurant-hero-enhanced.webp` und `terrace-enhanced.webp` sind ebenfalls
+Ableitungen der jeweiligen Ausgangsfotografien. Es wurden keine Stock- oder
+KI-Fotografien ergänzt.
+
+Der Projektbericht der Regionalinitiative Faszination Mosel vom
+29. September 2022 kennzeichnet die dort veröffentlichten Fotos mit
+„Fotos (c) Britta Böhm“. Das ist ein hilfreicher Herkunftshinweis, beweist
+jedoch nicht, dass jede Datei in diesem Repository zu genau diesem Bildsatz
+gehört oder für diesen neuen Webauftritt freigegeben wurde.
+
+Quelle:
+
+- https://www.faszinationmosel.info/2022/09/29/lag-mosel-leader-projekt-restaurant-und-hofcafe-jungenwaldmuehle-in-brauneberg/
+
+## Erforderliche Freigabe
+
+Vor einer endgültigen Kundenübergabe muss der Betrieb schriftlich bestätigen,
+dass die oben aufgeführten Fotografien für Website, Portfolio-Fallstudie und
+Vorschaubilder genutzt und bearbeitet werden dürfen. Die Bestätigung sollte
+Urheberschaft beziehungsweise Rechtekette und den erlaubten Nutzungsumfang
+enthalten.
+
+## Logo
+
+`logo.svg`, `logo.png` und `apple-touch-icon.svg` wurden für diesen
+Webauftritt als zusammengehörige Markenassets erstellt. Sie stellen kein
+historisch belegtes Bestandslogo der Jungenwaldmühle dar. Vor der endgültigen
+Markeneinführung ist die Zustimmung des Betriebs einzuholen.

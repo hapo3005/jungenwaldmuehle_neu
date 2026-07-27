@@ -55,3 +55,24 @@
 - [x] Startseite erzählt einen schlüssigen Besuchsweg
 - [x] Desktop und Mobil wurden visuell geprüft
 - [ ] Vorher-/Nachher-Erkenntnisse sind für eine spätere Fallstudie dokumentierbar
+
+## Technische Endabnahme
+
+- [x] Sieben Seiten einschließlich eigener 404-Seite werden gebaut und synchronisiert
+- [x] Automatische Prüfung auf eindeutige Titel, Beschreibungen und Canonical-URLs
+- [x] Noindex-Regeln und Sitemap-Inhalt stimmen überein
+- [x] Überschriftenfolge, Fokusziel, Sprunglink und aktuelle Navigation geprüft
+- [x] Keine internen Designkommentare oder Platzhalter im ausgelieferten HTML
+- [x] JSON-LD ist syntaktisch gültig und nur auf indexierbaren Seiten vorhanden
+- [x] Keine externen Skripte, Tracker, eingebetteten Karten oder externen Schriften
+- [x] CSS, JavaScript und jedes Bild bleiben innerhalb definierter Größenbudgets
+- [x] 35 Live-Kombinationen aus sieben Seiten und fünf Breiten ohne Überlauf, defekte Bilder oder zu kleine nicht-inline Bedienelemente
+- [x] Mobile Navigation öffnet und schließt korrekt, hält den Fokus und reagiert auf Escape
+- [x] Scroll-up-Button funktioniert per Touch/Klick; Tastaturpfad verwendet keine Bewegung
+- [x] Reale nicht vorhandene URL liefert die markengerechte 404-Seite mit Noindex
+- [x] Browserkonsole im finalen Live-Stand ohne Fehler
+- [x] Verwendete Kernfarbpaare erfüllen mindestens WCAG AA; gemessene Kontraste 5,33:1 bis 16,15:1
+- [x] Alle Fotografien bis zum ursprünglichen Upload im Repository zurückverfolgt; keine Stock- oder KI-Fotografien ergänzt
+- [ ] Bildrechte durch den Betrieb schriftlich bestätigt
+- [ ] Betriebsinhaber und Rechtsform sowie – soweit vorhanden – Vertretungsberechtigte, Register-, Umsatzsteuer- oder Wirtschafts-Identifikationsnummer durch den Betrieb oder Rechtsberater bestätigt
+- [ ] Abschließender Sicht- und Bedienungstest auf realem iPhone und Android-Gerät

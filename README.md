@@ -10,3 +10,10 @@ Semantische Struktur, Skip-Link, sichtbare Fokuszustände, responsive Navigation
 
 ## Vor Veröffentlichung
 Kontaktdaten, saisonale Öffnungszeiten und Gastgeberangaben sind in `docs/CONTENT.md` mit Quellen dokumentiert. Konkrete Speisen und Preise werden erst nach aktueller Freigabe des Betriebs veröffentlicht. Bildrechte und betriebsindividuelle Pflichtangaben bleiben vor der endgültigen kommerziellen Übernahme durch den Betrieb zu bestätigen.
+
+## Lokale Prüfung
+
+`npm run check` baut und synchronisiert alle Seiten, prüft SEO, Semantik,
+Navigation, interne Ressourcen, Sitemap, strukturierte Daten und Dateibudgets
+und führt zusätzlich den projektlokalen Impeccable-Detektor aus. Dafür ist nach
+der Installation der Projektabhängigkeiten kein externer Paketabruf nötig.

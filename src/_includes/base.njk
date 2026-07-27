@@ -1,3 +1,6 @@
+Exit code: 0
+Wall time: 2.1 seconds
+Output:
 {%- set pageAbsUrl = site.baseUrl + "/" + (permalink if permalink != "index.html" else "") -%}
 <!doctype html>
 <html lang="de">
@@ -13,7 +16,7 @@
 <link rel="canonical" href="{{ pageAbsUrl }}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<meta property="og:site_name" content="Jungenwaldmühle">
+<meta property="og:site_name" content="JungenwaldmÃ¼hle">
 <meta property="og:title" content="{{ ogTitle or title }}">
 <meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="{{ pageAbsUrl }}">
@@ -24,17 +27,17 @@
 <meta name="twitter:card" content="summary_large_image">
 {%- endif %}
 {%- if preloadHero %}<link rel="preload" as="image" href="{{ image }}" fetchpriority="high">{%- endif %}
-<link rel="stylesheet" href="assets/styles.css?v=20260726-5">
+<link rel="stylesheet" href="assets/styles.css?v=20260726-6">
 </head>
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a>
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="index.html" aria-label="Jungenwaldmühle – Startseite">
+    <a class="brand" href="index.html" aria-label="JungenwaldmÃ¼hle â€“ Startseite">
       <img src="assets/images/logo.svg" alt="" width="52" height="52">
-      <span><strong>Jungenwaldmühle</strong><small>Restaurant · Hofcafé · Ponyhof</small></span>
+      <span><strong>JungenwaldmÃ¼hle</strong><small>Restaurant Â· HofcafÃ© Â· Ponyhof</small></span>
     </a>
-    <button class="toggle" type="button" aria-label="Navigation öffnen" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    <button class="toggle" type="button" aria-label="Navigation Ã¶ffnen" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
     <nav class="links" id="nav" aria-label="Hauptnavigation">
       <div class="nav-primary">
       {% for item in site.nav %}<a href="{{ item.href }}"{% if item.key == navKey %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
@@ -49,36 +52,36 @@
 </button>
 <footer class="footer">
   <div class="container footer-lead">
-    <a class="footer-brand" href="index.html" aria-label="Jungenwaldmühle – Startseite">
+    <a class="footer-brand" href="index.html" aria-label="JungenwaldmÃ¼hle â€“ Startseite">
       <img src="assets/images/logo.svg" alt="" width="64" height="64">
-      <span>Jungenwaldmühle</span>
+      <span>JungenwaldmÃ¼hle</span>
     </a>
-    <p class="kicker">Jungenwaldmühle bei Brauneberg</p>
+    <p class="kicker">JungenwaldmÃ¼hle bei Brauneberg</p>
     <h2>Ein guter Grund,<br>von der Mosel abzubiegen.</h2>
     <a class="btn btn-light" href="tel:+4965347493854">Tisch telefonisch reservieren</a>
   </div>
   <div class="container footer-grid">
-    <div><strong>Jungenwaldmühle 1</strong><br>54472 Brauneberg<br><a href="https://www.google.com/maps/dir/?api=1&destination=Jungenwaldm%C3%BChle%201%2C%2054472%20Brauneberg">Route öffnen</a></div>
-    <div><strong>Restaurant & Hofcafé</strong><br>Apr–Okt · Sa–Di<br>Nov–Mär · Sa–So<br>11:30–21:00 Uhr</div>
+    <div><strong>JungenwaldmÃ¼hle 1</strong><br>54472 Brauneberg<br><a href="https://www.google.com/maps/dir/?api=1&destination=Jungenwaldm%C3%BChle%201%2C%2054472%20Brauneberg">Route Ã¶ffnen</a></div>
+    <div><strong>Restaurant & HofcafÃ©</strong><br>Aprâ€“Okt Â· Saâ€“Di<br>Novâ€“MÃ¤r Â· Saâ€“So<br>11:30â€“21:00 Uhr</div>
     <div><strong>Kontakt</strong><br><a href="tel:+4965347493854">06534 7493854</a><br><a href="mailto:jungenwaldmuehle1@gmail.com">E-Mail schreiben</a></div>
   </div>
-  <div class="container legal">© <span data-year></span> Jungenwaldmühle · <a href="impressum.html">Impressum & Datenschutz</a></div>
+  <div class="container legal">Â© <span data-year></span> JungenwaldmÃ¼hle Â· <a href="impressum.html">Impressum & Datenschutz</a></div>
 </footer>
-<script src="assets/app.js?v=20260726-5"></script>
+<script src="assets/app.js?v=20260726-6"></script>
 {%- if not noindex %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  "name": "Jungenwaldmühle",
+  "name": "JungenwaldmÃ¼hle",
   "url": "{{ site.baseUrl }}/",
   "image": "{{ site.baseUrl }}/assets/images/terrace-enhanced.webp",
   "telephone": "+49 6534 7493854",
   "email": "jungenwaldmuehle1@gmail.com",
-  "servesCuisine": "Regionale deutsche Küche",
+  "servesCuisine": "Regionale deutsche KÃ¼che",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Jungenwaldmühle 1",
+    "streetAddress": "JungenwaldmÃ¼hle 1",
     "postalCode": "54472",
     "addressLocality": "Brauneberg",
     "addressCountry": "DE"
@@ -108,3 +111,4 @@
 {%- if jsonLd %}<script type="application/ld+json">{{ jsonLd | safe }}</script>{%- endif %}
 </body>
 </html>
+

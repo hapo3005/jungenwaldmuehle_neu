@@ -6,7 +6,8 @@
   "scripts": {
     "build": "eleventy && node scripts/sync-root.mjs",
     "serve": "eleventy --serve",
-    "check": "npm run build && node scripts/validate-site.mjs && node --check assets/app.js && node --check scripts/sync-root.mjs"
+    "design-check": "node .agents/skills/impeccable/scripts/detect.mjs src/",
+    "check": "npm run build && node scripts/validate-site.mjs && npm run design-check && node --check assets/app.js && node --check scripts/sync-root.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
