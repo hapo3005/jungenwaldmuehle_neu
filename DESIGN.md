@@ -37,6 +37,9 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Großzügige, redaktionelle Ausschnitte; keine Collagen aus vielen gleichwertigen Kacheln.
 - Keine KI-Bilder, Stockfotos, künstlichen Lichtlecks oder generischen Textur-Overlays.
 - Bildausschnitte auf Mobilgeräten bewusst per `object-position` führen.
+- Asymmetrische Bildüberlagerungen bleiben ein Desktopmittel. Auf Mobilgeräten
+  stehen Bilder in einer klaren Leserichtung ohne Überschneidung; feste
+  Bedienelemente erhalten eine freie Kante.
 
 ## Logo
 
