@@ -41,7 +41,10 @@
 - [x] Telefonreservierung im ersten mobilen Bildschirm erreichbar
 - [x] Mehrspaltige Inhalte werden einspaltig
 - [x] Pferde-Informationsreihen verlieren mobil ihre seitlichen Trennlinien
-- [x] Reitschulbereiche sind über vier direkte Sprunglinks erreichbar
+- [x] Reitschulbereiche einschließlich Termine sind über fünf direkte Sprunglinks erreichbar
+- [x] Der nächste Ferientermin ist auf Start- und Reitschulseite auffindbar
+- [x] Termin, Uhrzeit, Alter, Beitrag, enthaltene Verpflegung und Mitbringliste stimmen mit dem Betriebsauftritt überein
+- [x] Der Terminbereich verspricht keine Verfügbarkeit und führt zur telefonischen Anfrage
 - [x] Verkaufspferde sind mobil als tastaturbedienbare Details gegliedert
 - [x] Verfügbarkeit und Stand der Verkaufspferde werden transparent benannt
 - [x] Jedem Verkaufspferd ist sein offizielles Originalfoto eindeutig zugeordnet
