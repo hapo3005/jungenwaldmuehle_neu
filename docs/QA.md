@@ -14,6 +14,7 @@
 - [x] Primäre Handlung ist im ersten mobilen Bildschirm verständlich.
 - [x] Öffnungszeiten, Telefonnummer und Route sind mobil schnell erreichbar.
 - [x] Speisekarte ist mobil ohne PDF, Zoom oder horizontales Seitenscrollen lesbar.
+- [x] Speisekarten-Kategorien schließen mobil ohne übergroße Leerflächen in einem gleichmäßigen Abstand aneinander an.
 - [x] Kategorien, Reservierung, Öffnungszeiten und Anfahrt sind direkt verlinkt.
 - [x] `prefers-reduced-motion` wird respektiert.
 - [x] Konsole enthält keine Fehler.
