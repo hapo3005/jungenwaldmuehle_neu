@@ -10,7 +10,11 @@
 <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/images/logo.png">
 <meta name="theme-color" content="#17372b">
-{%- if noindex %}<meta name="robots" content="noindex">{%- endif %}
+{%- if noindex %}
+<meta name="robots" content="noindex,follow">
+{%- else %}
+<meta name="robots" content="index,follow,max-image-preview:large">
+{%- endif %}
 <link rel="canonical" href="{{ pageAbsUrl }}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
@@ -22,7 +26,12 @@
 <meta property="og:image" content="{{ site.baseUrl }}/{{ image }}">
 <meta property="og:image:width" content="{{ imageW }}">
 <meta property="og:image:height" content="{{ imageH }}">
+<meta property="og:image:alt" content="{{ imageAlt }}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ ogTitle or title }}">
+<meta name="twitter:description" content="{{ description }}">
+<meta name="twitter:image" content="{{ site.baseUrl }}/{{ image }}">
+<meta name="twitter:image:alt" content="{{ imageAlt }}">
 {%- endif %}
 {%- if preloadHero %}<link rel="preload" as="image" href="{{ image }}"{% if imageSrcset %} imagesrcset="{{ imageSrcset }}" imagesizes="{{ imageSizes or '100vw' }}"{% endif %} fetchpriority="high">{%- endif %}
 <link rel="stylesheet" href="assets/styles.css?v=20260727-21">
@@ -70,42 +79,109 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Restaurant",
-  "name": "Jungenwaldmühle",
-  "url": "{{ site.baseUrl }}/",
-  "image": "{{ site.baseUrl }}/assets/images/terrace-enhanced.webp",
-  "telephone": "+49 6534 7493854",
-  "email": "jungenwaldmuehle1@gmail.com",
-  "servesCuisine": "Regionale deutsche Küche",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Jungenwaldmühle 1",
-    "postalCode": "54472",
-    "addressLocality": "Brauneberg",
-    "addressCountry": "DE"
-  },
-  "openingHoursSpecification": [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday"],
-      "opens": "11:30",
-      "closes": "21:00",
-      "validFrom": "2026-04-01",
-      "validThrough": "2026-10-31"
+      "@type": "Restaurant",
+      "@id": "{{ site.baseUrl }}/#restaurant",
+      "name": "Jungenwaldmühle",
+      "alternateName": "Restaurant & Hofcafé Jungenwaldmühle",
+      "description": "Historische Wassermühle mit Restaurant, Hofcafé und Ponyhof bei Brauneberg an der Mosel.",
+      "url": "{{ site.baseUrl }}/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.baseUrl }}/assets/images/logo.png"
+      },
+      "image": [
+        {
+          "@type": "ImageObject",
+          "url": "{{ site.baseUrl }}/assets/images/terrace-enhanced.webp"
+        },
+        {
+          "@type": "ImageObject",
+          "url": "{{ site.baseUrl }}/assets/images/restaurant-fireplace.jpg"
+        }
+      ],
+      "telephone": "+4965347493854",
+      "email": "jungenwaldmuehle1@gmail.com",
+      "servesCuisine": ["Regionale deutsche Küche", "Hausgemachte Kuchen"],
+      "acceptsReservations": true,
+      "hasMenu": "{{ site.baseUrl }}/restaurant.html#speisekarte",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jungenwaldmühle 1",
+        "postalCode": "54472",
+        "addressLocality": "Brauneberg",
+        "addressRegion": "Rheinland-Pfalz",
+        "addressCountry": "DE"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday"],
+          "opens": "11:30",
+          "closes": "21:00",
+          "validFrom": "2026-04-01",
+          "validThrough": "2026-10-31"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "11:30",
+          "closes": "21:00",
+          "validFrom": "2026-11-01",
+          "validThrough": "2027-03-31"
+        }
+      ],
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=Jungenwaldm%C3%BChle%201%2C%2054472%20Brauneberg",
+      "sameAs": [
+        "https://jungenwaldmuehle.simdif.com/",
+        "https://www.visitmosel.de/gastgeber-arrangements/poi/jungenwaldmuehle"
+      ]
     },
     {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Saturday", "Sunday"],
-      "opens": "11:30",
-      "closes": "21:00",
-      "validFrom": "2026-11-01",
-      "validThrough": "2027-03-31"
-    }
-  ],
-  "hasMap": "https://www.google.com/maps/search/?api=1&query=Jungenwaldm%C3%BChle%201%2C%2054472%20Brauneberg"
+      "@type": "WebSite",
+      "@id": "{{ site.baseUrl }}/#website",
+      "url": "{{ site.baseUrl }}/",
+      "name": "Jungenwaldmühle",
+      "inLanguage": "de-DE",
+      "publisher": {"@id": "{{ site.baseUrl }}/#restaurant"}
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ pageAbsUrl }}#webpage",
+      "url": "{{ pageAbsUrl }}",
+      "name": "{{ title | safe }}",
+      "description": "{{ description | safe }}",
+      "inLanguage": "de-DE",
+      "isPartOf": {"@id": "{{ site.baseUrl }}/#website"},
+      "about": {"@id": "{{ site.baseUrl }}/#restaurant"},
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "{{ site.baseUrl }}/{{ image }}",
+        "caption": "{{ imageAlt | safe }}"
+      }
+    }{% if breadcrumb %},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ pageAbsUrl }}#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "{{ site.baseUrl }}/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ breadcrumb | safe }}",
+          "item": "{{ pageAbsUrl }}"
+        }
+      ]
+    }{% endif %}
+  ]
 }
 </script>
 {%- endif %}
-{%- if jsonLd %}<script type="application/ld+json">{{ jsonLd | safe }}</script>{%- endif %}
 </body>
 </html>
