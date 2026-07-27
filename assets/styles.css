@@ -181,7 +181,7 @@ p{max-width:68ch;text-wrap:pretty}
 .horse-profile summary:after{content:"+";position:absolute;right:.25rem;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:1.8rem;font-weight:400;line-height:1}
 .horse-profile[open] summary:after{content:"−"}
 .horse-profile summary:active{transform:scale(.99)}
-.horse-profile-image{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--paper-deep)}
+.horse-profile-image{display:block;width:100%;height:clamp(6.375rem,11.25vw,8.25rem);object-fit:cover;background:var(--paper-deep)}
 .horse-profile-overview{display:grid;gap:.45rem;min-width:0}
 .horse-profile-name{font-family:var(--serif);font-size:clamp(1.55rem,2.7vw,2.15rem);line-height:1.12}
 .horse-profile-meta{color:var(--muted);font-size:.8rem;line-height:1.45}
@@ -276,7 +276,7 @@ form{display:grid;gap:1.35rem}.field{display:grid;gap:.35rem}.field-row{display:
   .stallion-metrics div:nth-child(odd){padding-left:0;border-right:1px solid rgba(255,255,255,.2)}
   .stallion-metrics dt{margin-bottom:.35rem}
   .horse-profile summary{grid-template-columns:6.75rem minmax(0,1fr);gap:1rem;padding:1rem 2.35rem 1rem 0}
-  .horse-profile-image{aspect-ratio:1/1}
+  .horse-profile-image{width:6.75rem;height:6.75rem}
   .horse-profile-name{font-size:clamp(1.3rem,6vw,1.65rem)}
   .horse-profile-body{grid-template-columns:1fr;gap:1.5rem;margin-left:0;padding:0 0 2rem}
   .horse-inquiry .actions{align-items:flex-start}
