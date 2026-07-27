@@ -126,7 +126,7 @@ p{max-width:68ch;text-wrap:pretty}
 .horse-details article+article{padding-left:2rem;border-left:1px solid var(--line)}
 .horse-details h3{font-size:clamp(1.55rem,2.5vw,2.1rem);margin:0 0 .8rem}
 .horse-details p{color:var(--muted);margin:0}
-.steps{counter-reset:steps}.step{border-top:1px solid var(--ink);padding-top:1.2rem}.step:before{counter-increment:steps;content:"0" counter(steps);color:var(--ochre);font-family:var(--serif);font-style:italic}.step h3{font-size:1.4rem}.step p{color:var(--muted)}
+.step{border-top:1px solid var(--ink);padding-top:1.6rem}.step h3{font-size:1.4rem;margin-top:0}.step p{color:var(--muted)}
 .availability-note,.notice{margin:2rem 0 0;padding:1rem 0;border-top:1px solid var(--ochre);color:var(--muted)}
 .cta-band{background:var(--forest);color:var(--white);text-align:center}.cta-band h2{font-size:clamp(2.8rem,5vw,4.7rem)}.cta-band p{margin:0 auto 2rem;color:rgba(255,255,255,.76)}
 .menu-section{background:var(--paper-deep);scroll-margin-top:1rem}

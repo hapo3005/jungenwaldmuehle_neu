@@ -53,6 +53,7 @@ Die Website fühlt sich wie ein sorgfältig geführtes Landgasthaus an: dunkles 
 - Buttons reagieren beim Drücken dezent mit `scale(.97)`.
 - Hover nur auf Geräten mit präzisem Zeiger.
 - Mobile Navigation ist ein klarer, bildschirmfüllender Entscheidungsraum mit sofort sichtbarer Telefonnummer.
+- Abläufe werden über Überschriften und feine Trennlinien gegliedert; dekorative Schrittziffern werden nicht verwendet.
 - Bewegung unterstützt Orientierung und bleibt unter 260 ms; keine Scrollshow und keine dekorative Dauermotion.
 
 ## Verbote
