@@ -44,6 +44,8 @@
 - [x] Reitschulbereiche sind über vier direkte Sprunglinks erreichbar
 - [x] Verkaufspferde sind mobil als tastaturbedienbare Details gegliedert
 - [x] Verfügbarkeit und Stand der Verkaufspferde werden transparent benannt
+- [x] Jedem Verkaufspferd ist sein offizielles Originalfoto eindeutig zugeordnet
+- [x] Verkaufspferde-Fotos bleiben mobil kompakt und ohne Layoutsprung erfassbar
 - [x] Kartenansicht und große Bilder erhalten mobile Höhen
 - [x] Horizontale Seitenüberläufe werden verhindert
 - [x] Bewegungsreduktion wird respektiert

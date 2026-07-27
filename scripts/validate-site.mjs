@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root=process.cwd();
 const baseUrl="https://hapo3005.github.io/jungenwaldmuehle_neu";
-const assetVersion="20260727-8";
+const assetVersion="20260727-9";
 const definitions=[
   {file:"index.html",canonical:`${baseUrl}/`,current:"index.html",indexable:true},
   {file:"restaurant.html",canonical:`${baseUrl}/restaurant.html`,current:"restaurant.html",indexable:true},
@@ -179,8 +179,12 @@ for(const definition of definitions){
       if(!ids.includes(id))fail(file,`Zucht-Sprungziel fehlt: ${id}`);
     }
     if(count(html,/class="horse-profile"/gi)!==9)fail(file,"neun veröffentlichte Verkaufspferde erforderlich");
+    if(count(html,/class="horse-profile-image"/gi)!==9)fail(file,"jedes veröffentlichte Verkaufspferd benötigt ein Originalfoto");
     for(const horse of ["Embla","Glotti","Asta","Sleipnir","Flekka","Brana","Ari","Einar","Grima"]){
       if(!html.includes(horse))fail(file,`veröffentlichtes Verkaufspferd fehlt: ${horse}`);
+    }
+    for(const image of ["embla-vom-mandelgraben","glotti-vom-mandelgraben","asta-vom-moseltal","sleipnir-vom-mandelgraben","flekka-vom-mandelgraben","brana","ari-vom-mandelgraben","einar-vom-mandelgraben","grima-vom-terlindenhof"]){
+      if(!html.includes(`assets/images/verkaufspferde/${image}.jpg`))fail(file,`Originalfoto des Verkaufspferds fehlt: ${image}`);
     }
     if(!/27\. Juli 2026/i.test(html))fail(file,"sichtbarer Aktualitätsstand der Verkaufspferde fehlt");
   }

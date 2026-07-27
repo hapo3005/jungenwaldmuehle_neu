@@ -2,7 +2,7 @@
 
 ## Herkunft der Fotografien
 
-Die neun verwendeten Ausgangsfotografien wurden am 21. Juli 2026 durch den
+Die neun ursprünglichen Ausgangsfotografien wurden am 21. Juli 2026 durch den
 Repositoryinhaber `hapo3005` in Commit
 `71c2de494865646e681686431b1af8301fa3b058` hochgeladen:
 
@@ -27,6 +27,28 @@ KI-Fotografien ergänzt.
 skalierte und komprimierte Varianten von `terrace-enhanced.webp`; Bildinhalt
 und Ausschnitt wurden nicht verändert.
 
+Am 27. Juli 2026 wurden zusätzlich neun Pferdefotografien aus dem offiziellen
+Betriebsauftritt übernommen und genau dem dort unmittelbar zugehörigen
+Verkaufspferd zugeordnet:
+
+- `embla-vom-mandelgraben.jpg` – Embla
+- `glotti-vom-mandelgraben.jpg` – Glotti
+- `asta-vom-moseltal.jpg` – Asta
+- `sleipnir-vom-mandelgraben.jpg` – Sleipnir
+- `flekka-vom-mandelgraben.jpg` – Flekka
+- `brana.jpg` – Brana
+- `ari-vom-mandelgraben.jpg` – Ari
+- `einar-vom-mandelgraben.jpg` – Einar
+- `grima-vom-terlindenhof.jpg` – Grima
+
+Quelle und Zuordnungsreihenfolge:
+
+- https://jungenwaldmuehle.simdif.com/verkaufspferde.html
+
+Die Dateien liegen unverändert als die dort ausgelieferten JPEG-Motive unter
+`assets/images/verkaufspferde/`. Es wurden weder Pferde ergänzt noch Bilder
+generiert oder Pferden anhand einer Vermutung zugeordnet.
+
 Der Projektbericht der Regionalinitiative Faszination Mosel vom
 29. September 2022 kennzeichnet die dort veröffentlichten Fotos mit
 „Fotos (c) Britta Böhm“. Das ist ein hilfreicher Herkunftshinweis, beweist
@@ -40,8 +62,9 @@ Quelle:
 ## Erforderliche Freigabe
 
 Vor einer endgültigen Kundenübergabe muss der Betrieb schriftlich bestätigen,
-dass die oben aufgeführten Fotografien für Website, Portfolio-Fallstudie und
-Vorschaubilder genutzt und bearbeitet werden dürfen. Die Bestätigung sollte
+dass alle oben aufgeführten Fotografien einschließlich der neun
+Verkaufspferde-Motive für Website, Portfolio-Fallstudie und Vorschaubilder
+genutzt und bearbeitet werden dürfen. Die Bestätigung sollte
 Urheberschaft beziehungsweise Rechtekette und den erlaubten Nutzungsumfang
 enthalten.
 
