@@ -58,7 +58,7 @@ async function validate(){
   const nestedHtml=await nestedResponse.text();
   if(nestedResponse.status!==404)failures.push(`${nestedUrl.href}: HTTP ${nestedResponse.status} statt 404`);
   if(!nestedType.includes("text/html"))failures.push(`${nestedUrl.href}: unerwarteter Content-Type ${nestedType}`);
-  if(!/<meta name="robots" content="noindex">/i.test(nestedHtml))failures.push(`${nestedUrl.href}: noindex fehlt`);
+  if(!/<meta name="robots" content="[^"]*\bnoindex\b[^"]*">/i.test(nestedHtml))failures.push(`${nestedUrl.href}: noindex fehlt`);
   const nestedBase=attribute(nestedHtml,"base","href");
   if(nestedBase!==baseUrl.href)failures.push(`${nestedUrl.href}: Basis-URL ist ${nestedBase||"nicht gesetzt"}`);
   const resolvedNestedBase=new URL(nestedBase||nestedResponse.url);
