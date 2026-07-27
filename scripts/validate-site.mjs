@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 2.3 seconds
-Output:
 import fs from "node:fs";
 import path from "node:path";
 
@@ -184,4 +181,3 @@ if(failures.length){
   process.exit(1);
 }
 console.log(`Validierung erfolgreich: ${definitions.length} Seiten, SEO, Semantik, Navigation, Ressourcen, Sitemap, JSON-LD und Dateibudgets geprÃ¼ft.`);
-
