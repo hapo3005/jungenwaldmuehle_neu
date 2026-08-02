@@ -21,9 +21,9 @@
 @media (prefers-reduced-motion:reduce){.guest-reviews *{scroll-behavior:auto}}
 
 /* Homepage image corrections: preserve the existing design, remove clipped/offset image treatment. */
+.food-cake{align-self:center;margin:0}
+.food-cake img{display:block;width:100%;height:auto;aspect-ratio:492/700;object-fit:contain;object-position:center}
 @media (min-width:981px){
-  .food-cake{align-self:center;margin:0}
-  .food-cake img{display:block;width:100%;height:auto;aspect-ratio:492/700;object-fit:contain;object-position:center}
   .horses-tall{width:100%;margin:0}
   .horses-tall img{display:block;width:100%;height:auto;aspect-ratio:960/639;object-fit:cover;object-position:center}
 }
