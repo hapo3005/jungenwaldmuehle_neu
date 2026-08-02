@@ -61,6 +61,15 @@ document.querySelectorAll("[data-year]").forEach(element=>{
   element.textContent=new Date().getFullYear();
 });
 
+const lessonGallery=document.querySelector("#unterricht .equine-gallery");
+if(lessonGallery&&!document.querySelector('link[data-reitschule-gallery]')){
+  const lessonGalleryStyles=document.createElement("link");
+  lessonGalleryStyles.rel="stylesheet";
+  lessonGalleryStyles.href="assets/reitschule-gallery.css?v=20260802-1";
+  lessonGalleryStyles.dataset.reitschuleGallery="";
+  document.head.append(lessonGalleryStyles);
+}
+
 const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
 const scrollTopButton=document.querySelector(".scroll-top");
 if(scrollTopButton){
