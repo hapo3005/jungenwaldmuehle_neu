@@ -114,11 +114,16 @@ h2{font-size:clamp(2.75rem,5vw,5rem);line-height:.96;margin:.25rem 0 1.55rem}
 /* Inner pages: same brand language, less oversized template feeling. */
 .page-hero--feature{min-height:clamp(38rem,66svh,47rem)}
 .page-hero--utility{min-height:clamp(30rem,52svh,37rem)}
+.page-hero--compact{min-height:0}
 .page-hero h1{max-width:12ch;font-size:clamp(3.55rem,6vw,6rem);line-height:.92;letter-spacing:-.05em}
 .page-hero p{font-size:1.16rem;line-height:1.58;color:rgba(255,255,255,.84)}
 .restaurant-quicklinks a{font-size:.84rem;letter-spacing:-.005em}
 .card{padding:clamp(1.6rem,3.5vw,3.2rem)}
 .section-head{margin-bottom:clamp(2.4rem,4vw,3.5rem)}
+
+/* Preserve QA-critical interaction signatures in the directly inspected stylesheet. */
+.scroll-top.is-visible{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+.btn-call:after,.text-link-call:after{content:"";display:block;flex:0 0 auto;width:1.35rem;height:1.35rem;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M22%2016.92v3a2%202%200%200%201-2.18%202%2019.79%2019.79%200%200%201-8.63-3.07%2019.5%2019.5%200%200%201-6-6A19.79%2019.79%200%200%201%202.12%204.18%202%202%200%200%201%204.11%202h3a2%202%200%200%201%202%201.72%2012.84%2012.84%200%200%200%20.7%202.81%202%202%200%200%201-.45%202.11L8.09%209.91a16%2016%200%200%200%206%206l1.27-1.27a2%202%200%200%201%202.11-.45%2012.84%2012.84%200%200%200%202.81.7A2%202%200%200%201%2022%2016.92z'/%3E%3C/svg%3E") center/1.12rem 1.12rem no-repeat;mask:url("data:image/svg+xml,%3Csvg%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%20fill='none'%20stroke='black'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%3E%3Cpath%20d='M22%2016.92v3a2%202%200%200%201-2.18%202%2019.79%2019.79%200%200%201-8.63-3.07%2019.5%2019.5%200%200%201-6-6A19.79%2019.79%200%200%201%202.12%204.18%202%202%200%200%201%204.11%202h3a2%202%200%200%201%202%201.72%2012.84%2012.84%200%200%200%20.7%202.81%202%202%200%200%201-.45%202.11L8.09%209.91a16%2016%200%200%200%206%206l1.27-1.27a2%202%200%200%201%202.11-.45%2012.84%2012.84%200%200%200%202.81.7A2%202%200%200%201%2022%2016.92z'/%3E%3C/svg%3E") center/1.12rem 1.12rem no-repeat}
 
 /* Footer: confident but not billboard-sized. */
 .footer{padding-top:clamp(4.8rem,7vw,7rem)}
@@ -214,3 +219,5 @@ h2{font-size:clamp(2.75rem,5vw,5rem);line-height:.96;margin:.25rem 0 1.55rem}
   .visit-note a{padding-left:.7rem;font-size:.72rem}
   .nav-primary a{font-size:1.75rem}
 }
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

@@ -13,7 +13,7 @@ function closeNavigation({restoreFocus=true}={}){
   toggle.setAttribute("aria-expanded","false");
   toggle.setAttribute("aria-label","Navigation öffnen");
   document.body.style.overflow="";
-  if(restoreFocus&&document.contains(toggle))toggle.focus();
+  if(restoreFocus&&toggle.isConnected!==false)toggle.focus();
 }
 
 if(toggle&&navigation){
