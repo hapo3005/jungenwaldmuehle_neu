@@ -1,4 +1,4 @@
-/* Final visual polish layer — desktop hierarchy and hero balance */
+/* Final visual polish layer — desktop hierarchy and responsive refinement */
 @media (min-width:981px){
   .site-header .nav{
     height:6.35rem;
@@ -53,4 +53,84 @@
   .nav-reserve{min-width:8.6rem;padding-left:.8rem}
   .nav-reserve strong{font-size:.92rem}
   .home-hero h1{font-size:clamp(3.4rem,5.4vw,4.7rem)}
+}
+
+@media (max-width:760px){
+  h1,h2,h3,.menu-lines span,.visit-facts strong{overflow-wrap:normal;word-break:normal;hyphens:none}
+  section{padding:3.65rem 0}
+  .kicker,.eyebrow{margin-bottom:.78rem}
+
+  .intro-grid h2,
+  .food-copy h2,
+  .menu-preview h2,
+  .horses-copy h2,
+  .visit-grid h2,
+  .guest-reviews-head h2{max-width:13.5ch}
+
+  .intro-grid{gap:.85rem!important}
+  .intro-grid .lead{font-size:clamp(1.16rem,5.2vw,1.35rem);line-height:1.48}
+  .round-link{margin-top:.75rem}
+
+  .food-grid{gap:1.35rem!important}
+  .food-copy{padding-top:.55rem}
+  .food-copy h2{font-size:clamp(2.4rem,10vw,3rem);line-height:1}
+  .food-copy p:not(.kicker){font-size:1rem;line-height:1.6}
+
+  .menu-preview{padding:3.9rem 0}
+  .menu-preview-grid{gap:1.8rem!important}
+  .menu-preview h2{max-width:13ch;font-size:clamp(2.35rem,9.7vw,2.95rem);line-height:1.01}
+  .menu-lines p{padding:1rem 0}
+  .menu-lines span{font-size:clamp(1.28rem,5.5vw,1.5rem);line-height:1.27;text-wrap:pretty}
+  .menu-lines small{margin-top:.3rem;font-size:.84rem;line-height:1.45;overflow-wrap:normal;word-break:normal}
+  .menu-lines .btn{min-height:3.45rem;margin-top:1.35rem}
+
+  .horses-story{padding-bottom:3.9rem}
+  .horses-copy{margin-bottom:1.45rem}
+  .horses-copy h2{font-size:clamp(2.4rem,10vw,3rem);line-height:1}
+  .home-event{margin-top:1.5rem}
+  .horse-links{margin-top:1.7rem}
+
+  .visit-section{padding:3.9rem 0}
+  .visit-grid{gap:1.55rem!important}
+  .visit-grid h2{max-width:13ch;font-size:clamp(2.4rem,10vw,3rem);line-height:1.01}
+  .visit-facts{margin-top:0}
+  .visit-facts p{gap:.18rem;padding:.9rem 0}
+  .visit-facts span{font-size:.79rem;line-height:1.35}
+  .visit-facts strong{font-size:1.07rem;line-height:1.36}
+  .visit-facts .actions{margin-top:1.3rem;gap:.7rem}
+  .visit-section .btn{min-height:3.45rem}
+  .visit-section .text-link{min-height:2.5rem}
+
+  .guest-reviews-head{gap:1.55rem!important;margin-bottom:2rem}
+  .guest-reviews-head h2{font-size:clamp(2.35rem,9.7vw,2.95rem);line-height:1.02}
+  .review-summary{gap:.8rem;padding:1rem 0}
+  .review-score{font-size:2.75rem}
+  .review-summary-copy strong{font-size:1rem}
+  .review-summary-copy small{line-height:1.4}
+  .review-card,.review-card:first-child,.review-card:nth-child(2),.review-card:nth-child(3){padding:1.35rem 0}
+  .review-card:first-child blockquote{font-size:clamp(1.45rem,6.5vw,1.85rem);line-height:1.25}
+
+  .restaurant-quicklinks .container{gap:0}
+  .restaurant-quicklinks a{min-width:0;font-size:.72rem;white-space:nowrap}
+  .menu-jumps a{min-height:3.4rem;padding:.7rem .8rem;font-size:.76rem}
+  .menu-category h3{line-height:1.03}
+  .menu-item strong{line-height:1.32}
+  .menu-service{gap:1.6rem}
+  .menu-service h2{font-size:clamp(2.35rem,9.5vw,2.95rem);line-height:1.02}
+
+  .footer-lead{padding-top:4.8rem;padding-bottom:2.7rem}
+  .footer-lead h2{max-width:12ch;font-size:clamp(2.55rem,10.8vw,3.25rem);line-height:.99}
+  .footer-grid{gap:.9rem}
+}
+
+@media (max-width:430px){
+  .container{width:calc(100% - 1.35rem)}
+  .home-hero h1{max-width:11ch;font-size:clamp(2.45rem,10.7vw,3rem)}
+  .home-hero-copy>p:not(.kicker){line-height:1.48}
+  .home-hero .actions{gap:.3rem}
+  .visit-note{grid-template-columns:minmax(0,1fr) minmax(6.5rem,auto);gap:.05rem .7rem}
+  .visit-note a{padding-left:.65rem}
+  .menu-preview h2,.visit-grid h2{max-width:14ch}
+  .review-summary{grid-template-columns:auto minmax(0,1fr)}
+  .review-summary-copy{min-width:0}
 }
