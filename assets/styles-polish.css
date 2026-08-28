@@ -64,6 +64,15 @@
   section{padding:3.65rem 0}
   .kicker,.eyebrow{margin-bottom:.78rem}
 
+  .scroll-top{
+    display:grid!important;
+    right:max(.8rem,env(safe-area-inset-right));
+    bottom:max(.8rem,env(safe-area-inset-bottom));
+    width:3.1rem;
+    height:3.1rem;
+  }
+  .scroll-top.is-visible{display:grid!important}
+
   .intro-grid h2,
   .food-copy h2,
   .menu-preview h2,
