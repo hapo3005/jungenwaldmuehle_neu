@@ -1,0 +1,56 @@
+/* Final visual polish layer — desktop hierarchy and hero balance */
+@media (min-width:981px){
+  .site-header .nav{
+    height:6.35rem;
+    gap:clamp(1.35rem,2vw,2rem);
+    border-bottom-color:rgba(255,255,255,.18);
+  }
+  .brand{gap:.82rem}
+  .brand img{width:3.05rem;height:3.05rem}
+  .brand strong{font-size:1.23rem;letter-spacing:-.025em}
+  .brand small{margin-top:.14rem;font-size:.61rem;font-weight:620;letter-spacing:.03em;opacity:.72}
+  .links{gap:clamp(.95rem,1.55vw,1.55rem)}
+  .nav-primary{gap:clamp(.78rem,1.3vw,1.25rem)}
+  .nav-primary a{min-height:2.8rem;font-size:.83rem;font-weight:625;letter-spacing:0}
+  .nav-primary a:after{bottom:-.28rem}
+  .nav-reserve{
+    display:grid;
+    min-width:9.9rem;
+    gap:.05rem;
+    padding:.35rem 0 .38rem 1.05rem;
+    border:0;
+    border-left:1px solid rgba(255,255,255,.28);
+    background:transparent;
+    text-align:left;
+  }
+  .nav-reserve span{font-size:.62rem;letter-spacing:.01em;opacity:.7}
+  .nav-reserve strong{font-size:1rem;font-weight:600;letter-spacing:-.015em}
+
+  .home-hero{min-height:47rem;height:min(93dvh,57rem)}
+  .home-hero-image{object-position:center 53%;filter:saturate(1) contrast(1.005) brightness(1.07)}
+  .home-hero-shade{
+    background:
+      linear-gradient(90deg,rgba(7,23,16,.49) 0,rgba(7,23,16,.20) 47%,rgba(7,23,16,.015) 78%),
+      linear-gradient(0deg,rgba(7,23,16,.25),transparent 60%);
+  }
+  .home-hero-inner{gap:clamp(4rem,8vw,8rem);padding-top:7.2rem;padding-bottom:clamp(3.1rem,6vh,4.6rem)}
+  .home-hero-copy{max-width:43rem}
+  .home-hero h1{max-width:11.2ch;margin-bottom:1.15rem;font-size:clamp(3.5rem,5.25vw,5.35rem);line-height:.94;letter-spacing:-.047em}
+  .home-hero-copy>p:not(.kicker){max-width:32rem;font-size:clamp(1.04rem,1.25vw,1.16rem);line-height:1.52}
+  .home-hero .actions{margin-top:1.5rem}
+  .visit-note{width:18rem;padding:1.12rem 0 1.2rem;background:none;border-top-color:rgba(255,255,255,.55);border-bottom-color:rgba(255,255,255,.16)}
+  .visit-note span,.visit-note small{font-size:.75rem}
+  .visit-note strong{margin:.18rem 0;font-size:1.35rem}
+  .visit-note a{margin-top:.9rem;font-size:.84rem}
+}
+
+@media (min-width:981px) and (max-width:1180px){
+  .site-header .nav{height:6.1rem;gap:1rem}
+  .brand img{width:2.9rem;height:2.9rem}
+  .brand strong{font-size:1.14rem}
+  .nav-primary{gap:.72rem}
+  .nav-primary a{font-size:.77rem}
+  .nav-reserve{min-width:8.6rem;padding-left:.8rem}
+  .nav-reserve strong{font-size:.92rem}
+  .home-hero h1{font-size:clamp(3.4rem,5.4vw,4.7rem)}
+}
