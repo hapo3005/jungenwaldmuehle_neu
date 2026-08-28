@@ -34,7 +34,7 @@
 <meta name="twitter:image:alt" content="{{ imageAlt }}">
 {%- endif %}
 {%- if preloadHero %}<link rel="preload" as="image" href="{{ image }}"{% if imageSrcset %} imagesrcset="{{ imageSrcset }}" imagesizes="{{ imageSizes or '100vw' }}"{% endif %} fetchpriority="high">{%- endif %}
-<link rel="stylesheet" href="assets/styles.css?v=20260828-2">
+<link rel="stylesheet" href="assets/styles.css?v=20260828-3">
 <link rel="stylesheet" href="assets/styles-polish.css?v=20260828-4">
 </head>
 <body>
@@ -55,7 +55,7 @@
   </div>
 </header>
 {{ content | safe }}
-<button class="scroll-top" type="button" aria-label="Zum Seitenanfang" title="Nach oben" tabindex="-1">
+<button class="scroll-top" type="button" aria-label="Zum Seitenanfang" title="Nach oben" tabindex="-1" style="display:grid">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6.5 10.5 12 5l5.5 5.5"/></svg>
 </button>
 <footer class="footer">
@@ -75,7 +75,7 @@
   </div>
   <div class="container legal">© <span data-year></span> Jungenwaldmühle · <a href="impressum.html">Impressum & Datenschutz</a></div>
 </footer>
-<script src="assets/app.js?v=20260828-2"></script>
+<script src="assets/app.js?v=20260828-3"></script>
 {%- if not noindex %}
 <script type="application/ld+json">
 {
