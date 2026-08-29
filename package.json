@@ -9,10 +9,9 @@
     "design-check": "node .agents/skills/impeccable/scripts/detect.mjs src/",
     "runtime-check": "node scripts/validate-app-runtime.mjs",
     "live-check": "node scripts/validate-live.mjs",
-    "check": "npm run build && node scripts/validate-site.mjs && npm run runtime-check && npm run design-check && node --check assets/app.js && node --check scripts/sync-root.mjs"
+    "check": "npm run build && node scripts/validate-production.mjs && npm run runtime-check && npm run design-check && node --check assets/app.js && node --check scripts/sync-root.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
   }
 }
-
