@@ -148,16 +148,19 @@ breadcrumb: "Ponyhof & Reitschule"
         </p>
       </div>
       <div class="gallery equine-gallery">
-        <img
-          src="assets/images/rundhalle.jpg"
-          srcset="assets/images/rundhalle-480.jpg 480w, assets/images/rundhalle.jpg 555w"
-          sizes="(max-width: 680px) calc(100vw - 1.5rem), 34vw"
-          alt="Überdachte Rundhalle der Reitschule Jungenwaldmühle"
-          width="555"
-          height="700"
-          loading="lazy"
-          decoding="async"
-        /><img
+        <picture>
+          <source srcset="assets/images/rundhalle.webp" type="image/webp">
+          <img
+            src="assets/images/rundhalle.jpg"
+            srcset="assets/images/rundhalle-480.jpg 480w, assets/images/rundhalle.jpg 555w"
+            sizes="(max-width: 680px) calc(100vw - 1.5rem), 34vw"
+            alt="Überdachte Rundhalle der Reitschule Jungenwaldmühle"
+            width="555"
+            height="700"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture><img
           src="assets/images/reitblick-mosellandschaft.jpg"
           srcset="assets/images/reitblick-mosellandschaft-480.jpg 480w, assets/images/reitblick-mosellandschaft.jpg 700w"
           sizes="(max-width: 680px) calc(100vw - 1.5rem), 25vw"
