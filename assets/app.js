@@ -1,18 +1,46 @@
 const toggle=document.querySelector(".toggle");
 const navigation=document.querySelector(".links");
 const mobileBreakpoint=window.matchMedia("(max-width: 980px)");
+let lockedScrollY=0;
+let pageScrollLocked=false;
 
 function focusableNavigationItems(){
   if(!navigation)return[];
   return [toggle,...navigation.querySelectorAll("a,button")].filter(element=>element&&!element.hasAttribute("disabled"));
 }
 
-function closeNavigation({restoreFocus=true}={}){
+function lockPageScroll(){
+  if(pageScrollLocked)return;
+  lockedScrollY=window.scrollY;
+  pageScrollLocked=true;
+  document.body.dataset.menuScrollLocked="true";
+  document.body.style.position="fixed";
+  document.body.style.top=`-${lockedScrollY}px`;
+  document.body.style.left="0";
+  document.body.style.right="0";
+  document.body.style.width="100%";
+  document.body.style.overflow="hidden";
+}
+
+function unlockPageScroll({restore=true}={}){
+  if(!pageScrollLocked)return;
+  pageScrollLocked=false;
+  delete document.body.dataset.menuScrollLocked;
+  document.body.style.position="";
+  document.body.style.top="";
+  document.body.style.left="";
+  document.body.style.right="";
+  document.body.style.width="";
+  document.body.style.overflow="";
+  if(restore)window.scrollTo(0,lockedScrollY);
+}
+
+function closeNavigation({restoreFocus=true,restoreScroll=true}={}){
   if(!toggle||!navigation)return;
   navigation.classList.remove("open");
   toggle.setAttribute("aria-expanded","false");
   toggle.setAttribute("aria-label","Navigation öffnen");
-  document.body.style.overflow="";
+  unlockPageScroll({restore:restoreScroll});
   if(restoreFocus&&toggle.isConnected!==false)toggle.focus();
 }
 
@@ -21,8 +49,12 @@ if(toggle&&navigation){
     const isOpen=navigation.classList.toggle("open");
     toggle.setAttribute("aria-expanded",String(isOpen));
     toggle.setAttribute("aria-label",isOpen?"Navigation schließen":"Navigation öffnen");
-    document.body.style.overflow=isOpen?"hidden":"";
-    if(isOpen)navigation.querySelector("a")?.focus();
+    if(isOpen){
+      lockPageScroll();
+      navigation.querySelector("a")?.focus();
+    }else{
+      unlockPageScroll();
+    }
   });
   navigation.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>closeNavigation({restoreFocus:false})));
   document.addEventListener("keydown",event=>{
@@ -52,8 +84,9 @@ if(toggle&&navigation){
   }else{
     mobileBreakpoint.addListener(handleBreakpointChange);
   }
-  window.addEventListener("pagehide",()=>{
-    document.body.style.overflow="";
+  window.addEventListener("pagehide",()=>unlockPageScroll({restore:false}));
+  window.addEventListener("pageshow",()=>{
+    if(!navigation.classList.contains("open"))unlockPageScroll({restore:false});
   });
 }
 
@@ -75,9 +108,10 @@ const scrollTopButton=document.querySelector(".scroll-top");
 if(scrollTopButton){
   let scrollFrame;
   const updateScrollTopButton=()=>{
-    const scrollable=Math.max(0,document.documentElement.scrollHeight-window.innerHeight);
+    const viewportHeight=window.visualViewport?.height||window.innerHeight;
+    const scrollable=Math.max(0,document.documentElement.scrollHeight-viewportHeight);
     const progress=scrollable?Math.min(1,window.scrollY/scrollable):0;
-    const visible=window.scrollY>Math.min(420,window.innerHeight*.55);
+    const visible=window.scrollY>Math.min(420,viewportHeight*.55);
     scrollTopButton.classList.toggle("is-visible",visible);
     scrollTopButton.tabIndex=visible?0:-1;
     scrollTopButton.style.setProperty("--scroll-progress",`${progress*360}deg`);
@@ -91,15 +125,17 @@ if(scrollTopButton){
       const main=document.querySelector("#main");
       window.setTimeout(()=>{
         if(main){
-          main.focus({preventScroll:true});
+          try{main.focus({preventScroll:true});}catch{main.focus();}
         }
       },0);
     }
   });
-  window.addEventListener("scroll",()=>{
+  const requestScrollUpdate=()=>{
     if(!scrollFrame)scrollFrame=window.requestAnimationFrame(updateScrollTopButton);
-  },{passive:true});
-  window.addEventListener("resize",updateScrollTopButton,{passive:true});
+  };
+  window.addEventListener("scroll",requestScrollUpdate,{passive:true});
+  window.addEventListener("resize",requestScrollUpdate,{passive:true});
+  window.visualViewport?.addEventListener("resize",requestScrollUpdate,{passive:true});
   updateScrollTopButton();
 }
 
