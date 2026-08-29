@@ -1,5 +1,3 @@
-@import url("./styles-base.css?v=20260828-1");
-
 /* Stable base wrapper. Visual composition lives in site.css. */
 .page-hero--feature{min-height:clamp(40rem,70svh,50rem)}
 .page-hero--utility{min-height:clamp(32rem,56svh,40rem)}
