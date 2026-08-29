@@ -13,7 +13,6 @@ function lockPageScroll(){
   if(pageScrollLocked)return;
   lockedScrollY=window.scrollY;
   pageScrollLocked=true;
-  document.body.dataset.menuScrollLocked="true";
   document.body.style.position="fixed";
   document.body.style.top=`-${lockedScrollY}px`;
   document.body.style.left="0";
@@ -25,7 +24,6 @@ function lockPageScroll(){
 function unlockPageScroll({restore=true}={}){
   if(!pageScrollLocked)return;
   pageScrollLocked=false;
-  delete document.body.dataset.menuScrollLocked;
   document.body.style.position="";
   document.body.style.top="";
   document.body.style.left="";
