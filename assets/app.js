@@ -132,7 +132,7 @@ if(scrollTopButton){
     if(!scrollFrame)scrollFrame=window.requestAnimationFrame(updateScrollTopButton);
   };
   window.addEventListener("scroll",requestScrollUpdate,{passive:true});
-  window.addEventListener("resize",requestScrollUpdate,{passive:true});
+  window.addEventListener("resize",updateScrollTopButton,{passive:true});
   window.visualViewport?.addEventListener("resize",requestScrollUpdate,{passive:true});
   updateScrollTopButton();
 }
