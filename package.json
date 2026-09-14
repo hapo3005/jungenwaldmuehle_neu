@@ -5,12 +5,12 @@
   "description": "Website der Jungenwaldmühle – Restaurant, Hofcafé & Reitschule",
   "scripts": {
     "build:css": "node scripts/build-css.mjs",
-    "build": "npm run build:css && eleventy && node scripts/sync-root.mjs",
+    "build": "npm run build:css && eleventy && node scripts/copy-css-bundle.mjs && node scripts/sync-root.mjs",
     "serve": "npm run build:css && eleventy --serve",
     "design-check": "node .agents/skills/impeccable/scripts/detect.mjs src/",
     "runtime-check": "node scripts/validate-app-runtime.mjs",
     "live-check": "node scripts/validate-live.mjs",
-    "check": "npm run build && node scripts/validate-production.mjs && npm run runtime-check && npm run design-check && node --check assets/app.js && node --check scripts/build-css.mjs && node --check scripts/sync-root.mjs"
+    "check": "npm run build && node scripts/validate-production.mjs && npm run runtime-check && npm run design-check && node --check assets/app.js && node --check scripts/build-css.mjs && node --check scripts/copy-css-bundle.mjs && node --check scripts/sync-root.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
