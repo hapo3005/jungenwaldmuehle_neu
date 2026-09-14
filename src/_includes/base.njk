@@ -35,10 +35,7 @@
 <meta name="twitter:image:alt" content="{{ imageAlt }}">
 {%- endif %}
 {%- if preloadHero %}<link rel="preload" as="image" href="{{ image }}"{% if imageSrcset %} imagesrcset="{{ imageSrcset }}" imagesizes="{{ imageSizes or '100vw' }}"{% endif %} fetchpriority="high">{%- endif %}
-<link rel="stylesheet" href="assets/styles-base.css?v=20260829-3">
-<link rel="stylesheet" href="assets/styles.css?v=20260829-3">
-<link rel="stylesheet" href="assets/site.css?v=20260829-3">
-<link rel="stylesheet" href="assets/apple-safari.css?v=20260829-3">
+<link rel="stylesheet" href="assets/site-bundle.css?v=20260914-1">
 </head>
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a>
@@ -138,8 +135,8 @@
       ],
       "hasMap": "https://www.google.com/maps/search/?api=1&query=Jungenwaldm%C3%BChle%201%2C%2054472%20Brauneberg",
       "sameAs": [
-        "https://jungenwaldmuehle.simdif.com/",
-        "https://www.visitmosel.de/gastgeber-arrangements/poi/jungenwaldmuehle"
+        "https://www.facebook.com/Jungenwaldmuehle/",
+        "https://www.instagram.com/jungenwaldmuehle/"
       ]
     },
     {
@@ -147,40 +144,24 @@
       "@id": "{{ site.baseUrl }}/#website",
       "url": "{{ site.baseUrl }}/",
       "name": "Jungenwaldmühle",
-      "inLanguage": "de-DE",
-      "publisher": {"@id": "{{ site.baseUrl }}/#restaurant"}
+      "publisher": { "@id": "{{ site.baseUrl }}/#restaurant" }
     },
     {
       "@type": "WebPage",
       "@id": "{{ pageAbsUrl }}#webpage",
       "url": "{{ pageAbsUrl }}",
-      "name": "{{ title | safe }}",
-      "description": "{{ description | safe }}",
-      "inLanguage": "de-DE",
-      "isPartOf": {"@id": "{{ site.baseUrl }}/#website"},
-      "about": {"@id": "{{ site.baseUrl }}/#restaurant"},
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "{{ site.baseUrl }}/{{ image }}",
-        "caption": "{{ imageAlt | safe }}"
-      }
+      "name": "{{ title }}",
+      "description": "{{ description }}",
+      "isPartOf": { "@id": "{{ site.baseUrl }}/#website" },
+      "about": { "@id": "{{ site.baseUrl }}/#restaurant" }{% if breadcrumb %},
+      "breadcrumb": { "@id": "{{ pageAbsUrl }}#breadcrumb" }{% endif %}
     }{% if breadcrumb %},
     {
       "@type": "BreadcrumbList",
       "@id": "{{ pageAbsUrl }}#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Startseite",
-          "item": "{{ site.baseUrl }}/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "{{ breadcrumb | safe }}",
-          "item": "{{ pageAbsUrl }}"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Start", "item": "{{ site.baseUrl }}/" },
+        { "@type": "ListItem", "position": 2, "name": "{{ breadcrumb }}", "item": "{{ pageAbsUrl }}" }
       ]
     }{% endif %}
   ]
